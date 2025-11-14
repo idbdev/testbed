@@ -1,380 +1,464 @@
-jobId: "990"
-jobName: Inventory
+jobId: "984"
+jobName: Sales Invoice
 jobType: Source Aligned Data Product
 developerId: e3177aef-f9f9-4f45-b0a7-a46ea5466170
-domain: inventory
-alias: loading_inventory_data_in_iceberg
+domain: sales
+alias: loading_sales_data
 discoveryPort:
-  name: Inventory
+  name: Sales Invoice
 inputPorts:
-  - alias: Item_Master_1
+  - alias: Invoice_1
     isDynamic: true
-    path: s3a://dataverse/testbed/automobile/inventory/item_master.csv
+    path: s3a://dataverse/testbed/automobile/sales/invoice.csv
     optional:
       persistDataFrame: false
       advanceOptions:
         delimiter: ","
       enableDataReconciliation: false
       enforceSchema: false
-      connection: S3 Connection - Inventory
-      dataSetUrn: urn:dv:dataset:55dd345e-0184-41cf-9fd5-ccf9a4729950
+      connection: S3 Connection - Marketing and Sales
+      dataSetUrn: urn:dv:dataset:0d4d0617-60e7-49b9-aabb-a75f55699c19
     type: inputDelimited
-  - alias: Inventory_Status_1
+  - alias: Order_Book_1
     isDynamic: true
-    path: s3a://dataverse/testbed/automobile/inventory/inventory_status.csv
+    path: s3a://dataverse/testbed/automobile/sales/order_book.csv
     optional:
       persistDataFrame: false
       advanceOptions:
         delimiter: ","
       enableDataReconciliation: false
       enforceSchema: false
-      connection: S3 Connection - Inventory
-      dataSetUrn: urn:dv:dataset:b5d7777d-5428-4eb3-9503-8796292711bd
+      connection: S3 Connection - Marketing and Sales
+      dataSetUrn: urn:dv:dataset:13f47c74-7b76-4026-b322-2af393c83756
     type: inputDelimited
-  - alias: Item_Stock_Limit_1
+  - alias: Vendor_Master_1
     isDynamic: true
-    path: s3a://dataverse/testbed/automobile/inventory/item_stock_limit.csv
+    path: s3a://dataverse/testbed/automobile/sales/vendor_master.csv
     optional:
       persistDataFrame: false
       advanceOptions:
         delimiter: ","
       enableDataReconciliation: false
       enforceSchema: false
-      connection: S3 Connection - Inventory
-      dataSetUrn: urn:dv:dataset:1ab46557-ba63-4af0-a1d5-d7e899b100b3
+      connection: S3 Connection - Marketing and Sales
+      dataSetUrn: urn:dv:dataset:d78a37a3-f063-48a3-96b3-36fb6c1771d2
     type: inputDelimited
-  - alias: Section_Department_Master_1
+  - alias: customer_master_1
     isDynamic: true
-    path: s3a://dataverse/testbed/automobile/inventory/section_department_master.csv
+    path: s3a://dataverse/testbed/automobile/sales/customer_master.csv
     optional:
       persistDataFrame: false
       advanceOptions:
         delimiter: ","
       enableDataReconciliation: false
       enforceSchema: false
-      connection: S3 Connection - Inventory
-      dataSetUrn: urn:dv:dataset:f916ea98-2f81-4e91-be80-19418283e2d4
+      connection: S3 Connection - Marketing and Sales
+      dataSetUrn: urn:dv:dataset:fb5eac54-1bad-4f15-a5cc-1bde3a781349
+      loggingOptions:
+        printSchema: true
+        count: true
+        showData: true
     type: inputDelimited
 productState:
   isDynamic: true
-  alias: loading_inventory_data_in_iceberg
+  alias: loading_sales_data
   retentionVersions: ""
   logicalSchema:
     properties:
-      Master_Flag:
+      Invoice_Date:
         type: STRING
-        description: Master flag indicator
-        sourceColumn: Master_Flag
-        sourceTable: public.data_1
-      Difference_Mil:
+        description: Invoice date
+        sourceColumn: Invoice_Date
+        sourceTable: public.invoice_master
+      Cancel_Date:
         type: STRING
-        description: Difference MIL value
-        sourceColumn: Difference_Mil
-        sourceTable: public.data_1
-      Difference_Rol:
+        description: Cancellation date
+        sourceColumn: Cancel_Date
+        sourceTable: public.invoice_master
+      Order_Date:
         type: STRING
-        description: Difference ROL value
-        sourceColumn: Difference_Rol
-        sourceTable: public.data_1
-      Item_Code:
+        description: Order date
+        sourceColumn: Order_Date
+        sourceTable: public.invoice_master
+      Order_Number:
         type: STRING
-        description: Unique item code
-        sourceColumn: Item_Code
-        sourceTable: public.data_1
-      Unit:
+        description: Order number
+        sourceColumn: Order_Number
+        sourceTable: public.invoice_master
+      Invoice_Cancel_Date:
         type: STRING
-        description: Unit of measurement
-        sourceColumn: Unit
-        sourceTable: public.data_1
-      Location:
+        description: Invoice cancellation date
+        sourceColumn: Invoice_Cancel_Date
+        sourceTable: public.invoice_master
+      Vehicle_Vin:
         type: STRING
-        description: Location information
-        sourceColumn: Location
-        sourceTable: public.data_1
-      Stock:
+        description: Vehicle VIN number
+        sourceColumn: Vehicle_Vin
+        sourceTable: public.invoice_master
+      Dealer_Map_Code:
         type: STRING
-        description: Stock quantity
-        sourceColumn: Stock
-        sourceTable: public.data_1
-      Company_Code:
+        description: Dealer map code
+        sourceColumn: Dealer_Map_Code
+        sourceTable: public.invoice_master
+      Company_Fa:
         type: STRING
-        description: Company code
-        sourceColumn: Company_Code
-        sourceTable: public.data_1
-      Rate:
+        description: Company FA code
+        sourceColumn: Company_Fa
+        sourceTable: public.invoice_master
+      Location_Code:
         type: STRING
-        description: Applicable rate
-        sourceColumn: Rate
-        sourceTable: public.data_1
-      Amount:
+        description: Location code
+        sourceColumn: Location_Code
+        sourceTable: public.invoice_master
+      Invoice_Type:
         type: STRING
-        description: Amount value
-        sourceColumn: Amount
-        sourceTable: public.data_1
-      Mil:
+        description: Invoice type
+        sourceColumn: Invoice_Type
+        sourceTable: public.invoice_master
+      Invoice_Number:
         type: STRING
-        description: MIL value
-        sourceColumn: Mil
-        sourceTable: public.data_1
-      Rol:
+        description: Invoice number
+        sourceColumn: Invoice_Number
+        sourceTable: public.invoice_master
+      Parent_Group:
         type: STRING
-        description: ROL value
-        sourceColumn: Rol
-        sourceTable: public.data_1
-      Section2:
+        description: Parent group code
+        sourceColumn: Parent_Group
+        sourceTable: public.invoice_master
+      Tehsil_Code:
         type: STRING
-        description: Section 2 category
-        sourceColumn: Section2
-        sourceTable: public.data_1
-      Transfer_Uom:
+        description: Tehsil code
+        sourceColumn: Tehsil_Code
+        sourceTable: public.invoice_master
+      Village_Code:
         type: STRING
-        description: Transfer unit of measurement
-        sourceColumn: Transfer_Uom
-        sourceTable: public.data_1
-      Conversion_Factor:
+        description: Village code
+        sourceColumn: Village_Code
+        sourceTable: public.invoice_master
+      State_Code:
         type: STRING
-        description: Conversion factor value
-        sourceColumn: Conversion_Factor
-        sourceTable: public.data_1
-      Sequence_Number:
+        description: State code
+        sourceColumn: State_Code
+        sourceTable: public.invoice_master
+      Cs_Mga_Sold_Amt:
         type: STRING
-        description: Sequence number
-        sourceColumn: Sequence_Number
-        sourceTable: public.data_1
-      Pack_Uom:
+        description: CS MGA sold amount
+        sourceColumn: Cs_Mga_Sold_Amt
+        sourceTable: public.invoice_master
+      Tds_Amt:
         type: STRING
-        description: Packing unit of measurement
-        sourceColumn: Pack_Uom
-        sourceTable: public.data_1
-      Min_Level:
+        description: TDS amount
+        sourceColumn: Tds_Amt
+        sourceTable: public.invoice_master
+      Interest_Amt:
         type: STRING
-        description: Minimum stock level
-        sourceColumn: Min_Level
-        sourceTable: public.data_1
-      Max_Level:
+        description: Interest amount
+        sourceColumn: Interest_Amt
+        sourceTable: public.invoice_master
+      Fin_Amt:
         type: STRING
-        description: Maximum stock level
-        sourceColumn: Max_Level
-        sourceTable: public.data_1
-      Record_Level:
+        description: Finance amount
+        sourceColumn: Fin_Amt
+        sourceTable: public.invoice_master
+      Emi_Amt:
         type: STRING
-        description: Record level parameter
-        sourceColumn: Record_Level
-        sourceTable: public.data_1
-      Categories:
+        description: EMI amount
+        sourceColumn: Emi_Amt
+        sourceTable: public.invoice_master
+      Insurance_Amt:
         type: STRING
-        description: Item categories
-        sourceColumn: Categories
-        sourceTable: public.data_1
-      Close_Date:
+        description: Insurance amount
+        sourceColumn: Insurance_Amt
+        sourceTable: public.invoice_master
+      Net_Premium_Amt:
         type: STRING
-        description: Close date of item
-        sourceColumn: Close_Date
-        sourceTable: public.data_1
-      Start_Date:
+        description: Net premium amount
+        sourceColumn: Net_Premium_Amt
+        sourceTable: public.invoice_master
+      Autocard_Booked_Amt:
         type: STRING
-        description: Start date of item
-        sourceColumn: Start_Date
-        sourceTable: public.data_1
-      Remarks:
+        description: Autocard booked amount
+        sourceColumn: Autocard_Booked_Amt
+        sourceTable: public.invoice_master
+      Ew_Booked_Amt:
         type: STRING
-        description: Remarks or comments
-        sourceColumn: Remarks
-        sourceTable: public.data_1
-      Section:
+        description: EW booked amount
+        sourceColumn: Ew_Booked_Amt
+        sourceTable: public.invoice_master
+      Mi_Booked_Amt:
         type: STRING
-        description: Section classification
-        sourceColumn: Section
-        sourceTable: public.data_1
-      Division:
+        description: MI booked amount
+        sourceColumn: Mi_Booked_Amt
+        sourceTable: public.invoice_master
+      Financed_Amt:
         type: STRING
-        description: Division information
-        sourceColumn: Division
-        sourceTable: public.data_1
-      Department:
+        description: Financed amount
+        sourceColumn: Financed_Amt
+        sourceTable: public.invoice_master
+      Writeoff_Amt:
         type: STRING
-        description: Department name
-        sourceColumn: Department
-        sourceTable: public.data_1
-      Status:
+        description: Writeoff amount
+        sourceColumn: Writeoff_Amt
+        sourceTable: public.invoice_master
+      Booking_Amt:
         type: STRING
-        description: Status indicator
-        sourceColumn: Status
-        sourceTable: public.data_1
-      Data_View:
+        description: Booking amount
+        sourceColumn: Booking_Amt
+        sourceTable: public.invoice_master
+      Received_Amt:
         type: STRING
-        description: Data view detail
-        sourceColumn: Data_View
-        sourceTable: public.data_1
-      Breakdown_View:
+        description: Received amount
+        sourceColumn: Received_Amt
+        sourceTable: public.invoice_master
+      Charge_Amt:
         type: STRING
-        description: Breakdown view parameter
-        sourceColumn: Breakdown_View
-        sourceTable: public.data_1
-      Sub_Group:
+        description: Charge amount
+        sourceColumn: Charge_Amt
+        sourceTable: public.invoice_master
+      Mga_Fin_Amt:
         type: STRING
-        description: Sub group classification
-        sourceColumn: Sub_Group
-        sourceTable: public.data_1
-      Bom_View:
+        description: MGA finance amount
+        sourceColumn: Mga_Fin_Amt
+        sourceTable: public.invoice_master
+      Booking_Amt_2:
         type: STRING
-        description: BOM view indicator
-        sourceColumn: Bom_View
-        sourceTable: public.data_1
-      Shop:
+        description: Booking amount 2
+        sourceColumn: Booking_Amt_2
+        sourceTable: public.invoice_master
+      Loyalty_Redeem_Amt:
         type: STRING
-        description: Shop or plant information
-        sourceColumn: Shop
-        sourceTable: public.data_1
-      Item_Description:
+        description: Loyalty redeem amount
+        sourceColumn: Loyalty_Redeem_Amt
+        sourceTable: public.invoice_master
+      Charge_Amt_2:
         type: STRING
-        description: Description of the item
-        sourceColumn: Item_Description
-        sourceTable: public.data_1
-      Item_Type:
+        description: Charge amount 2
+        sourceColumn: Charge_Amt_2
+        sourceTable: public.invoice_master
+      Fcb_Amt:
         type: STRING
-        description: Type of item
-        sourceColumn: Item_Type
-        sourceTable: public.data_1
-      Primary_Item_Flag:
+        description: FCB amount
+        sourceColumn: Fcb_Amt
+        sourceTable: public.invoice_master
+      Financed_Amt_2:
         type: STRING
-        description: Flag indicating primary item
-        sourceColumn: Primary_Item_Flag
-        sourceTable: public.data_1
-      Root_Company_Code:
+        description: Financed amount 2
+        sourceColumn: Financed_Amt_2
+        sourceTable: public.invoice_master
+      Invoice_Amt:
         type: STRING
-        description: Root company code
-        sourceColumn: Root_Company_Code
-        sourceTable: public.data_1
-      Purchase_Unit:
+        description: Invoice amount
+        sourceColumn: Invoice_Amt
+        sourceTable: public.invoice_master
+      Interest_Amt_2:
         type: STRING
-        description: Purchase unit of measurement
-        sourceColumn: Purchase_Unit
-        sourceTable: public.data_1
-      Item_Start_Date:
+        description: Interest amount 2
+        sourceColumn: Interest_Amt_2
+        sourceTable: public.invoice_master
+      Cancel_Charge_Amt:
         type: STRING
-        description: Item start date
-        sourceColumn: Item_Start_Date
-        sourceTable: public.data_1
-      Item_Close_Date:
+        description: Cancellation charge amount
+        sourceColumn: Cancel_Charge_Amt
+        sourceTable: public.invoice_master
+      Received_Amt_2:
         type: STRING
-        description: Item close date
-        sourceColumn: Item_Close_Date
-        sourceTable: public.data_1
-      Modvat_Start_Date:
+        description: Received amount 2
+        sourceColumn: Received_Amt_2
+        sourceTable: public.invoice_master
+      Oct_Amt:
         type: STRING
-        description: MODVAT applicability start date
-        sourceColumn: Modvat_Start_Date
-        sourceTable: public.data_1
-      Modvat_Close_Date:
+        description: OCT amount
+        sourceColumn: Oct_Amt
+        sourceTable: public.invoice_master
+      Writeoff_Amt_2:
         type: STRING
-        description: MODVAT applicability close date
-        sourceColumn: Modvat_Close_Date
-        sourceTable: public.data_1
-      Excise_Form_Series_Flag:
+        description: Writeoff amount 2
+        sourceColumn: Writeoff_Amt_2
+        sourceTable: public.invoice_master
+      Cancel_Invoice_Amt:
         type: STRING
-        description: Excise form series indicator
-        sourceColumn: Excise_Form_Series_Flag
-        sourceTable: public.data_1
-      Schedule_Flag:
+        description: Cancelled invoice amount
+        sourceColumn: Cancel_Invoice_Amt
+        sourceTable: public.invoice_master
+      Hypothecation_Amt:
         type: STRING
-        description: Schedule flag
-        sourceColumn: Schedule_Flag
-        sourceTable: public.data_1
-      Item_Sub_Type:
+        description: Hypothecation amount
+        sourceColumn: Hypothecation_Amt
+        sourceTable: public.invoice_master
+      Tds_Amt_2:
         type: STRING
-        description: Item sub-type
-        sourceColumn: Item_Sub_Type
-        sourceTable: public.data_1
-      Sub_Type:
+        description: TDS amount 2
+        sourceColumn: Tds_Amt_2
+        sourceTable: public.invoice_master
+      Region_Code:
         type: STRING
-        description: Subtype classification
-        sourceColumn: Sub_Type
-        sourceTable: public.data_1
-      Item_Sub_Group:
+        description: Region code
+        sourceColumn: Region_Code
+        sourceTable: public.invoice_master
+      Bill_Pin:
         type: STRING
-        description: Item sub-group
-        sourceColumn: Item_Sub_Group
-        sourceTable: public.data_1
-      Inner_Part_Flag:
+        description: Billing PIN
+        sourceColumn: Bill_Pin
+        sourceTable: public.invoice_master
+      Bill_Address_Line1:
         type: STRING
-        description: Inner part indicator
-        sourceColumn: Inner_Part_Flag
-        sourceTable: public.data_1
-      Tool_Code:
+        description: Billing address line 1
+        sourceColumn: Bill_Address_Line1
+        sourceTable: public.invoice_master
+      Bill_Address_Line2:
         type: STRING
-        description: Tool code
-        sourceColumn: Tool_Code
-        sourceTable: public.data_1
-      Shelf_Life:
+        description: Billing address line 2
+        sourceColumn: Bill_Address_Line2
+        sourceTable: public.invoice_master
+      Bill_Address_Line3:
         type: STRING
-        description: Shelf life duration
-        sourceColumn: Shelf_Life
-        sourceTable: public.data_1
-      Colour_Sensitivity:
+        description: Billing address line 3
+        sourceColumn: Bill_Address_Line3
+        sourceTable: public.invoice_master
+      Customer_Code:
         type: STRING
-        description: Color sensitivity factor
-        sourceColumn: Colour_Sensitivity
-        sourceTable: public.data_1
-      Season_Flag:
+        description: Customer code
+        sourceColumn: Customer_Code
+        sourceTable: public.invoice_master
+      Exchange_Flag:
         type: STRING
-        description: Seasonal flag
-        sourceColumn: Season_Flag
-        sourceTable: public.data_1
-      Item_Direct_Cons_Flag:
+        description: Exchange flag
+        sourceColumn: Exchange_Flag
+        sourceTable: public.invoice_master
+      Bill_Nature:
         type: STRING
-        description: Direct consumption flag
-        sourceColumn: Item_Direct_Cons_Flag
-        sourceTable: public.data_1
-      Latest_Po_Date:
+        description: Nature of billing
+        sourceColumn: Bill_Nature
+        sourceTable: public.invoice_master
+      Invoice_Status:
         type: STRING
-        description: Latest purchase order date
-        sourceColumn: Latest_Po_Date
-        sourceTable: public.data_1
-      Creator:
+        description: Invoice status
+        sourceColumn: Invoice_Status
+        sourceTable: public.invoice_master
+      Invoice_Party_Code:
         type: STRING
-        description: Record creator
-        sourceColumn: Creator
-        sourceTable: public.data_1
-      Comp:
+        description: Invoice party code
+        sourceColumn: Invoice_Party_Code
+        sourceTable: public.invoice_master
+      Parent_Group_2:
         type: STRING
-        description: Company identifier
-        sourceColumn: Comp
-        sourceTable: public.data_1
-      Plant_Location:
+        description: Parent group code 2
+        sourceColumn: Parent_Group_2
+        sourceTable: public.invoice_master
+      Dealer_Map_Code_2:
         type: STRING
-        description: Plant or facility location
-        sourceColumn: Plant_Location
-        sourceTable: public.data_1
-      Item_Category:
+        description: Dealer map code 2
+        sourceColumn: Dealer_Map_Code_2
+        sourceTable: public.invoice_master
+      Chassis_Number:
         type: STRING
-        description: Category of item
-        sourceColumn: Item_Category
-        sourceTable: public.data_1
+        description: Chassis number
+        sourceColumn: Chassis_Number
+        sourceTable: public.invoice_master
+      Location_Code_2:
+        type: STRING
+        description: Location code 2
+        sourceColumn: Location_Code_2
+        sourceTable: public.invoice_master
+      Salesman_Code:
+        type: STRING
+        description: Salesman code
+        sourceColumn: Salesman_Code
+        sourceTable: public.invoice_master
+      Company_Fa_2:
+        type: STRING
+        description: Company FA code 2
+        sourceColumn: Company_Fa_2
+        sourceTable: public.invoice_master
+      Order_Number_2:
+        type: STRING
+        description: Order number 2
+        sourceColumn: Order_Number_2
+        sourceTable: public.invoice_master
+      Order_Party_Code:
+        type: STRING
+        description: Order party code
+        sourceColumn: Order_Party_Code
+        sourceTable: public.invoice_master
+      Selling_Price:
+        type: STRING
+        description: Selling price
+        sourceColumn: Selling_Price
+        sourceTable: public.invoice_master
+      Received_Amt_3:
+        type: STRING
+        description: Received amount 3
+        sourceColumn: Received_Amt_3
+        sourceTable: public.invoice_master
+      Prom_Dod:
+        type: STRING
+        description: Promised date of delivery
+        sourceColumn: Prom_Dod
+        sourceTable: public.invoice_master
+      Pan_Number:
+        type: STRING
+        description: PAN number
+        sourceColumn: Pan_Number
+        sourceTable: public.invoice_master
+      District:
+        type: STRING
+        description: District name
+        sourceColumn: District
+        sourceTable: public.invoice_master
+      Enquiry_Number:
+        type: STRING
+        description: Enquiry number
+        sourceColumn: Enquiry_Number
+        sourceTable: public.invoice_master
+      City_Code:
+        type: STRING
+        description: City code
+        sourceColumn: City_Code
+        sourceTable: public.invoice_master
+      Fi_Code:
+        type: STRING
+        description: FI code
+        sourceColumn: Fi_Code
+        sourceTable: public.invoice_master
+      Customer_Email:
+        type: STRING
+        description: Customer email ID
+        sourceColumn: Customer_Email
+        sourceTable: public.invoice_master
+      Customer_City:
+        type: STRING
+        description: Customer city
+        sourceColumn: Customer_City
+        sourceTable: public.invoice_master
+      Party_Name:
+        type: STRING
+        description: Party name
+        sourceColumn: Party_Name
+        sourceTable: public.invoice_master
       Etl_Inserted_Date:
         type: STRING
-        description: ETL insertion timestamp
+        description: ETL inserted timestamp
         sourceColumn: Etl_Inserted_Date
-        sourceTable: public.data_1
+        sourceTable: public.invoice_master
       Etl_Modified_Date:
         type: STRING
-        description: ETL modification timestamp
+        description: ETL modified timestamp
         sourceColumn: Etl_Modified_Date
-        sourceTable: public.data_1
+        sourceTable: public.invoice_master
       Etl_Created_By:
         type: STRING
-        description: ETL creator
+        description: ETL created by user
         sourceColumn: Etl_Created_By
-        sourceTable: public.data_1
+        sourceTable: public.invoice_master
       Etl_Updated_By:
         type: STRING
-        description: ETL updater
+        description: ETL last updated by user
         sourceColumn: Etl_Updated_By
-        sourceTable: public.data_1
+        sourceTable: public.invoice_master
   stateStoreType: loadDataIceberg
   isProfilingEnabled: true
   updateStrategy: Overwrite
-  tableName: iceberg_meta.inventory
+  tableName: iceberg_meta.sales
   warehousePath: s3a://dataverse/testbed_load/
   catalogName: postgres_catalog
   optional:
@@ -391,23 +475,20 @@ productState:
 transformation:
   - isDynamic: true
     alias: Spark_SQL_1
-    description: transforming inventory data
+    description: transforming sales data
     sequence: 5
     inputDataFrameList:
-      - inputDataFrame: Section_Department_Master_1
-        tempViewName: sectionDepartmentMaster
-      - inputDataFrame: Inventory_Status_1
-        tempViewName: inventoryStatus
-      - inputDataFrame: Item_Master_1
-        tempViewName: itemMaster
-      - inputDataFrame: Item_Stock_Limit_1
-        tempViewName: itemStockLimit
-    query: select * from sectionDepartmentMaster
+      - inputDataFrame: Vendor_Master_1
+        tempViewName: vendorMaster
+      - inputDataFrame: Order_Book_1
+        tempViewName: orderBook
+      - inputDataFrame: Invoice_1
+        tempViewName: invoice
+      - inputDataFrame: customer_master_1
+        tempViewName: customerMaster
+    query: select * from customerMaster
     optional:
       persistDataFrame: false
-      loggingOptions:
-        printSchema: true
-        showData: true
     type: operationThroughSqlQuery
 controlPort:
   dataQualityRules: {}
