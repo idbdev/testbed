@@ -1,0 +1,563 @@
+jobId: "989"
+jobName: Port Management
+jobType: Source Aligned Data Product
+developerId: 7679c14a-8908-42a5-8656-2abecbfa4b49
+domain: port_management
+alias: loading_port_management_data_in_iceberg
+discoveryPort:
+  name: Port Management
+inputPorts:
+  - alias: Vehicle_Hold_Log_1
+    isDynamic: true
+    path: s3a://dataverse/testbed/automobile/port/vehicle_hold_log.csv
+    optional:
+      persistDataFrame: false
+      advanceOptions:
+        delimiter: ","
+      enableDataReconciliation: false
+      enforceSchema: false
+      connection: S3 Connection - Port Management
+      dataSetUrn: urn:dv:dataset:a49d13db-95f0-40dc-9c13-7be01d766038
+    type: inputDelimited
+  - alias: Vehicle_Sales_Details_1
+    isDynamic: true
+    path: s3a://dataverse/testbed/automobile/port/vehicle_sales_details.csv
+    optional:
+      persistDataFrame: false
+      advanceOptions:
+        delimiter: ","
+      enableDataReconciliation: false
+      enforceSchema: false
+      connection: S3 Connection - Port Management
+      dataSetUrn: urn:dv:dataset:9e088d03-a905-4e67-86da-41c7f1cc0b3b
+    type: inputDelimited
+  - alias: Transportation_Tracker_1
+    isDynamic: true
+    path: s3a://dataverse/testbed/automobile/port/transportation_tracker.csv
+    optional:
+      persistDataFrame: false
+      advanceOptions:
+        delimiter: ","
+      enableDataReconciliation: false
+      enforceSchema: false
+      connection: S3 Connection - Port Management
+      dataSetUrn: urn:dv:dataset:10ef7f02-4b23-4c28-9616-096641312e94
+    type: inputDelimited
+  - alias: Vehicle_Dispatch_Tracking_1
+    isDynamic: true
+    path: s3a://dataverse/testbed/automobile/port/vehicle_dispatch_tracking.csv
+    optional:
+      persistDataFrame: false
+      advanceOptions:
+        delimiter: ","
+      enableDataReconciliation: false
+      enforceSchema: false
+      connection: S3 Connection - Port Management
+      dataSetUrn: urn:dv:dataset:8bafaed0-aa25-43a4-9a66-cd73b4fd8d6f
+    type: inputDelimited
+  - alias: Shipping_Bill_Master_1
+    isDynamic: true
+    path: s3a://dataverse/testbed/automobile/port/shipping_bill_master.csv
+    optional:
+      persistDataFrame: false
+      advanceOptions:
+        delimiter: ","
+      enableDataReconciliation: false
+      enforceSchema: false
+      connection: S3 Connection - Port Management
+      dataSetUrn: urn:dv:dataset:6f4edc1c-8dcd-4afa-be7b-9cbe69d3dd3f
+    type: inputDelimited
+  - alias: Vehicle_Defect_Repair_Log_1
+    isDynamic: true
+    path: s3a://dataverse/testbed/automobile/port/vehicle_defect_repair_log.csv
+    optional:
+      persistDataFrame: false
+      advanceOptions:
+        delimiter: ","
+      enableDataReconciliation: false
+      enforceSchema: false
+      connection: S3 Connection - Port Management
+      dataSetUrn: urn:dv:dataset:1c1f1280-f4f7-4845-9b1a-980e1b54940c
+    type: inputDelimited
+  - alias: Engine_Master_1
+    isDynamic: true
+    path: s3a://dataverse/testbed/automobile/port/engine_master.csv
+    optional:
+      persistDataFrame: false
+      advanceOptions:
+        delimiter: ","
+      enableDataReconciliation: false
+      enforceSchema: false
+      connection: S3 Connection - Port Management
+      dataSetUrn: urn:dv:dataset:204813ad-dc52-435d-b95e-c09cb2a4ca09
+    type: inputDelimited
+  - alias: Vehicle_Parking_Status_._1
+    isDynamic: true
+    path: s3a://dataverse/testbed/automobile/port/vehicle_parking_status.csv
+    optional:
+      persistDataFrame: false
+      advanceOptions:
+        delimiter: ","
+      enableDataReconciliation: false
+      enforceSchema: false
+      connection: S3 Connection - Port Management
+      dataSetUrn: urn:dv:dataset:64db6d7e-d5b0-4c19-89b0-3807d4c6b50e
+    type: inputDelimited
+productState:
+  isDynamic: true
+  alias: loading_port_management_data_in_iceberg
+  retentionVersions: ""
+  logicalSchema:
+    properties:
+      Port0:
+        type: STRING
+        description: Port information
+        sourceColumn: Port0
+        sourceTable: port_management
+      Vech_Port1:
+        type: STRING
+        description: Vehicle port reference
+        sourceColumn: Vech_Port1
+        sourceTable: port_management
+      Cont:
+        type: STRING
+        description: Container or related information
+        sourceColumn: Cont
+        sourceTable: port_management
+      Smodel_Code3:
+        type: STRING
+        description: Sales model code
+        sourceColumn: Smodel_Code3
+        sourceTable: port_management
+      Modl:
+        type: STRING
+        description: Model code
+        sourceColumn: Modl
+        sourceTable: port_management
+      Spec:
+        type: STRING
+        description: Specification details
+        sourceColumn: Spec
+        sourceTable: port_management
+      Selection_Code:
+        type: STRING
+        description: Selection code
+        sourceColumn: Selection_Code
+        sourceTable: port_management
+      Modl1:
+        type: STRING
+        description: Additional model reference
+        sourceColumn: Modl1
+        sourceTable: port_management
+      Vinn:
+        type: STRING
+        description: Vehicle identification number
+        sourceColumn: Vinn
+        sourceTable: port_management
+      Engi_Number:
+        type: STRING
+        description: Engine number
+        sourceColumn: Engi_Number
+        sourceTable: port_management
+      Status10:
+        type: STRING
+        description: Status field
+        sourceColumn: Status10
+        sourceTable: port_management
+      Status1:
+        type: STRING
+        description: Secondary status field
+        sourceColumn: Status1
+        sourceTable: port_management
+      Vech_Port12:
+        type: STRING
+        description: Vehicle port identifier
+        sourceColumn: Vech_Port12
+        sourceTable: port_management
+      Colo_Code:
+        type: STRING
+        description: Color code
+        sourceColumn: Colo_Code
+        sourceTable: port_management
+      Engi_Vehm_Key_Number:
+        type: STRING
+        description: Engine vehicle key number
+        sourceColumn: Engi_Vehm_Key_Number
+        sourceTable: port_management
+      Order_No:
+        type: STRING
+        description: Order number
+        sourceColumn: Order_No
+        sourceTable: port_management
+      Ctrl_No:
+        type: STRING
+        description: Control number
+        sourceColumn: Ctrl_No
+        sourceTable: port_management
+      Exar_Number:
+        type: STRING
+        description: EXAR number
+        sourceColumn: Exar_Number
+        sourceTable: port_management
+      Invc_Date:
+        type: STRING
+        description: Invoice date
+        sourceColumn: Invc_Date
+        sourceTable: port_management
+      Are_No_Blank:
+        type: STRING
+        description: ARE number flag
+        sourceColumn: Are_No_Blank
+        sourceTable: port_management
+      Dealer:
+        type: STRING
+        description: Dealer name or code
+        sourceColumn: Dealer
+        sourceTable: port_management
+      Exin_Number:
+        type: STRING
+        description: EXIN number
+        sourceColumn: Exin_Number
+        sourceTable: port_management
+      Mulinvdt:
+        type: STRING
+        description: Multi invoice date
+        sourceColumn: Mulinvdt
+        sourceTable: port_management
+      Trip:
+        type: STRING
+        description: Trip identifier
+        sourceColumn: Trip
+        sourceTable: port_management
+      Regno:
+        type: STRING
+        description: Registration number
+        sourceColumn: Regno
+        sourceTable: port_management
+      Tptmode:
+        type: STRING
+        description: Transport mode
+        sourceColumn: Tptmode
+        sourceTable: port_management
+      Tptcode:
+        type: STRING
+        description: Transport code
+        sourceColumn: Tptcode
+        sourceTable: port_management
+      Transportation_Code:
+        type: STRING
+        description: Transportation code
+        sourceColumn: Transportation_Code
+        sourceTable: port_management
+      Transportation_Name:
+        type: STRING
+        description: Transportation provider name
+        sourceColumn: Transportation_Name
+        sourceTable: port_management
+      Recd_Date:
+        type: STRING
+        description: Record date
+        sourceColumn: Recd_Date
+        sourceTable: port_management
+      Soc:
+        type: STRING
+        description: SOC value
+        sourceColumn: Soc
+        sourceTable: port_management
+      Msil_Insp:
+        type: STRING
+        description: MSIL inspection information
+        sourceColumn: Msil_Insp
+        sourceTable: port_management
+      Batt_Reading:
+        type: STRING
+        description: Battery reading
+        sourceColumn: Batt_Reading
+        sourceTable: port_management
+      Km_Reading:
+        type: STRING
+        description: Odometer reading
+        sourceColumn: Km_Reading
+        sourceTable: port_management
+      Invc_Prefix:
+        type: STRING
+        description: Invoice prefix
+        sourceColumn: Invc_Prefix
+        sourceTable: port_management
+      Invc_Number:
+        type: STRING
+        description: Invoice number
+        sourceColumn: Invc_Number
+        sourceTable: port_management
+      Export_Challan_No:
+        type: STRING
+        description: Export challan number
+        sourceColumn: Export_Challan_No
+        sourceTable: port_management
+      Export_Challan_No1:
+        type: STRING
+        description: Secondary export challan number
+        sourceColumn: Export_Challan_No1
+        sourceTable: port_management
+      Tveh_Cinv_Invoice_Number:
+        type: STRING
+        description: TVEH invoice number
+        sourceColumn: Tveh_Cinv_Invoice_Number
+        sourceTable: port_management
+      Tveh_Cinv_Invoice_Date:
+        type: STRING
+        description: TVEH invoice date
+        sourceColumn: Tveh_Cinv_Invoice_Date
+        sourceTable: port_management
+      Cust_Ord_Mnth:
+        type: STRING
+        description: Customer order month
+        sourceColumn: Cust_Ord_Mnth
+        sourceTable: port_management
+      Rw_Num:
+        type: STRING
+        description: Row number
+        sourceColumn: Rw_Num
+        sourceTable: port_management
+      Epol_Name:
+        type: STRING
+        description: EPOL name
+        sourceColumn: Epol_Name
+        sourceTable: port_management
+      Ship_Date:
+        type: STRING
+        description: Shipment date
+        sourceColumn: Ship_Date
+        sourceTable: port_management
+      Esvc_Code:
+        type: STRING
+        description: ESVC code
+        sourceColumn: Esvc_Code
+        sourceTable: port_management
+      Einv_No:
+        type: STRING
+        description: E-invoice number
+        sourceColumn: Einv_No
+        sourceTable: port_management
+      Engi_Chassis_Prefix46:
+        type: STRING
+        description: Engine chassis prefix
+        sourceColumn: Engi_Chassis_Prefix46
+        sourceTable: port_management
+      Chassis_Number:
+        type: STRING
+        description: Chassis number
+        sourceColumn: Chassis_Number
+        sourceTable: port_management
+      Ship_Bill_No:
+        type: STRING
+        description: Shipping bill number
+        sourceColumn: Ship_Bill_No
+        sourceTable: port_management
+      Wax_Ok_Date:
+        type: STRING
+        description: Wax OK date
+        sourceColumn: Wax_Ok_Date
+        sourceTable: port_management
+      Shift_Name:
+        type: STRING
+        description: Shift name
+        sourceColumn: Shift_Name
+        sourceTable: port_management
+      Fcok_Date:
+        type: STRING
+        description: FCOk date
+        sourceColumn: Fcok_Date
+        sourceTable: port_management
+      Vehm_Sales_Model_Code:
+        type: STRING
+        description: Vehicle sales model code
+        sourceColumn: Vehm_Sales_Model_Code
+        sourceTable: port_management
+      Action:
+        type: STRING
+        description: Action taken
+        sourceColumn: Action
+        sourceTable: port_management
+      Stage:
+        type: STRING
+        description: Process stage
+        sourceColumn: Stage
+        sourceTable: port_management
+      Repair_Type:
+        type: STRING
+        description: Type of repair
+        sourceColumn: Repair_Type
+        sourceTable: port_management
+      Defect_Cd:
+        type: STRING
+        description: Defect code
+        sourceColumn: Defect_Cd
+        sourceTable: port_management
+      Jdfm_Desc:
+        type: STRING
+        description: JDFM description
+        sourceColumn: Jdfm_Desc
+        sourceTable: port_management
+      Port58:
+        type: STRING
+        description: Port reference 58
+        sourceColumn: Port58
+        sourceTable: port_management
+      Soc_Damage:
+        type: STRING
+        description: SOC damage information
+        sourceColumn: Soc_Damage
+        sourceTable: port_management
+      Time_In:
+        type: STRING
+        description: Time in
+        sourceColumn: Time_In
+        sourceTable: port_management
+      Time_Out:
+        type: STRING
+        description: Time out
+        sourceColumn: Time_Out
+        sourceTable: port_management
+      Shift_Name_Damage:
+        type: STRING
+        description: Shift name for damage
+        sourceColumn: Shift_Name_Damage
+        sourceTable: port_management
+      Repairby:
+        type: STRING
+        description: Repaired by
+        sourceColumn: Repairby
+        sourceTable: port_management
+      Responsibility:
+        type: STRING
+        description: Responsible person or team
+        sourceColumn: Responsibility
+        sourceTable: port_management
+      Defect_Type:
+        type: STRING
+        description: Type of defect
+        sourceColumn: Defect_Type
+        sourceTable: port_management
+      Date_In:
+        type: STRING
+        description: Date in
+        sourceColumn: Date_In
+        sourceTable: port_management
+      Date_Out:
+        type: STRING
+        description: Date out
+        sourceColumn: Date_Out
+        sourceTable: port_management
+      Smodel_Code68:
+        type: STRING
+        description: Sales model code reference
+        sourceColumn: Smodel_Code68
+        sourceTable: port_management
+      Cod:
+        type: STRING
+        description: Code field
+        sourceColumn: Cod
+        sourceTable: port_management
+      Engi_Chassis_Prefix70:
+        type: STRING
+        description: Engine chassis prefix
+        sourceColumn: Engi_Chassis_Prefix70
+        sourceTable: port_management
+      Chasssis:
+        type: STRING
+        description: Chassis information
+        sourceColumn: Chasssis
+        sourceTable: port_management
+      Dcat_Code:
+        type: STRING
+        description: DCAT code
+        sourceColumn: Dcat_Code
+        sourceTable: port_management
+      Status73:
+        type: STRING
+        description: Status field 73
+        sourceColumn: Status73
+        sourceTable: port_management
+      Reason_1:
+        type: STRING
+        description: Primary reason
+        sourceColumn: Reason_1
+        sourceTable: port_management
+      Reason_2:
+        type: STRING
+        description: Secondary reason
+        sourceColumn: Reason_2
+        sourceTable: port_management
+      Park_Vin_Status:
+        type: STRING
+        description: Parking VIN status
+        sourceColumn: Park_Vin_Status
+        sourceTable: port_management
+      Etl_Inserted_Date:
+        type: STRING
+        description: ETL inserted date
+        sourceColumn: Etl_Inserted_Date
+        sourceTable: port_management
+      Etl_Modified_Date:
+        type: STRING
+        description: ETL modified date
+        sourceColumn: Etl_Modified_Date
+        sourceTable: port_management
+      Etl_Created_By:
+        type: STRING
+        description: ETL created by
+        sourceColumn: Etl_Created_By
+        sourceTable: port_management
+      Etl_Updated_By:
+        type: STRING
+        description: ETL updated by
+        sourceColumn: Etl_Updated_By
+        sourceTable: port_management
+  stateStoreType: loadDataIceberg
+  isProfilingEnabled: false
+  updateStrategy: Overwrite
+  tableName: iceberg_meta.port_management
+  warehousePath: s3a://dataverse/testbed_load/
+  catalogName: postgres_catalog
+  optional:
+    persistDataFrame: false
+    enableDataReconciliation: false
+    enforceSchema: true
+    enforceSchemaMethod: Warning
+    catalogType: postgres
+    loggingOptions:
+      printSchema: true
+      showData: true
+  refreshInterval: 30 5 * * *
+transformation:
+  - isDynamic: true
+    alias: Spark_SQL_1
+    description: Transforming Port Management data
+    sequence: 9
+    inputDataFrameList:
+      - inputDataFrame: Vehicle_Hold_Log_1
+        tempViewName: vhl
+      - inputDataFrame: Vehicle_Sales_Details_1
+        tempViewName: vsd
+      - inputDataFrame: Transportation_Tracker_1
+        tempViewName: tt
+      - inputDataFrame: Vehicle_Dispatch_Tracking_1
+        tempViewName: vdt
+      - inputDataFrame: Shipping_Bill_Master_1
+        tempViewName: sbm
+      - inputDataFrame: Vehicle_Defect_Repair_Log_1
+        tempViewName: vdrl
+      - inputDataFrame: Engine_Master_1
+        tempViewName: em
+      - inputDataFrame: Vehicle_Parking_Status_._1
+        tempViewName: vps
+    query: select * from vps
+    optional:
+      persistDataFrame: false
+      loggingOptions:
+        printSchema: true
+        showData: true
+    type: operationThroughSqlQuery
+controlPort:
+  dataQualityRules: {}
