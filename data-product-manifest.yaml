@@ -109,411 +109,371 @@ productState:
   retentionVersions: ""
   logicalSchema:
     properties:
-      Port0:
+      Port:
         type: STRING
         description: Port information
-        sourceColumn: Port0
-        sourceTable: port_management
-      Vech_Port1:
+        sourceColumn: Port
+        sourceTable: public.port_management_system
+      Vech_Port:
         type: STRING
-        description: Vehicle port reference
-        sourceColumn: Vech_Port1
-        sourceTable: port_management
+        description: Vehicle port information
+        sourceColumn: Vech_Port
+        sourceTable: public.port_management_system
       Cont:
         type: STRING
         description: Container or related information
         sourceColumn: Cont
-        sourceTable: port_management
-      Smodel_Code3:
+        sourceTable: public.port_management_system
+      Smodel_Code:
         type: STRING
         description: Sales model code
-        sourceColumn: Smodel_Code3
-        sourceTable: port_management
+        sourceColumn: Smodel_Code
+        sourceTable: public.port_management_system
       Modl:
         type: STRING
         description: Model code
         sourceColumn: Modl
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Spec:
         type: STRING
         description: Specification details
         sourceColumn: Spec
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Selection_Code:
         type: STRING
         description: Selection code
         sourceColumn: Selection_Code
-        sourceTable: port_management
-      Modl1:
-        type: STRING
-        description: Additional model reference
-        sourceColumn: Modl1
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Vinn:
         type: STRING
         description: Vehicle identification number
         sourceColumn: Vinn
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Engi_Number:
         type: STRING
         description: Engine number
         sourceColumn: Engi_Number
-        sourceTable: port_management
-      Status10:
+        sourceTable: public.port_management_system
+      Status:
         type: STRING
-        description: Status field
-        sourceColumn: Status10
-        sourceTable: port_management
-      Status1:
-        type: STRING
-        description: Secondary status field
-        sourceColumn: Status1
-        sourceTable: port_management
-      Vech_Port12:
-        type: STRING
-        description: Vehicle port identifier
-        sourceColumn: Vech_Port12
-        sourceTable: port_management
+        description: Status of the vehicle
+        sourceColumn: Status
+        sourceTable: public.port_management_system
       Colo_Code:
         type: STRING
         description: Color code
         sourceColumn: Colo_Code
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Engi_Vehm_Key_Number:
         type: STRING
         description: Engine vehicle key number
         sourceColumn: Engi_Vehm_Key_Number
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Order_No:
         type: STRING
         description: Order number
         sourceColumn: Order_No
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Ctrl_No:
         type: STRING
         description: Control number
         sourceColumn: Ctrl_No
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Exar_Number:
         type: STRING
         description: EXAR number
         sourceColumn: Exar_Number
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Invc_Date:
         type: STRING
         description: Invoice date
         sourceColumn: Invc_Date
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Are_No_Blank:
         type: STRING
-        description: ARE number flag
+        description: ARE number blank flag
         sourceColumn: Are_No_Blank
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Dealer:
         type: STRING
         description: Dealer name or code
         sourceColumn: Dealer
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Exin_Number:
         type: STRING
         description: EXIN number
         sourceColumn: Exin_Number
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Mulinvdt:
         type: STRING
         description: Multi invoice date
         sourceColumn: Mulinvdt
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Trip:
         type: STRING
-        description: Trip identifier
+        description: Trip information
         sourceColumn: Trip
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Regno:
         type: STRING
         description: Registration number
         sourceColumn: Regno
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Tptmode:
         type: STRING
         description: Transport mode
         sourceColumn: Tptmode
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Tptcode:
         type: STRING
         description: Transport code
         sourceColumn: Tptcode
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Transportation_Code:
         type: STRING
         description: Transportation code
         sourceColumn: Transportation_Code
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Transportation_Name:
         type: STRING
         description: Transportation provider name
         sourceColumn: Transportation_Name
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Recd_Date:
         type: STRING
-        description: Record date
+        description: Record received date
         sourceColumn: Recd_Date
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Soc:
         type: STRING
         description: SOC value
         sourceColumn: Soc
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Msil_Insp:
         type: STRING
-        description: MSIL inspection information
+        description: MSIL inspection status
         sourceColumn: Msil_Insp
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Batt_Reading:
         type: STRING
         description: Battery reading
         sourceColumn: Batt_Reading
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Km_Reading:
         type: STRING
-        description: Odometer reading
+        description: Kilometer reading
         sourceColumn: Km_Reading
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Invc_Prefix:
         type: STRING
         description: Invoice prefix
         sourceColumn: Invc_Prefix
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Invc_Number:
         type: STRING
         description: Invoice number
         sourceColumn: Invc_Number
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Export_Challan_No:
         type: STRING
         description: Export challan number
         sourceColumn: Export_Challan_No
-        sourceTable: port_management
-      Export_Challan_No1:
-        type: STRING
-        description: Secondary export challan number
-        sourceColumn: Export_Challan_No1
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Tveh_Cinv_Invoice_Number:
         type: STRING
         description: TVEH invoice number
         sourceColumn: Tveh_Cinv_Invoice_Number
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Tveh_Cinv_Invoice_Date:
         type: STRING
         description: TVEH invoice date
         sourceColumn: Tveh_Cinv_Invoice_Date
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Cust_Ord_Mnth:
         type: STRING
         description: Customer order month
         sourceColumn: Cust_Ord_Mnth
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Rw_Num:
         type: STRING
         description: Row number
         sourceColumn: Rw_Num
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Epol_Name:
         type: STRING
         description: EPOL name
         sourceColumn: Epol_Name
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Ship_Date:
         type: STRING
-        description: Shipment date
+        description: Shipping date
         sourceColumn: Ship_Date
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Esvc_Code:
         type: STRING
         description: ESVC code
         sourceColumn: Esvc_Code
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Einv_No:
         type: STRING
         description: E-invoice number
         sourceColumn: Einv_No
-        sourceTable: port_management
-      Engi_Chassis_Prefix46:
+        sourceTable: public.port_management_system
+      Engi_Chassis_Prefix:
         type: STRING
         description: Engine chassis prefix
-        sourceColumn: Engi_Chassis_Prefix46
-        sourceTable: port_management
+        sourceColumn: Engi_Chassis_Prefix
+        sourceTable: public.port_management_system
       Chassis_Number:
         type: STRING
         description: Chassis number
         sourceColumn: Chassis_Number
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Ship_Bill_No:
         type: STRING
         description: Shipping bill number
         sourceColumn: Ship_Bill_No
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Wax_Ok_Date:
         type: STRING
         description: Wax OK date
         sourceColumn: Wax_Ok_Date
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Shift_Name:
         type: STRING
         description: Shift name
         sourceColumn: Shift_Name
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Fcok_Date:
         type: STRING
         description: FCOk date
         sourceColumn: Fcok_Date
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Vehm_Sales_Model_Code:
         type: STRING
         description: Vehicle sales model code
         sourceColumn: Vehm_Sales_Model_Code
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Action:
         type: STRING
         description: Action taken
         sourceColumn: Action
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Stage:
         type: STRING
-        description: Process stage
+        description: Processing stage
         sourceColumn: Stage
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Repair_Type:
         type: STRING
         description: Type of repair
         sourceColumn: Repair_Type
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Defect_Cd:
         type: STRING
         description: Defect code
         sourceColumn: Defect_Cd
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Jdfm_Desc:
         type: STRING
         description: JDFM description
         sourceColumn: Jdfm_Desc
-        sourceTable: port_management
-      Port58:
-        type: STRING
-        description: Port reference 58
-        sourceColumn: Port58
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Soc_Damage:
         type: STRING
-        description: SOC damage information
+        description: SOC damage details
         sourceColumn: Soc_Damage
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Time_In:
         type: STRING
         description: Time in
         sourceColumn: Time_In
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Time_Out:
         type: STRING
         description: Time out
         sourceColumn: Time_Out
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Shift_Name_Damage:
         type: STRING
-        description: Shift name for damage
+        description: Shift name during damage
         sourceColumn: Shift_Name_Damage
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Repairby:
         type: STRING
         description: Repaired by
         sourceColumn: Repairby
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Responsibility:
         type: STRING
-        description: Responsible person or team
+        description: Responsibility assignment
         sourceColumn: Responsibility
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Defect_Type:
         type: STRING
-        description: Type of defect
+        description: Defect type
         sourceColumn: Defect_Type
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Date_In:
         type: STRING
         description: Date in
         sourceColumn: Date_In
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Date_Out:
         type: STRING
         description: Date out
         sourceColumn: Date_Out
-        sourceTable: port_management
-      Smodel_Code68:
-        type: STRING
-        description: Sales model code reference
-        sourceColumn: Smodel_Code68
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Cod:
         type: STRING
         description: Code field
         sourceColumn: Cod
-        sourceTable: port_management
-      Engi_Chassis_Prefix70:
-        type: STRING
-        description: Engine chassis prefix
-        sourceColumn: Engi_Chassis_Prefix70
-        sourceTable: port_management
-      Chasssis:
+        sourceTable: public.port_management_system
+      Chassis:
         type: STRING
         description: Chassis information
-        sourceColumn: Chasssis
-        sourceTable: port_management
+        sourceColumn: Chassis
+        sourceTable: public.port_management_system
       Dcat_Code:
         type: STRING
         description: DCAT code
         sourceColumn: Dcat_Code
-        sourceTable: port_management
-      Status73:
-        type: STRING
-        description: Status field 73
-        sourceColumn: Status73
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Reason_1:
         type: STRING
         description: Primary reason
         sourceColumn: Reason_1
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Reason_2:
         type: STRING
         description: Secondary reason
         sourceColumn: Reason_2
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Park_Vin_Status:
         type: STRING
-        description: Parking VIN status
+        description: Vehicle park VIN status
         sourceColumn: Park_Vin_Status
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Etl_Inserted_Date:
         type: STRING
         description: ETL inserted date
         sourceColumn: Etl_Inserted_Date
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Etl_Modified_Date:
         type: STRING
         description: ETL modified date
         sourceColumn: Etl_Modified_Date
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Etl_Created_By:
         type: STRING
         description: ETL created by
         sourceColumn: Etl_Created_By
-        sourceTable: port_management
+        sourceTable: public.port_management_system
       Etl_Updated_By:
         type: STRING
         description: ETL updated by
         sourceColumn: Etl_Updated_By
-        sourceTable: port_management
+        sourceTable: public.port_management_system
   stateStoreType: loadDataIceberg
   isProfilingEnabled: false
   updateStrategy: Overwrite
