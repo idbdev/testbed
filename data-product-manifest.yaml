@@ -1,0 +1,323 @@
+jobId: "983"
+jobName: market quality
+jobType: Source Aligned Data Product
+developerId: e3177aef-f9f9-4f45-b0a7-a46ea5466170
+domain: market_quality
+alias: loading_market_quality_data
+discoveryPort:
+  name: market quality
+inputPorts:
+  - alias: Vehicle_Master_1
+    isDynamic: true
+    path: s3a://dataverse/testbed/automobile/market_quality_kpi/vehicle_master.csv
+    optional:
+      persistDataFrame: false
+      advanceOptions:
+        delimiter: ","
+      enableDataReconciliation: false
+      enforceSchema: false
+      connection: S3 Connection - Market Quality KPI
+      dataSetUrn: urn:dv:dataset:a2266278-1df9-4902-850e-8100fc1db20d
+      loggingOptions:
+        printSchema: true
+        count: true
+        showData: true
+    type: inputDelimited
+  - alias: Production_Master_1
+    isDynamic: true
+    path: s3a://dataverse/testbed/automobile/market_quality_kpi/production_master.csv
+    optional:
+      persistDataFrame: false
+      advanceOptions:
+        delimiter: ","
+      enableDataReconciliation: false
+      enforceSchema: false
+      connection: S3 Connection - Market Quality KPI
+      dataSetUrn: urn:dv:dataset:801a560a-a437-44a6-a006-ae3e0eb4fed8
+      loggingOptions:
+        printSchema: true
+        count: true
+        showData: true
+    type: inputDelimited
+  - alias: Dispatch_Details_1
+    isDynamic: true
+    path: s3a://dataverse/testbed/automobile/market_quality_kpi/dispatch_details.csv
+    optional:
+      persistDataFrame: false
+      advanceOptions:
+        delimiter: ","
+      enableDataReconciliation: false
+      enforceSchema: false
+      connection: S3 Connection - Market Quality KPI
+      dataSetUrn: urn:dv:dataset:9109489a-022b-43fe-b8e8-60e987df0c4e
+      loggingOptions:
+        printSchema: true
+        count: true
+        showData: true
+    type: inputDelimited
+  - alias: First_Party_Concern_Data_1
+    isDynamic: true
+    path: s3a://dataverse/testbed/automobile/market_quality_kpi/first_party_concern_data.csv
+    optional:
+      persistDataFrame: false
+      advanceOptions:
+        delimiter: ","
+      enableDataReconciliation: false
+      enforceSchema: false
+      connection: S3 Connection - Market Quality KPI
+      dataSetUrn: urn:dv:dataset:58d01813-fe8d-497c-89fd-c0c1b91a23bb
+      loggingOptions:
+        printSchema: true
+        count: true
+        showData: true
+    type: inputDelimited
+  - alias: Field_Technical_Information_Data_1
+    isDynamic: true
+    path: s3a://dataverse/testbed/automobile/market_quality_kpi/field_technical_information_data.csv
+    optional:
+      persistDataFrame: false
+      advanceOptions:
+        delimiter: ","
+      enableDataReconciliation: false
+      enforceSchema: false
+      connection: S3 Connection - Market Quality KPI
+      dataSetUrn: urn:dv:dataset:c724fd40-8791-42ec-8fd7-2937ca1cff60
+      loggingOptions:
+        printSchema: true
+        count: true
+        showData: true
+    type: inputDelimited
+  - alias: Vehicle_Recall_Data_1
+    isDynamic: true
+    path: s3a://dataverse/testbed/automobile/market_quality_kpi/vehicle_recall_data.csv
+    optional:
+      persistDataFrame: false
+      advanceOptions:
+        delimiter: ","
+      enableDataReconciliation: false
+      enforceSchema: false
+      connection: S3 Connection - Market Quality KPI
+      dataSetUrn: urn:dv:dataset:9a311112-31cf-493c-8dac-a58db1d3754f
+      loggingOptions:
+        printSchema: true
+        count: true
+        showData: true
+    type: inputDelimited
+  - alias: Warranty_Claims_Details_1
+    isDynamic: true
+    path: s3a://dataverse/testbed/automobile/market_quality_kpi/warranty_claims_details.csv
+    optional:
+      persistDataFrame: false
+      advanceOptions:
+        delimiter: ","
+      enableDataReconciliation: false
+      enforceSchema: false
+      connection: S3 Connection - Market Quality KPI
+      dataSetUrn: urn:dv:dataset:bfbe30b5-13b7-49dc-aad1-f6f154640095
+    type: inputDelimited
+  - alias: MoRTH_1
+    isDynamic: true
+    path: s3a://dataverse/testbed/automobile/market_quality_kpi/morth.csv
+    optional:
+      persistDataFrame: false
+      advanceOptions:
+        delimiter: ","
+      enableDataReconciliation: false
+      enforceSchema: false
+      connection: S3 Connection - Market Quality KPI
+      dataSetUrn: urn:dv:dataset:c34e37ad-caf5-4d07-b164-aaa5afccd6dc
+    type: inputDelimited
+  - alias: Defect_Hold_And_Market_Quality_Master_1
+    isDynamic: true
+    path: s3a://dataverse/testbed/automobile/market_quality_kpi/defect_hold_and_market_quality_master.csv
+    optional:
+      persistDataFrame: false
+      advanceOptions:
+        delimiter: ","
+      enableDataReconciliation: false
+      enforceSchema: false
+      connection: S3 Connection - Market Quality KPI
+      dataSetUrn: urn:dv:dataset:b05ceb1d-8d55-4d7e-a452-858b4e6c286e
+    type: inputDelimited
+productState:
+  isDynamic: true
+  alias: loading_market_quality_data
+  retentionVersions: ""
+  logicalSchema:
+    properties:
+      VIN:
+        type: STRING
+        description: Vehicle Identification Number
+        sourceColumn: VIN
+        sourceTable: public.market_quality_master
+      Engine_Number:
+        type: STRING
+        description: Engine number
+        sourceColumn: Engine_Number
+        sourceTable: public.market_quality_master
+      Chassis_Number:
+        type: STRING
+        description: Chassis number
+        sourceColumn: Chassis_Number
+        sourceTable: public.market_quality_master
+      Model_Code:
+        type: STRING
+        description: Vehicle model code
+        sourceColumn: Model_Code
+        sourceTable: public.market_quality_master
+      Sub_Model_Code:
+        type: STRING
+        description: Vehicle sub-model code
+        sourceColumn: Sub_Model_Code
+        sourceTable: public.market_quality_master
+      Spec_Code:
+        type: STRING
+        description: Specification code
+        sourceColumn: Spec_Code
+        sourceTable: public.market_quality_master
+      Selection_Code:
+        type: STRING
+        description: Selection code
+        sourceColumn: Selection_Code
+        sourceTable: public.market_quality_master
+      Vehicle_Age_Days:
+        type: STRING
+        description: Age of the vehicle in days
+        sourceColumn: Vehicle_Age_Days
+        sourceTable: public.market_quality_master
+      Warranty_Failure_Rate:
+        type: STRING
+        description: Warranty failure rate
+        sourceColumn: Warranty_Failure_Rate
+        sourceTable: public.market_quality_master
+      System_Failure_Rate:
+        type: STRING
+        description: System failure rate
+        sourceColumn: System_Failure_Rate
+        sourceTable: public.market_quality_master
+      Part_Failure_Frequency:
+        type: STRING
+        description: Part failure frequency
+        sourceColumn: Part_Failure_Frequency
+        sourceTable: public.market_quality_master
+      Failure_Severity_Score:
+        type: STRING
+        description: Severity score of failure
+        sourceColumn: Failure_Severity_Score
+        sourceTable: public.market_quality_master
+      Repeat_Failure_Flag:
+        type: STRING
+        description: Flag indicating repeated failure
+        sourceColumn: Repeat_Failure_Flag
+        sourceTable: public.market_quality_master
+      High_Severity_Failure_Flag:
+        type: STRING
+        description: Flag indicating high severity failure
+        sourceColumn: High_Severity_Failure_Flag
+        sourceTable: public.market_quality_master
+      FTIR_Rate_Per_1000:
+        type: STRING
+        description: FTIR failure rate per 1000 vehicles
+        sourceColumn: FTIR_Rate_Per_1000
+        sourceTable: public.market_quality_master
+      Emerging_Symptom_Trend_Index:
+        type: STRING
+        description: Emerging symptom trend index
+        sourceColumn: Emerging_Symptom_Trend_Index
+        sourceTable: public.market_quality_master
+      Dealer_Early_Failure_Rate:
+        type: STRING
+        description: Dealer early failure rate
+        sourceColumn: Dealer_Early_Failure_Rate
+        sourceTable: public.market_quality_master
+      Time_To_Failure_Days:
+        type: STRING
+        description: Time to failure in days
+        sourceColumn: Time_To_Failure_Days
+        sourceTable: public.market_quality_master
+      Time_To_Repair_Hours:
+        type: STRING
+        description: Time taken to repair in hours
+        sourceColumn: Time_To_Repair_Hours
+        sourceTable: public.market_quality_master
+      Time_To_Detection_Days:
+        type: STRING
+        description: Time to detect the issue in days
+        sourceColumn: Time_To_Detection_Days
+        sourceTable: public.market_quality_master
+      Vehicle_Age_At_First_Failure:
+        type: STRING
+        description: Vehicle age at first failure
+        sourceColumn: Vehicle_Age_At_First_Failure
+        sourceTable: public.market_quality_master
+      Market_Quality_Health_Score:
+        type: STRING
+        description: Market quality health score
+        sourceColumn: Market_Quality_Health_Score
+        sourceTable: public.market_quality_master
+      MQ_Risk_Level:
+        type: STRING
+        description: Market quality risk level
+        sourceColumn: MQ_Risk_Level
+        sourceTable: public.market_quality_master
+      MQ_Trend_Score_3M:
+        type: STRING
+        description: 3-month trend score
+        sourceColumn: MQ_Trend_Score_3M
+        sourceTable: public.market_quality_master
+      MQ_Trend_Score_6M:
+        type: STRING
+        description: 6-month trend score
+        sourceColumn: MQ_Trend_Score_6M
+        sourceTable: public.market_quality_master
+  stateStoreType: loadDataIceberg
+  isProfilingEnabled: true
+  updateStrategy: Overwrite
+  tableName: iceberg_meta.market_quality
+  warehousePath: s3a://dataverse/testbed_load/
+  catalogName: postgres catalog
+  optional:
+    persistDataFrame: false
+    enableDataReconciliation: false
+    enforceSchema: true
+    enforceSchemaMethod: Warning
+    catalogType: postgres
+    loggingOptions:
+      printSchema: true
+      count: true
+      showData: true
+  refreshInterval: 30 5 * * *
+transformation:
+  - isDynamic: true
+    alias: Spark_SQL_1
+    description: transforming data of marketQuality
+    sequence: 10
+    inputDataFrameList:
+      - inputDataFrame: Vehicle_Master_1
+        tempViewName: vehicleMaster
+      - inputDataFrame: Production_Master_1
+        tempViewName: productionMaster
+      - inputDataFrame: Dispatch_Details_1
+        tempViewName: dispatchDetail
+      - inputDataFrame: First_Party_Concern_Data_1
+        tempViewName: firstPartyConcernData
+      - inputDataFrame: Field_Technical_Information_Data_1
+        tempViewName: fieldTechincalInformationData
+      - inputDataFrame: Vehicle_Recall_Data_1
+        tempViewName: vrd
+      - inputDataFrame: Warranty_Claims_Details_1
+        tempViewName: wrd
+      - inputDataFrame: MoRTH_1
+        tempViewName: morth
+      - inputDataFrame: Defect_Hold_And_Market_Quality_Master_1
+        tempViewName: dhmqm
+    query: select * from morth
+    optional:
+      persistDataFrame: false
+      loggingOptions:
+        printSchema: true
+        count: true
+        showData: true
+    type: operationThroughSqlQuery
+controlPort:
+  dataQualityRules: {}
