@@ -14,6 +14,23 @@ inputPorts:
       persistDataFrame: false
       advanceOptions:
         delimiter: ","
+      jsonSchema: '{"DATE_IN":{"type":"string","source_table":"vehicle_hold_log","source_column":"DATE_IN","description":"Hold
+        start
+        date"},"DATE_OUT":{"type":"string","source_table":"vehicle_hold_log","source_column":"DATE_OUT","description":"Hold
+        end
+        date"},"smodel_code":{"type":"string","source_table":"vehicle_hold_log","source_column":"smodel_code","description":"Sales
+        model
+        code"},"modl":{"type":"string","source_table":"vehicle_hold_log","source_column":"modl","description":"Vehicle
+        model"},"spec":{"type":"string","source_table":"vehicle_hold_log","source_column":"spec","description":"Specification"},"selection_code":{"type":"string","source_table":"vehicle_hold_log","source_column":"selection_code","description":"Selection
+        code"},"engi_chassis_prefix":{"type":"string","source_table":"vehicle_hold_log","source_column":"engi_chassis_prefix","description":"Engine
+        chassis
+        prefix"},"CHASSSIS":{"type":"string","source_table":"vehicle_hold_log","source_column":"CHASSSIS","description":"Chassis
+        number"},"DCAT_CODE":{"type":"string","source_table":"vehicle_hold_log","source_column":"DCAT_CODE","description":"DCAT
+        code"},"STATUS":{"type":"string","source_table":"vehicle_hold_log","source_column":"STATUS","description":"Hold
+        status"},"REASON_1":{"type":"string","source_table":"vehicle_hold_log","source_column":"REASON_1","description":"Hold
+        reason
+        1"},"REASON_2":{"type":"string","source_table":"vehicle_hold_log","source_column":"REASON_2","description":"Hold
+        reason 2"}}'
       enableDataReconciliation: false
       enforceSchema: false
       connection: S3 Connection - Port Management
@@ -26,6 +43,31 @@ inputPorts:
       persistDataFrame: false
       advanceOptions:
         delimiter: ","
+      jsonSchema: '{"invc_prefix":{"type":"string","source_table":"vehicle_sales_details","source_column":"invc_prefix","description":"Invoice
+        prefix"},"invc_number":{"type":"string","source_table":"vehicle_sales_details","source_column":"invc_number","description":"Invoice
+        number"},"invoice_date":{"type":"string","source_table":"vehicle_sales_details","source_column":"invoice_date","description":"Invoice
+        date"},"invoice_amount":{"type":"string","source_table":"vehicle_sales_details","source_column":"invoice_amount","description":"Invoice
+        amount"},"invoice_type":{"type":"string","source_table":"vehicle_sales_details","source_column":"invoice_type","description":"Invoice
+        type"},"tax_amount":{"type":"string","source_table":"vehicle_sales_details","source_column":"tax_amount","description":"Tax
+        amount"},"discount_amount":{"type":"string","source_table":"vehicle_sales_details","source_column":"discount_amount","description":"Discount
+        amount"},"customer_id":{"type":"string","source_table":"vehicle_sales_details","source_column":"customer_id","description":"Customer
+        ID"},"customer_name":{"type":"string","source_table":"vehicle_sales_details","source_column":"customer_name","description":"Customer
+        name"},"customer_contact":{"type":"string","source_table":"vehicle_sales_details","source_column":"customer_contact","description":"Customer
+        contact"},"customer_email":{"type":"string","source_table":"vehicle_sales_details","source_column":"customer_email","description":"Customer
+        email"},"customer_address":{"type":"string","source_table":"vehicle_sales_details","source_column":"customer_address","description":"Customer
+        address"},"customer_state":{"type":"string","source_table":"vehicle_sales_details","source_column":"customer_state","description":"Customer
+        state"},"dealer_code":{"type":"string","source_table":"vehicle_sales_details","source_column":"dealer_code","description":"Dealer
+        code"},"dealer_name":{"type":"string","source_table":"vehicle_sales_details","source_column":"dealer_name","description":"Dealer
+        name"},"sales_channel":{"type":"string","source_table":"vehicle_sales_details","source_column":"sales_channel","description":"Sales
+        channel"},"sales_region":{"type":"string","source_table":"vehicle_sales_details","source_column":"sales_region","description":"Sales
+        region"},"vin":{"type":"string","source_table":"vehicle_sales_details","source_column":"vin","description":"Vehicle
+        VIN"},"engine_number":{"type":"string","source_table":"vehicle_sales_details","source_column":"engine_number","description":"Engine
+        number"},"chassis_number":{"type":"string","source_table":"vehicle_sales_details","source_column":"chassis_number","description":"Chassis
+        number"},"model_code":{"type":"string","source_table":"vehicle_sales_details","source_column":"model_code","description":"Model
+        code"},"variant_code":{"type":"string","source_table":"vehicle_sales_details","source_column":"variant_code","description":"Variant
+        code"},"color_code":{"type":"string","source_table":"vehicle_sales_details","source_column":"color_code","description":"Color
+        code"},"fuel_type":{"type":"string","source_table":"vehicle_sales_details","source_column":"fuel_type","description":"Fuel
+        type"}}'
       enableDataReconciliation: false
       enforceSchema: false
       connection: S3 Connection - Port Management
@@ -38,6 +80,25 @@ inputPorts:
       persistDataFrame: false
       advanceOptions:
         delimiter: ","
+      jsonSchema: '{"TRANSPORTATION_CODE":{"type":"string","source_table":"transportation_tracker","source_column":"TRANSPORTATION_CODE","description":"Transportation
+        code"},"TRANSPORTATION_NAME":{"type":"string","source_table":"transportation_tracker","source_column":"TRANSPORTATION_NAME","description":"Transportation
+        provider
+        name"},"TRANSPORTATION_short_name":{"type":"string","source_table":"transportation_tracker","source_column":"TRANSPORTATION_short_name","description":"Short
+        name"},"transporter_type":{"type":"string","source_table":"transportation_tracker","source_column":"transporter_type","description":"Transporter
+        type"},"contact_person":{"type":"string","source_table":"transportation_tracker","source_column":"contact_person","description":"Contact
+        person"},"contact_number":{"type":"string","source_table":"transportation_tracker","source_column":"contact_number","description":"Phone
+        number"},"contact_email":{"type":"string","source_table":"transportation_tracker","source_column":"contact_email","description":"Email
+        address"},"regional_manager":{"type":"string","source_table":"transportation_tracker","source_column":"regional_manager","description":"Regional
+        manager"},"base_location":{"type":"string","source_table":"transportation_tracker","source_column":"base_location","description":"Base
+        location"},"operating_regions":{"type":"string","source_table":"transportation_tracker","source_column":"operating_regions","description":"Operating
+        regions"},"parking_yard_code":{"type":"string","source_table":"transportation_tracker","source_column":"parking_yard_code","description":"Parking
+        yard
+        code"},"route_type":{"type":"string","source_table":"transportation_tracker","source_column":"route_type","description":"Route
+        type"},"fleet_size":{"type":"string","source_table":"transportation_tracker","source_column":"fleet_size","description":"Fleet
+        size"},"vehicle_capacity":{"type":"string","source_table":"transportation_tracker","source_column":"vehicle_capacity","description":"Vehicle
+        capacity"},"fleet_type":{"type":"string","source_table":"transportation_tracker","source_column":"fleet_type","description":"Fleet
+        type"},"gps_tracking_flag":{"type":"string","source_table":"transportation_tracker","source_column":"gps_tracking_flag","description":"GPS
+        tracking availability"}}'
       enableDataReconciliation: false
       enforceSchema: false
       connection: S3 Connection - Port Management
@@ -50,6 +111,45 @@ inputPorts:
       persistDataFrame: false
       advanceOptions:
         delimiter: ","
+      jsonSchema: '{"PORT":{"type":"string","source_table":"vehicle_dispatch_tracking","source_column":"PORT","description":"Port
+        code"},"VECH_PORT":{"type":"string","source_table":"vehicle_dispatch_tracking","source_column":"VECH_PORT","description":"Vehicle
+        port
+        location"},"CONT":{"type":"string","source_table":"vehicle_dispatch_tracking","source_column":"CONT","description":"Container
+        identifier"},"SMODEL_CODE":{"type":"string","source_table":"vehicle_dispatch_tracking","source_column":"SMODEL_CODE","description":"Sales
+        model
+        code"},"MODL":{"type":"string","source_table":"vehicle_dispatch_tracking","source_column":"MODL","description":"Vehicle
+        model"},"SPEC":{"type":"string","source_table":"vehicle_dispatch_tracking","source_column":"SPEC","description":"Vehicle
+        specification"},"SELECTION_CODE":{"type":"string","source_table":"vehicle_dispatch_tracking","source_column":"SELECTION_CODE","description":"Selection
+        code"},"VINN":{"type":"string","source_table":"vehicle_dispatch_tracking","source_column":"VINN","description":"Vehicle
+        VIN"},"STATUS":{"type":"string","source_table":"vehicle_dispatch_tracking","source_column":"STATUS","description":"Dispatch
+        status"},"COLO_CODE":{"type":"string","source_table":"vehicle_dispatch_tracking","source_column":"COLO_CODE","description":"Color
+        code"},"ORDE_NUMBER":{"type":"string","source_table":"vehicle_dispatch_tracking","source_column":"ORDE_NUMBER","description":"Order
+        number"},"EXVH_CONTROL_NUMBER":{"type":"string","source_table":"vehicle_dispatch_tracking","source_column":"EXVH_CONTROL_NUMBER","description":"Control
+        number"},"EXAR_NUMBER":{"type":"string","source_table":"vehicle_dispatch_tracking","source_column":"EXAR_NUMBER","description":"EXAR
+        reference
+        number"},"INVC_DATE":{"type":"string","source_table":"vehicle_dispatch_tracking","source_column":"INVC_DATE","description":"Invoice
+        date"},"ORDE_DELR_CODE":{"type":"string","source_table":"vehicle_dispatch_tracking","source_column":"ORDE_DELR_CODE","description":"Dealer
+        code"},"EXIN_NUMBER":{"type":"string","source_table":"vehicle_dispatch_tracking","source_column":"EXIN_NUMBER","description":"EXIN
+        number"},"TRIP_NUMBER":{"type":"string","source_table":"vehicle_dispatch_tracking","source_column":"TRIP_NUMBER","description":"Trip
+        number"},"TRIP_TRPT_REGN_NUMBER":{"type":"string","source_table":"vehicle_dispatch_tracking","source_column":"TRIP_TRPT_REGN_NUMBER","description":"Transport
+        registration
+        number"},"TRIP_TRTP_CODE":{"type":"string","source_table":"vehicle_dispatch_tracking","source_column":"TRIP_TRTP_CODE","description":"Transport
+        mode
+        code"},"TRIP_CODE":{"type":"string","source_table":"vehicle_dispatch_tracking","source_column":"TRIP_CODE","description":"Transport
+        code"},"RECD_DATE":{"type":"string","source_table":"vehicle_dispatch_tracking","source_column":"RECD_DATE","description":"Record
+        received
+        date"},"soc":{"type":"string","source_table":"vehicle_dispatch_tracking","source_column":"soc","description":"SOC
+        status"},"MSIL_INSP":{"type":"string","source_table":"vehicle_dispatch_tracking","source_column":"MSIL_INSP","description":"MSIL
+        inspection
+        flag"},"BATT_READING":{"type":"string","source_table":"vehicle_dispatch_tracking","source_column":"BATT_READING","description":"Battery
+        reading"},"KM_READING":{"type":"string","source_table":"vehicle_dispatch_tracking","source_column":"KM_READING","description":"Kilometer
+        reading"},"engi_chassis_prefix":{"type":"string","source_table":"vehicle_dispatch_tracking","source_column":"engi_chassis_prefix","description":"Engine
+        chassis
+        prefix"},"chassis_number":{"type":"string","source_table":"vehicle_dispatch_tracking","source_column":"chassis_number","description":"Chassis
+        number"},"WAX_OK_DATE":{"type":"string","source_table":"vehicle_dispatch_tracking","source_column":"WAX_OK_DATE","description":"Wax
+        OK
+        date"},"FCOK_DATE":{"type":"string","source_table":"vehicle_dispatch_tracking","source_column":"FCOK_DATE","description":"Final
+        check OK date"}}'
       enableDataReconciliation: false
       enforceSchema: false
       connection: S3 Connection - Port Management
@@ -62,6 +162,11 @@ inputPorts:
       persistDataFrame: false
       advanceOptions:
         delimiter: ","
+      jsonSchema: '{"ship_date":{"type":"string","source_table":"shipping_bill_master","source_column":"ship_date","description":"Shipping
+        date"},"esvc_code":{"type":"string","source_table":"shipping_bill_master","source_column":"esvc_code","description":"ESVC
+        code"},"einv_no":{"type":"string","source_table":"shipping_bill_master","source_column":"einv_no","description":"E-invoice
+        number"},"SHIP_BILL_NO":{"type":"string","source_table":"shipping_bill_master","source_column":"SHIP_BILL_NO","description":"Shipping
+        bill number"}}'
       enableDataReconciliation: false
       enforceSchema: false
       connection: S3 Connection - Port Management
@@ -74,6 +179,21 @@ inputPorts:
       persistDataFrame: false
       advanceOptions:
         delimiter: ","
+      jsonSchema: '{"stage":{"type":"string","source_table":"vehicle_defect_repair_log","source_column":"stage","description":"Repair
+        stage"},"repair_type":{"type":"string","source_table":"vehicle_defect_repair_log","source_column":"repair_type","description":"Type
+        of
+        repair"},"defect_cd":{"type":"string","source_table":"vehicle_defect_repair_log","source_column":"defect_cd","description":"Defect
+        code"},"port":{"type":"string","source_table":"vehicle_defect_repair_log","source_column":"port","description":"Port
+        location"},"time_in":{"type":"string","source_table":"vehicle_defect_repair_log","source_column":"time_in","description":"Repair
+        start
+        time"},"time_out":{"type":"string","source_table":"vehicle_defect_repair_log","source_column":"time_out","description":"Repair
+        end
+        time"},"entry_date":{"type":"string","source_table":"vehicle_defect_repair_log","source_column":"entry_date","description":"Entry
+        date"},"REPAIRBY":{"type":"string","source_table":"vehicle_defect_repair_log","source_column":"REPAIRBY","description":"Repaired
+        by"},"responsibility":{"type":"string","source_table":"vehicle_defect_repair_log","source_column":"responsibility","description":"Responsible
+        team"},"defect_type":{"type":"string","source_table":"vehicle_defect_repair_log","source_column":"defect_type","description":"Defect
+        type"},"jdfm_desc":{"type":"string","source_table":"vehicle_defect_repair_log","source_column":"jdfm_desc","description":"Defect
+        description"}}'
       enableDataReconciliation: false
       enforceSchema: false
       connection: S3 Connection - Port Management
@@ -86,6 +206,28 @@ inputPorts:
       persistDataFrame: false
       advanceOptions:
         delimiter: ","
+      jsonSchema: '{"ENGINE_NUMBER":{"type":"string","source_table":"engine_master","source_column":"ENGINE_NUMBER","description":"Unique
+        engine
+        number"},"ENGINE_VEHM_KEY_NUMBER":{"type":"string","source_table":"engine_master","source_column":"ENGINE_VEHM_KEY_NUMBER","description":"Engine
+        vehicle key
+        number"},"engine_family":{"type":"string","source_table":"engine_master","source_column":"engine_family","description":"Engine
+        family"},"engine_model_code":{"type":"string","source_table":"engine_master","source_column":"engine_model_code","description":"Engine
+        model
+        code"},"engine_capacity_cc":{"type":"string","source_table":"engine_master","source_column":"engine_capacity_cc","description":"Engine
+        displacement"},"engine_power_hp":{"type":"string","source_table":"engine_master","source_column":"engine_power_hp","description":"Engine
+        power
+        output"},"engine_torque_nm":{"type":"string","source_table":"engine_master","source_column":"engine_torque_nm","description":"Engine
+        torque"},"fuel_type":{"type":"string","source_table":"engine_master","source_column":"fuel_type","description":"Fuel
+        type"},"engine_type":{"type":"string","source_table":"engine_master","source_column":"engine_type","description":"Engine
+        type"},"engine_production_date":{"type":"string","source_table":"engine_master","source_column":"engine_production_date","description":"Production
+        date"},"engine_production_shift":{"type":"string","source_table":"engine_master","source_column":"engine_production_shift","description":"Production
+        shift"},"engine_plant":{"type":"string","source_table":"engine_master","source_column":"engine_plant","description":"Plant
+        location"},"engine_line_number":{"type":"string","source_table":"engine_master","source_column":"engine_line_number","description":"Line
+        number"},"engine_batch_number":{"type":"string","source_table":"engine_master","source_column":"engine_batch_number","description":"Batch
+        number"},"engine_serial_sequence":{"type":"string","source_table":"engine_master","source_column":"engine_serial_sequence","description":"Serial
+        sequence"},"vin":{"type":"string","source_table":"engine_master","source_column":"vin","description":"Associated
+        VIN"},"chassis_number":{"type":"string","source_table":"engine_master","source_column":"chassis_number","description":"Associated
+        chassis number"}}'
       enableDataReconciliation: false
       enforceSchema: false
       connection: S3 Connection - Port Management
@@ -111,371 +253,346 @@ productState:
     properties:
       Port:
         type: STRING
-        description: Port information
-        sourceColumn: Port
-        sourceTable: port_management_system
+        description: Port code
+        sourceColumn: PORT
+        sourceTable: vehicle_dispatch_tracking
       Vech_Port:
         type: STRING
-        description: Vehicle port information
-        sourceColumn: Vech_Port
-        sourceTable: port_management_system
+        description: Vehicle port
+        sourceColumn: VECH_PORT
+        sourceTable: vehicle_dispatch_tracking
       Cont:
         type: STRING
-        description: Container or related information
-        sourceColumn: Cont
-        sourceTable: port_management_system
+        description: Container identifier
+        sourceColumn: CONT
+        sourceTable: vehicle_dispatch_tracking
       Smodel_Code:
         type: STRING
         description: Sales model code
-        sourceColumn: Smodel_Code
-        sourceTable: port_management_system
+        sourceColumn: SMODEL_CODE
+        sourceTable: vehicle_dispatch_tracking
       Modl:
         type: STRING
-        description: Model code
-        sourceColumn: Modl
-        sourceTable: port_management_system
+        description: Vehicle model
+        sourceColumn: MODL
+        sourceTable: vehicle_dispatch_tracking
       Spec:
         type: STRING
-        description: Specification details
-        sourceColumn: Spec
-        sourceTable: port_management_system
+        description: Vehicle specifications
+        sourceColumn: SPEC
+        sourceTable: vehicle_dispatch_tracking
       Selection_Code:
         type: STRING
         description: Selection code
-        sourceColumn: Selection_Code
-        sourceTable: port_management_system
+        sourceColumn: SELECTION_CODE
+        sourceTable: vehicle_dispatch_tracking
       Vinn:
         type: STRING
-        description: Vehicle identification number
-        sourceColumn: Vinn
-        sourceTable: port_management_system
+        description: Vehicle VIN number
+        sourceColumn: VINN
+        sourceTable: vehicle_dispatch_tracking
       Engi_Number:
         type: STRING
         description: Engine number
-        sourceColumn: Engi_Number
-        sourceTable: port_management_system
+        sourceColumn: ENGINE_NUMBER
+        sourceTable: engine_master
       Status:
         type: STRING
-        description: Status of the vehicle
-        sourceColumn: Status
-        sourceTable: port_management_system
+        description: Vehicle dispatch status
+        sourceColumn: STATUS
+        sourceTable: vehicle_dispatch_tracking
       Colo_Code:
         type: STRING
-        description: Color code
-        sourceColumn: Colo_Code
-        sourceTable: port_management_system
+        description: Vehicle color code
+        sourceColumn: COLO_CODE
+        sourceTable: vehicle_dispatch_tracking
       Engi_Vehm_Key_Number:
         type: STRING
-        description: Engine vehicle key number
-        sourceColumn: Engi_Vehm_Key_Number
-        sourceTable: port_management_system
+        description: Engine key number
+        sourceColumn: ENGINE_VEHM_KEY_NUMBER
+        sourceTable: engine_master
       Order_No:
         type: STRING
         description: Order number
-        sourceColumn: Order_No
-        sourceTable: port_management_system
+        sourceColumn: ORDE_NUMBER
+        sourceTable: vehicle_dispatch_tracking
       Ctrl_No:
         type: STRING
         description: Control number
-        sourceColumn: Ctrl_No
-        sourceTable: port_management_system
+        sourceColumn: EXVH_CONTROL_NUMBER
+        sourceTable: vehicle_dispatch_tracking
       Exar_Number:
         type: STRING
-        description: EXAR number
-        sourceColumn: Exar_Number
-        sourceTable: port_management_system
+        description: EXAR reference number
+        sourceColumn: EXAR_NUMBER
+        sourceTable: vehicle_dispatch_tracking
       Invc_Date:
         type: STRING
         description: Invoice date
-        sourceColumn: Invc_Date
-        sourceTable: port_management_system
+        sourceColumn: INVC_DATE
+        sourceTable: vehicle_dispatch_tracking
       Are_No_Blank:
         type: STRING
-        description: ARE number blank flag
-        sourceColumn: Are_No_Blank
-        sourceTable: port_management_system
+        description: ARE number blank field
+        sourceColumn: ORDE_DELR_CODE
+        sourceTable: vehicle_dispatch_tracking
       Dealer:
         type: STRING
-        description: Dealer name or code
-        sourceColumn: Dealer
-        sourceTable: port_management_system
+        description: Dealer code
+        sourceColumn: ORDE_DELR_CODE
+        sourceTable: vehicle_dispatch_tracking
       Exin_Number:
         type: STRING
         description: EXIN number
-        sourceColumn: Exin_Number
-        sourceTable: port_management_system
+        sourceColumn: EXIN_NUMBER
+        sourceTable: vehicle_dispatch_tracking
       Mulinvdt:
         type: STRING
         description: Multi invoice date
-        sourceColumn: Mulinvdt
-        sourceTable: port_management_system
+        sourceColumn: INVC_DATE
+        sourceTable: vehicle_dispatch_tracking
       Trip:
         type: STRING
-        description: Trip information
-        sourceColumn: Trip
-        sourceTable: port_management_system
+        description: Trip number
+        sourceColumn: TRIP_NUMBER
+        sourceTable: vehicle_dispatch_tracking
       Regno:
         type: STRING
-        description: Registration number
-        sourceColumn: Regno
-        sourceTable: port_management_system
+        description: Transport registration number
+        sourceColumn: TRIP_TRPT_REGN_NUMBER
+        sourceTable: vehicle_dispatch_tracking
       Tptmode:
         type: STRING
-        description: Transport mode
-        sourceColumn: Tptmode
-        sourceTable: port_management_system
+        description: Transport mode code
+        sourceColumn: TRIP_TRTP_CODE
+        sourceTable: vehicle_dispatch_tracking
       Tptcode:
         type: STRING
         description: Transport code
-        sourceColumn: Tptcode
-        sourceTable: port_management_system
+        sourceColumn: TRIP_CODE
+        sourceTable: vehicle_dispatch_tracking
       Transportation_Code:
         type: STRING
         description: Transportation code
-        sourceColumn: Transportation_Code
-        sourceTable: port_management_system
+        sourceColumn: TRIP_CODE
+        sourceTable: vehicle_dispatch_tracking
       Transportation_Name:
         type: STRING
         description: Transportation provider name
-        sourceColumn: Transportation_Name
-        sourceTable: port_management_system
+        sourceColumn: TRANSPORTATION_NAME
+        sourceTable: transportation_tracker
       Recd_Date:
         type: STRING
         description: Record received date
-        sourceColumn: Recd_Date
-        sourceTable: port_management_system
+        sourceColumn: RECD_DATE
+        sourceTable: vehicle_dispatch_tracking
       Soc:
         type: STRING
-        description: SOC value
-        sourceColumn: Soc
-        sourceTable: port_management_system
+        description: State of charge or status flag
+        sourceColumn: soc
+        sourceTable: vehicle_dispatch_tracking
       Msil_Insp:
         type: STRING
-        description: MSIL inspection status
-        sourceColumn: Msil_Insp
-        sourceTable: port_management_system
+        description: MSIL inspection flag
+        sourceColumn: MSIL_INSP
+        sourceTable: vehicle_dispatch_tracking
       Batt_Reading:
         type: STRING
         description: Battery reading
-        sourceColumn: Batt_Reading
-        sourceTable: port_management_system
+        sourceColumn: BATT_READING
+        sourceTable: vehicle_dispatch_tracking
       Km_Reading:
         type: STRING
-        description: Kilometer reading
-        sourceColumn: Km_Reading
-        sourceTable: port_management_system
+        description: Odometer reading
+        sourceColumn: KM_READING
+        sourceTable: vehicle_dispatch_tracking
       Invc_Prefix:
         type: STRING
         description: Invoice prefix
-        sourceColumn: Invc_Prefix
-        sourceTable: port_management_system
+        sourceColumn: invc_prefix
+        sourceTable: vehicle_sales_details
       Invc_Number:
         type: STRING
         description: Invoice number
-        sourceColumn: Invc_Number
-        sourceTable: port_management_system
+        sourceColumn: invc_number
+        sourceTable: vehicle_sales_details
       Export_Challan_No:
         type: STRING
         description: Export challan number
-        sourceColumn: Export_Challan_No
-        sourceTable: port_management_system
-      Tveh_Cinv_Invoice_Number:
+        sourceColumn: EXAR_NUMBER
+        sourceTable: vehicle_dispatch_tracking
+      Ship_Date:
         type: STRING
-        description: TVEH invoice number
-        sourceColumn: Tveh_Cinv_Invoice_Number
-        sourceTable: port_management_system
-      Tveh_Cinv_Invoice_Date:
+        description: Shipping date
+        sourceColumn: ship_date
+        sourceTable: shipping_bill_master
+      Esvc_Code:
         type: STRING
-        description: TVEH invoice date
-        sourceColumn: Tveh_Cinv_Invoice_Date
-        sourceTable: port_management_system
+        description: ESVC code
+        sourceColumn: esvc_code
+        sourceTable: shipping_bill_master
+      Einv_No:
+        type: STRING
+        description: E-invoice number
+        sourceColumn: einv_no
+        sourceTable: shipping_bill_master
+      Engi_Chassis_Prefix:
+        type: STRING
+        description: Engine chassis prefix
+        sourceColumn: engi_chassis_prefix
+        sourceTable: vehicle_dispatch_tracking
+      Chassis_Number:
+        type: STRING
+        description: Chassis number
+        sourceColumn: chassis_number
+        sourceTable: vehicle_dispatch_tracking
+      Ship_Bill_No:
+        type: STRING
+        description: Shipping bill number
+        sourceColumn: SHIP_BILL_NO
+        sourceTable: shipping_bill_master
+      Wax_Ok_Date:
+        type: STRING
+        description: Wax OK date
+        sourceColumn: WAX_OK_DATE
+        sourceTable: vehicle_dispatch_tracking
+      Fcok_Date:
+        type: STRING
+        description: Final check OK date
+        sourceColumn: FCOK_DATE
+        sourceTable: vehicle_dispatch_tracking
+      Stage:
+        type: STRING
+        description: Repair stage
+        sourceColumn: stage
+        sourceTable: vehicle_defect_repair_log
+      Repair_Type:
+        type: STRING
+        description: Repair type
+        sourceColumn: repair_type
+        sourceTable: vehicle_defect_repair_log
+      Defect_Cd:
+        type: STRING
+        description: Defect code
+        sourceColumn: defect_cd
+        sourceTable: vehicle_defect_repair_log
+      Jdfm_Desc:
+        type: STRING
+        description: Defect description
+        sourceColumn: jdfm_desc
+        sourceTable: vehicle_defect_repair_log
+      Time_In:
+        type: STRING
+        description: Time-in for repair
+        sourceColumn: time_in
+        sourceTable: vehicle_defect_repair_log
+      Time_Out:
+        type: STRING
+        description: Time-out for repair
+        sourceColumn: time_out
+        sourceTable: vehicle_defect_repair_log
+      Repairby:
+        type: STRING
+        description: Repaired by
+        sourceColumn: REPAIRBY
+        sourceTable: vehicle_defect_repair_log
+      Responsibility:
+        type: STRING
+        description: Responsible department
+        sourceColumn: responsibility
+        sourceTable: vehicle_defect_repair_log
+      Defect_Type:
+        type: STRING
+        description: Type of defect
+        sourceColumn: defect_type
+        sourceTable: vehicle_defect_repair_log
+      Date_In:
+        type: STRING
+        description: Hold date in
+        sourceColumn: DATE_IN
+        sourceTable: vehicle_hold_log
+      Date_Out:
+        type: STRING
+        description: Hold date out
+        sourceColumn: DATE_OUT
+        sourceTable: vehicle_hold_log
+      Chassis:
+        type: STRING
+        description: Chassis number in hold log
+        sourceColumn: CHASSSIS
+        sourceTable: vehicle_hold_log
+      Dcat_Code:
+        type: STRING
+        description: DCAT code
+        sourceColumn: DCAT_CODE
+        sourceTable: vehicle_hold_log
+      Reason_1:
+        type: STRING
+        description: Hold reason 1
+        sourceColumn: REASON_1
+        sourceTable: vehicle_hold_log
+      Reason_2:
+        type: STRING
+        description: Hold reason 2
+        sourceColumn: REASON_2
+        sourceTable: vehicle_hold_log
       Cust_Ord_Mnth:
         type: STRING
         description: Customer order month
         sourceColumn: Cust_Ord_Mnth
-        sourceTable: port_management_system
+        sourceTable: pms_vehicle_events
       Rw_Num:
         type: STRING
-        description: Row number
+        description: Row number identifier
         sourceColumn: Rw_Num
-        sourceTable: port_management_system
+        sourceTable: pms_vehicle_events
       Epol_Name:
         type: STRING
         description: EPOL name
         sourceColumn: Epol_Name
-        sourceTable: port_management_system
-      Ship_Date:
-        type: STRING
-        description: Shipping date
-        sourceColumn: Ship_Date
-        sourceTable: port_management_system
-      Esvc_Code:
-        type: STRING
-        description: ESVC code
-        sourceColumn: Esvc_Code
-        sourceTable: port_management_system
-      Einv_No:
-        type: STRING
-        description: E-invoice number
-        sourceColumn: Einv_No
-        sourceTable: port_management_system
-      Engi_Chassis_Prefix:
-        type: STRING
-        description: Engine chassis prefix
-        sourceColumn: Engi_Chassis_Prefix
-        sourceTable: port_management_system
-      Chassis_Number:
-        type: STRING
-        description: Chassis number
-        sourceColumn: Chassis_Number
-        sourceTable: port_management_system
-      Ship_Bill_No:
-        type: STRING
-        description: Shipping bill number
-        sourceColumn: Ship_Bill_No
-        sourceTable: port_management_system
-      Wax_Ok_Date:
-        type: STRING
-        description: Wax OK date
-        sourceColumn: Wax_Ok_Date
-        sourceTable: port_management_system
-      Shift_Name:
-        type: STRING
-        description: Shift name
-        sourceColumn: Shift_Name
-        sourceTable: port_management_system
-      Fcok_Date:
-        type: STRING
-        description: FCOk date
-        sourceColumn: Fcok_Date
-        sourceTable: port_management_system
-      Vehm_Sales_Model_Code:
-        type: STRING
-        description: Vehicle sales model code
-        sourceColumn: Vehm_Sales_Model_Code
-        sourceTable: port_management_system
+        sourceTable: pms_vehicle_events
       Action:
         type: STRING
         description: Action taken
         sourceColumn: Action
-        sourceTable: port_management_system
-      Stage:
+        sourceTable: pms_vehicle_events
+      Vehm_Sales_Model_Code:
         type: STRING
-        description: Processing stage
-        sourceColumn: Stage
-        sourceTable: port_management_system
-      Repair_Type:
-        type: STRING
-        description: Type of repair
-        sourceColumn: Repair_Type
-        sourceTable: port_management_system
-      Defect_Cd:
-        type: STRING
-        description: Defect code
-        sourceColumn: Defect_Cd
-        sourceTable: port_management_system
-      Jdfm_Desc:
-        type: STRING
-        description: JDFM description
-        sourceColumn: Jdfm_Desc
-        sourceTable: port_management_system
-      Soc_Damage:
-        type: STRING
-        description: SOC damage details
-        sourceColumn: Soc_Damage
-        sourceTable: port_management_system
-      Time_In:
-        type: STRING
-        description: Time in
-        sourceColumn: Time_In
-        sourceTable: port_management_system
-      Time_Out:
-        type: STRING
-        description: Time out
-        sourceColumn: Time_Out
-        sourceTable: port_management_system
+        description: Sales model code
+        sourceColumn: Vehm_Sales_Model_Code
+        sourceTable: pms_vehicle_events
       Shift_Name_Damage:
         type: STRING
         description: Shift name during damage
         sourceColumn: Shift_Name_Damage
-        sourceTable: port_management_system
-      Repairby:
+        sourceTable: pms_vehicle_events
+      Soc_Damage:
         type: STRING
-        description: Repaired by
-        sourceColumn: Repairby
-        sourceTable: port_management_system
-      Responsibility:
-        type: STRING
-        description: Responsibility assignment
-        sourceColumn: Responsibility
-        sourceTable: port_management_system
-      Defect_Type:
-        type: STRING
-        description: Defect type
-        sourceColumn: Defect_Type
-        sourceTable: port_management_system
-      Date_In:
-        type: STRING
-        description: Date in
-        sourceColumn: Date_In
-        sourceTable: port_management_system
-      Date_Out:
-        type: STRING
-        description: Date out
-        sourceColumn: Date_Out
-        sourceTable: port_management_system
-      Cod:
-        type: STRING
-        description: Code field
-        sourceColumn: Cod
-        sourceTable: port_management_system
-      Chassis:
-        type: STRING
-        description: Chassis information
-        sourceColumn: Chassis
-        sourceTable: port_management_system
-      Dcat_Code:
-        type: STRING
-        description: DCAT code
-        sourceColumn: Dcat_Code
-        sourceTable: port_management_system
-      Reason_1:
-        type: STRING
-        description: Primary reason
-        sourceColumn: Reason_1
-        sourceTable: port_management_system
-      Reason_2:
-        type: STRING
-        description: Secondary reason
-        sourceColumn: Reason_2
-        sourceTable: port_management_system
+        description: SOC damage flag
+        sourceColumn: Soc_Damage
+        sourceTable: pms_vehicle_events
       Park_Vin_Status:
         type: STRING
-        description: Vehicle park VIN status
+        description: Parking VIN status
         sourceColumn: Park_Vin_Status
-        sourceTable: port_management_system
-      Etl_Inserted_Date:
+        sourceTable: pms_vehicle_events
+      Cod:
         type: STRING
-        description: ETL inserted date
-        sourceColumn: Etl_Inserted_Date
-        sourceTable: port_management_system
-      Etl_Modified_Date:
+        description: Code
+        sourceColumn: Cod
+        sourceTable: pms_vehicle_events
+      Tveh_Cinv_Invoice_Number:
         type: STRING
-        description: ETL modified date
-        sourceColumn: Etl_Modified_Date
-        sourceTable: port_management_system
-      Etl_Created_By:
+        description: Invoice number
+        sourceColumn: Tveh_Cinv_Invoice_Number
+        sourceTable: pms_vehicle_events
+      Tveh_Cinv_Invoice_Date:
         type: STRING
-        description: ETL created by
-        sourceColumn: Etl_Created_By
-        sourceTable: port_management_system
-      Etl_Updated_By:
-        type: STRING
-        description: ETL updated by
-        sourceColumn: Etl_Updated_By
-        sourceTable: port_management_system
+        description: Invoice date
+        sourceColumn: Tveh_Cinv_Invoice_Date
+        sourceTable: pms_vehicle_events
   stateStoreType: loadDataIceberg
-  isProfilingEnabled: false
+  isProfilingEnabled: true
   updateStrategy: Overwrite
   tableName: iceberg_meta.port_management
   warehousePath: s3a://dataverse/testbed_load/
@@ -520,4 +637,14 @@ transformation:
         showData: true
     type: operationThroughSqlQuery
 controlPort:
-  dataQualityRules: {}
+  dataQualityRules:
+    NullValueCheck:
+      productState:
+        checks:
+          - column: Vinn
+        referenceAlias: loading_port_management_data_in_iceberg
+    UniquenessCheck:
+      productState:
+        checks:
+          - column: Engi_Number
+        referenceAlias: loading_port_management_data_in_iceberg
