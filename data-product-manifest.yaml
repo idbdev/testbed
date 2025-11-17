@@ -65,312 +65,312 @@ productState:
         type: STRING
         description: Master flag indicator
         sourceColumn: Master_Flag
-        sourceTable: public.data_1
+        sourceTable: item_master
       Difference_Mil:
         type: STRING
         description: Difference MIL value
         sourceColumn: Difference_Mil
-        sourceTable: public.data_1
+        sourceTable: item_master
       Difference_Rol:
         type: STRING
         description: Difference ROL value
         sourceColumn: Difference_Rol
-        sourceTable: public.data_1
+        sourceTable: item_master
       Item_Code:
         type: STRING
         description: Unique item code
         sourceColumn: Item_Code
-        sourceTable: public.data_1
+        sourceTable: item_master
       Unit:
         type: STRING
         description: Unit of measurement
         sourceColumn: Unit
-        sourceTable: public.data_1
+        sourceTable: inventory_status
       Location:
         type: STRING
         description: Location information
         sourceColumn: Location
-        sourceTable: public.data_1
+        sourceTable: inventory_status
       Stock:
         type: STRING
         description: Stock quantity
         sourceColumn: Stock
-        sourceTable: public.data_1
+        sourceTable: inventory_status
       Company_Code:
         type: STRING
         description: Company code
         sourceColumn: Company_Code
-        sourceTable: public.data_1
+        sourceTable: inventory_status
       Rate:
         type: STRING
         description: Applicable rate
         sourceColumn: Rate
-        sourceTable: public.data_1
+        sourceTable: inventory_status
       Amount:
         type: STRING
         description: Amount value
         sourceColumn: Amount
-        sourceTable: public.data_1
+        sourceTable: inventory_status
       Mil:
         type: STRING
         description: MIL value
         sourceColumn: Mil
-        sourceTable: public.data_1
+        sourceTable: inventory_status
       Rol:
         type: STRING
         description: ROL value
         sourceColumn: Rol
-        sourceTable: public.data_1
+        sourceTable: inventory_status
       Section2:
         type: STRING
         description: Section 2 category
         sourceColumn: Section2
-        sourceTable: public.data_1
+        sourceTable: section_department_master
       Transfer_Uom:
         type: STRING
         description: Transfer unit of measurement
         sourceColumn: Transfer_Uom
-        sourceTable: public.data_1
+        sourceTable: item_stock_limit
       Conversion_Factor:
         type: STRING
         description: Conversion factor value
         sourceColumn: Conversion_Factor
-        sourceTable: public.data_1
+        sourceTable: item_stock_limit
       Sequence_Number:
         type: STRING
         description: Sequence number
         sourceColumn: Sequence_Number
-        sourceTable: public.data_1
+        sourceTable: item_stock_limit
       Pack_Uom:
         type: STRING
         description: Packing unit of measurement
         sourceColumn: Pack_Uom
-        sourceTable: public.data_1
+        sourceTable: item_stock_limit
       Min_Level:
         type: STRING
         description: Minimum stock level
         sourceColumn: Min_Level
-        sourceTable: public.data_1
+        sourceTable: item_stock_limit
       Max_Level:
         type: STRING
         description: Maximum stock level
         sourceColumn: Max_Level
-        sourceTable: public.data_1
+        sourceTable: item_stock_limit
       Record_Level:
         type: STRING
         description: Record level parameter
         sourceColumn: Record_Level
-        sourceTable: public.data_1
+        sourceTable: item_stock_limit
       Categories:
         type: STRING
         description: Item categories
         sourceColumn: Categories
-        sourceTable: public.data_1
+        sourceTable: item_stock_limit
       Close_Date:
         type: STRING
         description: Close date of item
         sourceColumn: Close_Date
-        sourceTable: public.data_1
+        sourceTable: item_stock_limit
       Start_Date:
         type: STRING
         description: Start date of item
         sourceColumn: Start_Date
-        sourceTable: public.data_1
+        sourceTable: item_stock_limit
       Remarks:
         type: STRING
         description: Remarks or comments
         sourceColumn: Remarks
-        sourceTable: public.data_1
+        sourceTable: item_stock_limit
       Section:
         type: STRING
         description: Section classification
         sourceColumn: Section
-        sourceTable: public.data_1
+        sourceTable: section_department_master
       Division:
         type: STRING
         description: Division information
         sourceColumn: Division
-        sourceTable: public.data_1
+        sourceTable: section_department_master
       Department:
         type: STRING
         description: Department name
         sourceColumn: Department
-        sourceTable: public.data_1
+        sourceTable: section_department_master
       Status:
         type: STRING
         description: Status indicator
         sourceColumn: Status
-        sourceTable: public.data_1
+        sourceTable: section_department_master
       Data_View:
         type: STRING
         description: Data view detail
         sourceColumn: Data_View
-        sourceTable: public.data_1
+        sourceTable: section_department_master
       Breakdown_View:
         type: STRING
         description: Breakdown view parameter
         sourceColumn: Breakdown_View
-        sourceTable: public.data_1
+        sourceTable: section_department_master
       Sub_Group:
         type: STRING
         description: Sub group classification
         sourceColumn: Sub_Group
-        sourceTable: public.data_1
+        sourceTable: section_department_master
       Bom_View:
         type: STRING
         description: BOM view indicator
         sourceColumn: Bom_View
-        sourceTable: public.data_1
+        sourceTable: section_department_master
       Shop:
         type: STRING
         description: Shop or plant information
         sourceColumn: Shop
-        sourceTable: public.data_1
+        sourceTable: section_department_master
       Item_Description:
         type: STRING
         description: Description of the item
         sourceColumn: Item_Description
-        sourceTable: public.data_1
+        sourceTable: item_master
       Item_Type:
         type: STRING
         description: Type of item
         sourceColumn: Item_Type
-        sourceTable: public.data_1
+        sourceTable: item_master
       Primary_Item_Flag:
         type: STRING
         description: Flag indicating primary item
         sourceColumn: Primary_Item_Flag
-        sourceTable: public.data_1
+        sourceTable: item_master
       Root_Company_Code:
         type: STRING
         description: Root company code
         sourceColumn: Root_Company_Code
-        sourceTable: public.data_1
+        sourceTable: item_master
       Purchase_Unit:
         type: STRING
         description: Purchase unit of measurement
         sourceColumn: Purchase_Unit
-        sourceTable: public.data_1
+        sourceTable: item_master
       Item_Start_Date:
         type: STRING
         description: Item start date
         sourceColumn: Item_Start_Date
-        sourceTable: public.data_1
+        sourceTable: item_master
       Item_Close_Date:
         type: STRING
         description: Item close date
         sourceColumn: Item_Close_Date
-        sourceTable: public.data_1
+        sourceTable: item_master
       Modvat_Start_Date:
         type: STRING
         description: MODVAT applicability start date
         sourceColumn: Modvat_Start_Date
-        sourceTable: public.data_1
+        sourceTable: item_master
       Modvat_Close_Date:
         type: STRING
         description: MODVAT applicability close date
         sourceColumn: Modvat_Close_Date
-        sourceTable: public.data_1
+        sourceTable: item_master
       Excise_Form_Series_Flag:
         type: STRING
         description: Excise form series indicator
         sourceColumn: Excise_Form_Series_Flag
-        sourceTable: public.data_1
+        sourceTable: item_master
       Schedule_Flag:
         type: STRING
         description: Schedule flag
         sourceColumn: Schedule_Flag
-        sourceTable: public.data_1
+        sourceTable: item_master
       Item_Sub_Type:
         type: STRING
         description: Item sub-type
         sourceColumn: Item_Sub_Type
-        sourceTable: public.data_1
+        sourceTable: item_master
       Sub_Type:
         type: STRING
         description: Subtype classification
         sourceColumn: Sub_Type
-        sourceTable: public.data_1
+        sourceTable: item_master
       Item_Sub_Group:
         type: STRING
         description: Item sub-group
         sourceColumn: Item_Sub_Group
-        sourceTable: public.data_1
+        sourceTable: item_master
       Inner_Part_Flag:
         type: STRING
         description: Inner part indicator
         sourceColumn: Inner_Part_Flag
-        sourceTable: public.data_1
+        sourceTable: item_master
       Tool_Code:
         type: STRING
         description: Tool code
         sourceColumn: Tool_Code
-        sourceTable: public.data_1
+        sourceTable: item_master
       Shelf_Life:
         type: STRING
         description: Shelf life duration
         sourceColumn: Shelf_Life
-        sourceTable: public.data_1
+        sourceTable: item_master
       Colour_Sensitivity:
         type: STRING
         description: Color sensitivity factor
         sourceColumn: Colour_Sensitivity
-        sourceTable: public.data_1
+        sourceTable: item_master
       Season_Flag:
         type: STRING
         description: Seasonal flag
         sourceColumn: Season_Flag
-        sourceTable: public.data_1
+        sourceTable: item_master
       Item_Direct_Cons_Flag:
         type: STRING
         description: Direct consumption flag
         sourceColumn: Item_Direct_Cons_Flag
-        sourceTable: public.data_1
+        sourceTable: item_master
       Latest_Po_Date:
         type: STRING
         description: Latest purchase order date
         sourceColumn: Latest_Po_Date
-        sourceTable: public.data_1
+        sourceTable: item_master
       Creator:
         type: STRING
         description: Record creator
         sourceColumn: Creator
-        sourceTable: public.data_1
+        sourceTable: item_master
       Comp:
         type: STRING
         description: Company identifier
         sourceColumn: Comp
-        sourceTable: public.data_1
+        sourceTable: item_master
       Plant_Location:
         type: STRING
         description: Plant or facility location
         sourceColumn: Plant_Location
-        sourceTable: public.data_1
+        sourceTable: item_master
       Item_Category:
         type: STRING
         description: Category of item
         sourceColumn: Item_Category
-        sourceTable: public.data_1
+        sourceTable: item_master
       Etl_Inserted_Date:
         type: STRING
         description: ETL insertion timestamp
         sourceColumn: Etl_Inserted_Date
-        sourceTable: public.data_1
+        sourceTable: item_master
       Etl_Modified_Date:
         type: STRING
         description: ETL modification timestamp
         sourceColumn: Etl_Modified_Date
-        sourceTable: public.data_1
+        sourceTable: item_master
       Etl_Created_By:
         type: STRING
         description: ETL creator
         sourceColumn: Etl_Created_By
-        sourceTable: public.data_1
+        sourceTable: item_master
       Etl_Updated_By:
         type: STRING
         description: ETL updater
         sourceColumn: Etl_Updated_By
-        sourceTable: public.data_1
+        sourceTable: item_master
   stateStoreType: loadDataIceberg
   isProfilingEnabled: true
   updateStrategy: Overwrite
