@@ -5,7 +5,7 @@ developerId: e3177aef-f9f9-4f45-b0a7-a46ea5466170
 domain: inventory
 alias: loading_inventory_data_in_iceberg
 discoveryPort:
-  name: Inventory
+  name: Inventory List
 inputPorts:
   - alias: Item_Master_1
     isDynamic: true
