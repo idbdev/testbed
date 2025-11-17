@@ -601,18 +601,4 @@ transformation:
       persistDataFrame: false
     type: operationThroughSqlQuery
 controlPort:
-  dataQualityRules:
-    NullValueCheck:
-      productState:
-        checks:
-          - column: Order_Number
-            expression: "!="
-            number: 100
-            owner: yamini
-        referenceAlias: loading_sales_data
-    UniquenessCheck:
-      productState:
-        checks:
-          - column: Order_Number
-            owner: yamini
-        referenceAlias: loading_sales_data
+  dataQualityRules: {}
