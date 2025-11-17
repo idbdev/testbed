@@ -50,6 +50,116 @@ inputPorts:
       persistDataFrame: false
       advanceOptions:
         delimiter: ","
+      jsonSchema: '{"Invoice_Date":{"type":"string","source_table":"invoice","source_column":"Invoice_Date","description":"Invoice
+        date"},"Cancel_Date":{"type":"string","source_table":"invoice","source_column":"Cancel_Date","description":"Cancellation
+        date"},"Order_Date":{"type":"string","source_table":"invoice","source_column":"Order_Date","description":"Order
+        date"},"Order_Number":{"type":"string","source_table":"invoice","source_column":"Order_Number","description":"Order
+        number"},"Invoice_Cancel_Date":{"type":"string","source_table":"invoice","source_column":"Invoice_Cancel_Date","description":"Invoice
+        cancellation
+        date"},"Vehicle_Vin":{"type":"string","source_table":"invoice","source_column":"Vehicle_Vin","description":"Vehicle
+        VIN
+        number"},"Dealer_Map_Code":{"type":"string","source_table":"orderbook","source_column":"Dealer_Map_Code","description":"Dealer
+        map
+        code"},"Company_Fa":{"type":"string","source_table":"invoice","source_column":"Company_Fa","description":"Company
+        FA
+        code"},"Location_Code":{"type":"string","source_table":"invoice","source_column":"Location_Code","description":"Location
+        code"},"Invoice_Type":{"type":"string","source_table":"invoice","source_column":"Invoice_Type","description":"Invoice
+        type"},"Invoice_Number":{"type":"string","source_table":"invoice","source_column":"Invoice_Number","description":"Invoice
+        number"},"Parent_Group":{"type":"string","source_table":"invoice","source_column":"Parent_Group","description":"Parent
+        group
+        code"},"Tehsil_Code":{"type":"string","source_table":"orderbook","source_column":"Tehsil_Code","description":"Tehsil
+        code"},"Village_Code":{"type":"string","source_table":"orderbook","source_column":"Village_Code","description":"Village
+        code"},"State_Code":{"type":"string","source_table":"orderbook","source_column":"State_Code","description":"State
+        code"},"Cs_Mga_Sold_Amt":{"type":"string","source_table":"orderbook","source_column":"Cs_Mga_Sold_Amt","description":"CS
+        MGA sold
+        amount"},"Tds_Amt":{"type":"string","source_table":"orderbook","source_column":"Tds_Amt","description":"TDS
+        amount"},"Interest_Amt":{"type":"string","source_table":"orderbook","source_column":"Interest_Amt","description":"Interest
+        amount"},"Fin_Amt":{"type":"string","source_table":"orderbook","source_column":"Fin_Amt","description":"Finance
+        amount"},"Emi_Amt":{"type":"string","source_table":"orderbook","source_column":"Emi_Amt","description":"EMI
+        amount"},"Insurance_Amt":{"type":"string","source_table":"orderbook","source_column":"Insurance_Amt","description":"Insurance
+        amount"},"Net_Premium_Amt":{"type":"string","source_table":"orderbook","source_column":"Net_Premium_Amt","description":"Net
+        premium
+        amount"},"Autocard_Booked_Amt":{"type":"string","source_table":"orderbook","source_column":"Autocard_Booked_Amt","description":"Autocard
+        booked
+        amount"},"Ew_Booked_Amt":{"type":"string","source_table":"orderbook","source_column":"Ew_Booked_Amt","description":"EW
+        booked
+        amount"},"Mi_Booked_Amt":{"type":"string","source_table":"orderbook","source_column":"Mi_Booked_Amt","description":"MI
+        booked
+        amount"},"Financed_Amt":{"type":"string","source_table":"orderbook","source_column":"Financed_Amt","description":"Financed
+        amount"},"Writeoff_Amt":{"type":"string","source_table":"orderbook","source_column":"Writeoff_Amt","description":"Writeoff
+        amount"},"Booking_Amt":{"type":"string","source_table":"orderbook","source_column":"Booking_Amt","description":"Booking
+        amount"},"Received_Amt":{"type":"string","source_table":"orderbook","source_column":"Received_Amt","description":"Received
+        amount"},"Charge_Amt":{"type":"string","source_table":"orderbook","source_column":"Charge_Amt","description":"Charge
+        amount"},"Mga_Fin_Amt":{"type":"string","source_table":"orderbook","source_column":"Mga_Fin_Amt","description":"MGA
+        finance
+        amount"},"Booking_Amt_2":{"type":"string","source_table":"orderbook","source_column":"Booking_Amt_2","description":"Booking
+        amount
+        2"},"Loyalty_Redeem_Amt":{"type":"string","source_table":"invoice","source_column":"Loyalty_Redeem_Amt","description":"Loyalty
+        redeem
+        amount"},"Charge_Amt_2":{"type":"string","source_table":"orderbook","source_column":"Charge_Amt_2","description":"Charge
+        amount
+        2"},"Fcb_Amt":{"type":"string","source_table":"invoice","source_column":"Fcb_Amt","description":"FCB
+        amount"},"Financed_Amt_2":{"type":"string","source_table":"orderbook","source_column":"Financed_Amt_2","description":"Financed
+        amount
+        2"},"Invoice_Amt":{"type":"string","source_table":"invoice","source_column":"Invoice_Amt","description":"Invoice
+        amount"},"Interest_Amt_2":{"type":"string","source_table":"invoice","source_column":"Interest_Amt_2","description":"Interest
+        amount
+        2"},"Cancel_Charge_Amt":{"type":"string","source_table":"invoice","source_column":"Cancel_Charge_Amt","description":"Cancellation
+        charge
+        amount"},"Received_Amt_2":{"type":"string","source_table":"invoice","source_column":"Received_Amt_2","description":"Received
+        amount
+        2"},"Oct_Amt":{"type":"string","source_table":"invoice","source_column":"Oct_Amt","description":"OCT
+        amount"},"Writeoff_Amt_2":{"type":"string","source_table":"invoice","source_column":"Writeoff_Amt_2","description":"Writeoff
+        amount
+        2"},"Cancel_Invoice_Amt":{"type":"string","source_table":"invoice","source_column":"Cancel_Invoice_Amt","description":"Cancelled
+        invoice
+        amount"},"Hypothecation_Amt":{"type":"string","source_table":"invoice","source_column":"Hypothecation_Amt","description":"Hypothecation
+        amount"},"Tds_Amt_2":{"type":"string","source_table":"orderbook","source_column":"Tds_Amt_2","description":"TDS
+        amount
+        2"},"Region_Code":{"type":"string","source_table":"orderbook","source_column":"Region_Code","description":"Region
+        code"},"Bill_Pin":{"type":"string","source_table":"orderbook","source_column":"Bill_Pin","description":"Billing
+        PIN"},"Bill_Address_Line1":{"type":"string","source_table":"orderbook","source_column":"Bill_Address_Line1","description":"Billing
+        address line
+        1"},"Bill_Address_Line2":{"type":"string","source_table":"orderbook","source_column":"Bill_Address_Line2","description":"Billing
+        address line
+        2"},"Bill_Address_Line3":{"type":"string","source_table":"orderbook","source_column":"Bill_Address_Line3","description":"Billing
+        address line
+        3"},"Customer_Code":{"type":"string","source_table":"orderbook","source_column":"Customer_Code","description":"Customer
+        code"},"Exchange_Flag":{"type":"string","source_table":"invoice","source_column":"Exchange_Flag","description":"Exchange
+        flag"},"Bill_Nature":{"type":"string","source_table":"invoice","source_column":"Bill_Nature","description":"Nature
+        of
+        billing"},"Invoice_Status":{"type":"string","source_table":"invoice","source_column":"Invoice_Status","description":"Invoice
+        status"},"Invoice_Party_Code":{"type":"string","source_table":"invoice","source_column":"Invoice_Party_Code","description":"Invoice
+        party
+        code"},"Parent_Group_2":{"type":"string","source_table":"invoice","source_column":"Parent_Group_2","description":"Parent
+        group code
+        2"},"Dealer_Map_Code_2":{"type":"string","source_table":"invoice","source_column":"Dealer_Map_Code_2","description":"Dealer
+        map code
+        2"},"Chassis_Number":{"type":"string","source_table":"invoice","source_column":"Chassis_Number","description":"Chassis
+        number"},"Location_Code_2":{"type":"string","source_table":"invoice","source_column":"Location_Code_2","description":"Location
+        code
+        2"},"Salesman_Code":{"type":"string","source_table":"invoice","source_column":"Salesman_Code","description":"Salesman
+        code"},"Company_Fa_2":{"type":"string","source_table":"invoice","source_column":"Company_Fa_2","description":"Company
+        FA code
+        2"},"Order_Number_2":{"type":"string","source_table":"invoice","source_column":"Order_Number_2","description":"Order
+        number
+        2"},"Order_Party_Code":{"type":"string","source_table":"invoice","source_column":"Order_Party_Code","description":"Order
+        party
+        code"},"Selling_Price":{"type":"string","source_table":"invoice","source_column":"Selling_Price","description":"Selling
+        price"},"Received_Amt_3":{"type":"string","source_table":"invoice","source_column":"Received_Amt_3","description":"Received
+        amount
+        3"},"Prom_Dod":{"type":"string","source_table":"orderbook","source_column":"Prom_Dod","description":"Promised
+        date of
+        delivery"},"Pan_Number":{"type":"string","source_table":"orderbook","source_column":"Pan_Number","description":"PAN
+        number"},"District":{"type":"string","source_table":"orderbook","source_column":"District","description":"District
+        name"},"Enquiry_Number":{"type":"string","source_table":"orderbook","source_column":"Enquiry_Number","description":"Enquiry
+        number"},"City_Code":{"type":"string","source_table":"orderbook","source_column":"City_Code","description":"City
+        code"},"Fi_Code":{"type":"string","source_table":"orderbook","source_column":"Fi_Code","description":"FI
+        code"},"Customer_Email":{"type":"string","source_table":"customer_master","source_column":"Customer_Email","description":"Customer
+        email
+        ID"},"Customer_City":{"type":"string","source_table":"customer_master","source_column":"Customer_City","description":"Customer
+        city"},"Party_Name":{"type":"string","source_table":"vendor_master","source_column":"Party_Name","description":"Party
+        name"}}'
       enableDataReconciliation: false
       enforceSchema: false
       connection: S3 Connection - Marketing and Sales
@@ -69,372 +179,372 @@ productState:
         type: STRING
         description: Invoice date
         sourceColumn: Invoice_Date
-        sourceTable: public.invoice_master
+        sourceTable: invoice
       Cancel_Date:
         type: STRING
         description: Cancellation date
         sourceColumn: Cancel_Date
-        sourceTable: public.invoice_master
+        sourceTable: invoice
       Order_Date:
         type: STRING
         description: Order date
         sourceColumn: Order_Date
-        sourceTable: public.invoice_master
+        sourceTable: invoice
       Order_Number:
         type: STRING
         description: Order number
         sourceColumn: Order_Number
-        sourceTable: public.invoice_master
+        sourceTable: invoice
       Invoice_Cancel_Date:
         type: STRING
         description: Invoice cancellation date
         sourceColumn: Invoice_Cancel_Date
-        sourceTable: public.invoice_master
+        sourceTable: invoice
       Vehicle_Vin:
         type: STRING
         description: Vehicle VIN number
         sourceColumn: Vehicle_Vin
-        sourceTable: public.invoice_master
+        sourceTable: invoice
       Dealer_Map_Code:
         type: STRING
         description: Dealer map code
         sourceColumn: Dealer_Map_Code
-        sourceTable: public.invoice_master
+        sourceTable: orderbook
       Company_Fa:
         type: STRING
         description: Company FA code
         sourceColumn: Company_Fa
-        sourceTable: public.invoice_master
+        sourceTable: invoice
       Location_Code:
         type: STRING
         description: Location code
         sourceColumn: Location_Code
-        sourceTable: public.invoice_master
+        sourceTable: invoice
       Invoice_Type:
         type: STRING
         description: Invoice type
         sourceColumn: Invoice_Type
-        sourceTable: public.invoice_master
+        sourceTable: invoice
       Invoice_Number:
         type: STRING
         description: Invoice number
         sourceColumn: Invoice_Number
-        sourceTable: public.invoice_master
+        sourceTable: invoice
       Parent_Group:
         type: STRING
         description: Parent group code
         sourceColumn: Parent_Group
-        sourceTable: public.invoice_master
+        sourceTable: invoice
       Tehsil_Code:
         type: STRING
         description: Tehsil code
         sourceColumn: Tehsil_Code
-        sourceTable: public.invoice_master
+        sourceTable: orderbook
       Village_Code:
         type: STRING
         description: Village code
         sourceColumn: Village_Code
-        sourceTable: public.invoice_master
+        sourceTable: orderbook
       State_Code:
         type: STRING
         description: State code
         sourceColumn: State_Code
-        sourceTable: public.invoice_master
+        sourceTable: orderbook
       Cs_Mga_Sold_Amt:
         type: STRING
         description: CS MGA sold amount
         sourceColumn: Cs_Mga_Sold_Amt
-        sourceTable: public.invoice_master
+        sourceTable: orderbook
       Tds_Amt:
         type: STRING
         description: TDS amount
         sourceColumn: Tds_Amt
-        sourceTable: public.invoice_master
+        sourceTable: orderbook
       Interest_Amt:
         type: STRING
         description: Interest amount
         sourceColumn: Interest_Amt
-        sourceTable: public.invoice_master
+        sourceTable: orderbook
       Fin_Amt:
         type: STRING
         description: Finance amount
         sourceColumn: Fin_Amt
-        sourceTable: public.invoice_master
+        sourceTable: orderbook
       Emi_Amt:
         type: STRING
         description: EMI amount
         sourceColumn: Emi_Amt
-        sourceTable: public.invoice_master
+        sourceTable: orderbook
       Insurance_Amt:
         type: STRING
         description: Insurance amount
         sourceColumn: Insurance_Amt
-        sourceTable: public.invoice_master
+        sourceTable: orderbook
       Net_Premium_Amt:
         type: STRING
         description: Net premium amount
         sourceColumn: Net_Premium_Amt
-        sourceTable: public.invoice_master
+        sourceTable: orderbook
       Autocard_Booked_Amt:
         type: STRING
         description: Autocard booked amount
         sourceColumn: Autocard_Booked_Amt
-        sourceTable: public.invoice_master
+        sourceTable: orderbook
       Ew_Booked_Amt:
         type: STRING
         description: EW booked amount
         sourceColumn: Ew_Booked_Amt
-        sourceTable: public.invoice_master
+        sourceTable: orderbook
       Mi_Booked_Amt:
         type: STRING
         description: MI booked amount
         sourceColumn: Mi_Booked_Amt
-        sourceTable: public.invoice_master
+        sourceTable: orderbook
       Financed_Amt:
         type: STRING
         description: Financed amount
         sourceColumn: Financed_Amt
-        sourceTable: public.invoice_master
+        sourceTable: orderbook
       Writeoff_Amt:
         type: STRING
         description: Writeoff amount
         sourceColumn: Writeoff_Amt
-        sourceTable: public.invoice_master
+        sourceTable: orderbook
       Booking_Amt:
         type: STRING
         description: Booking amount
         sourceColumn: Booking_Amt
-        sourceTable: public.invoice_master
+        sourceTable: orderbook
       Received_Amt:
         type: STRING
         description: Received amount
         sourceColumn: Received_Amt
-        sourceTable: public.invoice_master
+        sourceTable: orderbook
       Charge_Amt:
         type: STRING
         description: Charge amount
         sourceColumn: Charge_Amt
-        sourceTable: public.invoice_master
+        sourceTable: orderbook
       Mga_Fin_Amt:
         type: STRING
         description: MGA finance amount
         sourceColumn: Mga_Fin_Amt
-        sourceTable: public.invoice_master
+        sourceTable: orderbook
       Booking_Amt_2:
         type: STRING
         description: Booking amount 2
         sourceColumn: Booking_Amt_2
-        sourceTable: public.invoice_master
+        sourceTable: orderbook
       Loyalty_Redeem_Amt:
         type: STRING
         description: Loyalty redeem amount
         sourceColumn: Loyalty_Redeem_Amt
-        sourceTable: public.invoice_master
+        sourceTable: invoice
       Charge_Amt_2:
         type: STRING
         description: Charge amount 2
         sourceColumn: Charge_Amt_2
-        sourceTable: public.invoice_master
+        sourceTable: orderbook
       Fcb_Amt:
         type: STRING
         description: FCB amount
         sourceColumn: Fcb_Amt
-        sourceTable: public.invoice_master
+        sourceTable: invoice
       Financed_Amt_2:
         type: STRING
         description: Financed amount 2
         sourceColumn: Financed_Amt_2
-        sourceTable: public.invoice_master
+        sourceTable: orderbook
       Invoice_Amt:
         type: STRING
         description: Invoice amount
         sourceColumn: Invoice_Amt
-        sourceTable: public.invoice_master
+        sourceTable: invoice
       Interest_Amt_2:
         type: STRING
         description: Interest amount 2
         sourceColumn: Interest_Amt_2
-        sourceTable: public.invoice_master
+        sourceTable: invoice
       Cancel_Charge_Amt:
         type: STRING
         description: Cancellation charge amount
         sourceColumn: Cancel_Charge_Amt
-        sourceTable: public.invoice_master
+        sourceTable: invoice
       Received_Amt_2:
         type: STRING
         description: Received amount 2
         sourceColumn: Received_Amt_2
-        sourceTable: public.invoice_master
+        sourceTable: invoice
       Oct_Amt:
         type: STRING
         description: OCT amount
         sourceColumn: Oct_Amt
-        sourceTable: public.invoice_master
+        sourceTable: invoice
       Writeoff_Amt_2:
         type: STRING
         description: Writeoff amount 2
         sourceColumn: Writeoff_Amt_2
-        sourceTable: public.invoice_master
+        sourceTable: invoice
       Cancel_Invoice_Amt:
         type: STRING
         description: Cancelled invoice amount
         sourceColumn: Cancel_Invoice_Amt
-        sourceTable: public.invoice_master
+        sourceTable: invoice
       Hypothecation_Amt:
         type: STRING
         description: Hypothecation amount
         sourceColumn: Hypothecation_Amt
-        sourceTable: public.invoice_master
+        sourceTable: invoice
       Tds_Amt_2:
         type: STRING
         description: TDS amount 2
         sourceColumn: Tds_Amt_2
-        sourceTable: public.invoice_master
+        sourceTable: orderbook
       Region_Code:
         type: STRING
         description: Region code
         sourceColumn: Region_Code
-        sourceTable: public.invoice_master
+        sourceTable: orderbook
       Bill_Pin:
         type: STRING
         description: Billing PIN
         sourceColumn: Bill_Pin
-        sourceTable: public.invoice_master
+        sourceTable: orderbook
       Bill_Address_Line1:
         type: STRING
         description: Billing address line 1
         sourceColumn: Bill_Address_Line1
-        sourceTable: public.invoice_master
+        sourceTable: orderbook
       Bill_Address_Line2:
         type: STRING
         description: Billing address line 2
         sourceColumn: Bill_Address_Line2
-        sourceTable: public.invoice_master
+        sourceTable: orderbook
       Bill_Address_Line3:
         type: STRING
         description: Billing address line 3
         sourceColumn: Bill_Address_Line3
-        sourceTable: public.invoice_master
+        sourceTable: orderbook
       Customer_Code:
         type: STRING
         description: Customer code
         sourceColumn: Customer_Code
-        sourceTable: public.invoice_master
+        sourceTable: orderbook
       Exchange_Flag:
         type: STRING
         description: Exchange flag
         sourceColumn: Exchange_Flag
-        sourceTable: public.invoice_master
+        sourceTable: invoice
       Bill_Nature:
         type: STRING
         description: Nature of billing
         sourceColumn: Bill_Nature
-        sourceTable: public.invoice_master
+        sourceTable: invoice
       Invoice_Status:
         type: STRING
         description: Invoice status
         sourceColumn: Invoice_Status
-        sourceTable: public.invoice_master
+        sourceTable: invoice
       Invoice_Party_Code:
         type: STRING
         description: Invoice party code
         sourceColumn: Invoice_Party_Code
-        sourceTable: public.invoice_master
+        sourceTable: invoice
       Parent_Group_2:
         type: STRING
         description: Parent group code 2
         sourceColumn: Parent_Group_2
-        sourceTable: public.invoice_master
+        sourceTable: invoice
       Dealer_Map_Code_2:
         type: STRING
         description: Dealer map code 2
         sourceColumn: Dealer_Map_Code_2
-        sourceTable: public.invoice_master
+        sourceTable: invoice
       Chassis_Number:
         type: STRING
         description: Chassis number
         sourceColumn: Chassis_Number
-        sourceTable: public.invoice_master
+        sourceTable: invoice
       Location_Code_2:
         type: STRING
         description: Location code 2
         sourceColumn: Location_Code_2
-        sourceTable: public.invoice_master
+        sourceTable: invoice
       Salesman_Code:
         type: STRING
         description: Salesman code
         sourceColumn: Salesman_Code
-        sourceTable: public.invoice_master
+        sourceTable: invoice
       Company_Fa_2:
         type: STRING
         description: Company FA code 2
         sourceColumn: Company_Fa_2
-        sourceTable: public.invoice_master
+        sourceTable: invoice
       Order_Number_2:
         type: STRING
         description: Order number 2
         sourceColumn: Order_Number_2
-        sourceTable: public.invoice_master
+        sourceTable: invoice
       Order_Party_Code:
         type: STRING
         description: Order party code
         sourceColumn: Order_Party_Code
-        sourceTable: public.invoice_master
+        sourceTable: invoice
       Selling_Price:
         type: STRING
         description: Selling price
         sourceColumn: Selling_Price
-        sourceTable: public.invoice_master
+        sourceTable: invoice
       Received_Amt_3:
         type: STRING
         description: Received amount 3
         sourceColumn: Received_Amt_3
-        sourceTable: public.invoice_master
+        sourceTable: invoice
       Prom_Dod:
         type: STRING
         description: Promised date of delivery
         sourceColumn: Prom_Dod
-        sourceTable: public.invoice_master
+        sourceTable: orderbook
       Pan_Number:
         type: STRING
         description: PAN number
         sourceColumn: Pan_Number
-        sourceTable: public.invoice_master
+        sourceTable: orderbook
       District:
         type: STRING
         description: District name
         sourceColumn: District
-        sourceTable: public.invoice_master
+        sourceTable: orderbook
       Enquiry_Number:
         type: STRING
         description: Enquiry number
         sourceColumn: Enquiry_Number
-        sourceTable: public.invoice_master
+        sourceTable: orderbook
       City_Code:
         type: STRING
         description: City code
         sourceColumn: City_Code
-        sourceTable: public.invoice_master
+        sourceTable: orderbook
       Fi_Code:
         type: STRING
         description: FI code
         sourceColumn: Fi_Code
-        sourceTable: public.invoice_master
+        sourceTable: orderbook
       Customer_Email:
         type: STRING
         description: Customer email ID
         sourceColumn: Customer_Email
-        sourceTable: public.invoice_master
+        sourceTable: customer_master
       Customer_City:
         type: STRING
         description: Customer city
         sourceColumn: Customer_City
-        sourceTable: public.invoice_master
+        sourceTable: customer_master
       Party_Name:
         type: STRING
         description: Party name
         sourceColumn: Party_Name
-        sourceTable: public.invoice_master
+        sourceTable: vendor_master
       Etl_Inserted_Date:
         type: STRING
         description: ETL inserted timestamp
@@ -491,4 +601,16 @@ transformation:
       persistDataFrame: false
     type: operationThroughSqlQuery
 controlPort:
-  dataQualityRules: {}
+  dataQualityRules:
+    NullValueCheck:
+      productState:
+        checks:
+          - column: Order_Number
+            expression: "!="
+            number: 100
+        referenceAlias: loading_sales_data
+    UniquenessCheck:
+      productState:
+        checks:
+          - column: Order_Number
+        referenceAlias: loading_sales_data
