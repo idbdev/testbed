@@ -149,127 +149,127 @@ productState:
         type: STRING
         description: Vehicle Identification Number
         sourceColumn: VIN
-        sourceTable: public.market_quality_master
+        sourceTable: vehicle_master
       Engine_Number:
         type: STRING
         description: Engine number
         sourceColumn: Engine_Number
-        sourceTable: public.market_quality_master
+        sourceTable: vehicle_master
       Chassis_Number:
         type: STRING
         description: Chassis number
         sourceColumn: Chassis_Number
-        sourceTable: public.market_quality_master
+        sourceTable: vehicle_master
       Model_Code:
         type: STRING
         description: Vehicle model code
         sourceColumn: Model_Code
-        sourceTable: public.market_quality_master
+        sourceTable: vehicle_master
       Sub_Model_Code:
         type: STRING
         description: Vehicle sub-model code
         sourceColumn: Sub_Model_Code
-        sourceTable: public.market_quality_master
+        sourceTable: vehicle_master
       Spec_Code:
         type: STRING
         description: Specification code
         sourceColumn: Spec_Code
-        sourceTable: public.market_quality_master
+        sourceTable: vehicle_master
       Selection_Code:
         type: STRING
         description: Selection code
         sourceColumn: Selection_Code
-        sourceTable: public.market_quality_master
+        sourceTable: vehicle_master
       Vehicle_Age_Days:
         type: STRING
         description: Age of the vehicle in days
         sourceColumn: Vehicle_Age_Days
-        sourceTable: public.market_quality_master
+        sourceTable: defect_hold_and_market_quality_master
       Warranty_Failure_Rate:
         type: STRING
         description: Warranty failure rate
         sourceColumn: Warranty_Failure_Rate
-        sourceTable: public.market_quality_master
+        sourceTable: defect_hold_and_market_quality_master
       System_Failure_Rate:
         type: STRING
         description: System failure rate
         sourceColumn: System_Failure_Rate
-        sourceTable: public.market_quality_master
+        sourceTable: defect_hold_and_market_quality_master
       Part_Failure_Frequency:
         type: STRING
         description: Part failure frequency
         sourceColumn: Part_Failure_Frequency
-        sourceTable: public.market_quality_master
+        sourceTable: defect_hold_and_market_quality_master
       Failure_Severity_Score:
         type: STRING
         description: Severity score of failure
         sourceColumn: Failure_Severity_Score
-        sourceTable: public.market_quality_master
+        sourceTable: field_technical_information_data
       Repeat_Failure_Flag:
         type: STRING
         description: Flag indicating repeated failure
         sourceColumn: Repeat_Failure_Flag
-        sourceTable: public.market_quality_master
+        sourceTable: field_technical_Information_Data
       High_Severity_Failure_Flag:
         type: STRING
         description: Flag indicating high severity failure
         sourceColumn: High_Severity_Failure_Flag
-        sourceTable: public.market_quality_master
+        sourceTable: field_technical_information_data
       FTIR_Rate_Per_1000:
         type: STRING
         description: FTIR failure rate per 1000 vehicles
         sourceColumn: FTIR_Rate_Per_1000
-        sourceTable: public.market_quality_master
+        sourceTable: defect_hold_and_market_quality_master
       Emerging_Symptom_Trend_Index:
         type: STRING
         description: Emerging symptom trend index
         sourceColumn: Emerging_Symptom_Trend_Index
-        sourceTable: public.market_quality_master
+        sourceTable: defect_hold_and_market_quality_master
       Dealer_Early_Failure_Rate:
         type: STRING
         description: Dealer early failure rate
         sourceColumn: Dealer_Early_Failure_Rate
-        sourceTable: public.market_quality_master
+        sourceTable: vehicle_recall_data
       Time_To_Failure_Days:
         type: STRING
         description: Time to failure in days
         sourceColumn: Time_To_Failure_Days
-        sourceTable: public.market_quality_master
+        sourceTable: warranty_claim_details
       Time_To_Repair_Hours:
         type: STRING
         description: Time taken to repair in hours
         sourceColumn: Time_To_Repair_Hours
-        sourceTable: public.market_quality_master
+        sourceTable: warranty_claim_details
       Time_To_Detection_Days:
         type: STRING
         description: Time to detect the issue in days
         sourceColumn: Time_To_Detection_Days
-        sourceTable: public.market_quality_master
+        sourceTable: vehicle_recall_data
       Vehicle_Age_At_First_Failure:
         type: STRING
         description: Vehicle age at first failure
         sourceColumn: Vehicle_Age_At_First_Failure
-        sourceTable: public.market_quality_master
+        sourceTable: MoRTH
       Market_Quality_Health_Score:
         type: STRING
         description: Market quality health score
         sourceColumn: Market_Quality_Health_Score
-        sourceTable: public.market_quality_master
+        sourceTable: vehicle_recall_data
       MQ_Risk_Level:
         type: STRING
         description: Market quality risk level
         sourceColumn: MQ_Risk_Level
-        sourceTable: public.market_quality_master
+        sourceTable: MoRTH
       MQ_Trend_Score_3M:
         type: STRING
         description: 3-month trend score
         sourceColumn: MQ_Trend_Score_3M
-        sourceTable: public.market_quality_master
+        sourceTable: MoRTH
       MQ_Trend_Score_6M:
         type: STRING
         description: 6-month trend score
         sourceColumn: MQ_Trend_Score_6M
-        sourceTable: public.market_quality_master
+        sourceTable: MoRTH
   stateStoreType: loadDataIceberg
   isProfilingEnabled: true
   updateStrategy: Overwrite
@@ -320,4 +320,14 @@ transformation:
         showData: true
     type: operationThroughSqlQuery
 controlPort:
-  dataQualityRules: {}
+  dataQualityRules:
+    NullValueCheck:
+      productState:
+        checks:
+          - column: VIN
+        referenceAlias: loading_market_quality_data
+    UniquenessCheck:
+      productState:
+        checks:
+          - column: VIN
+        referenceAlias: loading_market_quality_data
