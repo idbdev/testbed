@@ -174,4 +174,14 @@ transformation:
         showData: true
     type: operationThroughSqlQuery
 controlPort:
-  dataQualityRules: {}
+  dataQualityRules:
+    NullValueCheck:
+      productState:
+        checks:
+          - column: Product_Id
+        referenceAlias: loading_stock_status_data_in_iceberg
+    UniquenessCheck:
+      productState:
+        checks:
+          - column: Product_Id
+        referenceAlias: loading_stock_status_data_in_iceberg
