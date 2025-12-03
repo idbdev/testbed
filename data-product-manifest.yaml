@@ -175,4 +175,14 @@ transformation:
         showData: true
     type: operationThroughSqlQuery
 controlPort:
-  dataQualityRules: {}
+  dataQualityRules:
+    NullValueCheck:
+      productState:
+        checks:
+          - column: Customer_Id
+        referenceAlias: loading_customer_acquisition_data_in_iceberg
+    UniquenessCheck:
+      productState:
+        checks:
+          - column: Customer_Id
+        referenceAlias: loading_customer_acquisition_data_in_iceberg
