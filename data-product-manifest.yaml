@@ -14,6 +14,26 @@ inputPorts:
       persistDataFrame: false
       advanceOptions:
         delimiter: ","
+      jsonSchema: '{"product_id":{"type":"string","source_table":"material_master","source_column":"product_id","description":"Unique
+        identifier for the
+        product"},"timestamp":{"type":"string","source_table":"material_master","source_column":"timestamp","description":"Timestamp
+        of when the product data was last
+        updated"},"is_available":{"type":"string","source_table":"material_master","source_column":"is_available","description":"Indicates
+        whether the product is available for
+        sale"},"barcode":{"type":"string","source_table":"material_master","source_column":"barcode","description":"Barcode
+        associated with the
+        product"},"material_type":{"type":"string","source_table":"material_master","source_column":"material_type","description":"Type
+        of material the product is made
+        of"},"material_group":{"type":"string","source_table":"material_master","source_column":"material_group","description":"Group
+        that the product belongs
+        to"},"product_name":{"type":"string","source_table":"material_master","source_column":"product_name","description":"Name
+        of the
+        product"},"sku":{"type":"string","source_table":"material_master","source_column":"sku","description":"Stock
+        Keeping Unit (SKU) identifier for the
+        product"},"current_stock":{"type":"string","source_table":"material_master","source_column":"current_stock","description":"Current
+        available stock of the
+        product"},"standard_cost":{"type":"string","source_table":"material_master","source_column":"standard_cost","description":"Standard
+        cost of the product"}}'
       enableDataReconciliation: false
       enforceSchema: false
       connection: S3 Connection - FMCG
