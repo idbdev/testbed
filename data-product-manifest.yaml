@@ -14,6 +14,26 @@ inputPorts:
       persistDataFrame: false
       advanceOptions:
         delimiter: ","
+      jsonSchema: '{"campaign_id":{"type":"string","source_table":"marketing_spend","source_column":"campaign_id","description":"Unique
+        identifier for the
+        campaign"},"campaign_name":{"type":"string","source_table":"marketing_spend","source_column":"campaign_name","description":"Name
+        of the marketing
+        campaign"},"campaign_type":{"type":"string","source_table":"marketing_spend","source_column":"campaign_type","description":"Type
+        of the marketing
+        campaign"},"start_date":{"type":"string","source_table":"marketing_spend","source_column":"start_date","description":"Start
+        date of the marketing
+        campaign"},"end_date":{"type":"string","source_table":"marketing_spend","source_column":"end_date","description":"End
+        date of the marketing
+        campaign"},"budget_amount":{"type":"string","source_table":"marketing_spend","source_column":"budget_amount","description":"Budget
+        allocated for the marketing
+        campaign"},"target_audience":{"type":"string","source_table":"marketing_spend","source_column":"target_audience","description":"Target
+        audience for the marketing
+        campaign"},"location_target":{"type":"string","source_table":"marketing_spend","source_column":"location_target","description":"Geographical
+        location targeted by the marketing
+        campaign"},"channel":{"type":"string","source_table":"marketing_spend","source_column":"channel","description":"Marketing
+        channel used in the
+        campaign"},"agency_name":{"type":"string","source_table":"marketing_spend","source_column":"agency_name","description":"Agency
+        handling the marketing campaign"}}'
       enableDataReconciliation: false
       enforceSchema: false
       connection: S3 Connection - FMCG
@@ -26,6 +46,14 @@ inputPorts:
       persistDataFrame: false
       advanceOptions:
         delimiter: ","
+      jsonSchema: '{"customer_id":{"type":"string","source_table":"new_customer","source_column":"customer_id","description":"Unique
+        identifier for the
+        customer"},"campaign_id":{"type":"string","source_table":"new_customer","source_column":"campaign_id","description":"Unique
+        identifier for the marketing
+        campaign"},"acquisition_date":{"type":"string","source_table":"new_customer","source_column":"acquisition_date","description":"Date
+        when the customer was
+        acquired"},"acquisition_channel":{"type":"string","source_table":"new_customer","source_column":"acquisition_channel","description":"Channel
+        through which the customer was acquired"}}'
       enableDataReconciliation: false
       enforceSchema: false
       connection: S3 Connection - FMCG
