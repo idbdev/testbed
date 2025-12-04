@@ -603,6 +603,7 @@ productState:
     enforceSchema: true
     enforceSchemaMethod: Warning
     catalogType: postgres
+    connection: S3 Connection
     loggingOptions:
       printSchema: true
       showData: true
