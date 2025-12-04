@@ -275,7 +275,7 @@ productState:
   updateStrategy: Overwrite
   tableName: iceberg_meta.market_quality
   warehousePath: s3a://dataverse/testbed_load/
-  catalogName: postgres catalog
+  catalogName: postgres_catalog
   optional:
     persistDataFrame: false
     enableDataReconciliation: false
