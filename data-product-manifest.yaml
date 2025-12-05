@@ -1,7 +1,7 @@
 jobId: "990"
 jobName: Inventory
 jobType: Source Aligned Data Product
-developerId: e3177aef-f9f9-4f45-b0a7-a46ea5466170
+developerId: 7679c14a-8908-42a5-8656-2abecbfa4b49
 domain: inventory
 alias: loading_inventory_data_in_iceberg
 discoveryPort:
@@ -383,6 +383,7 @@ productState:
     enforceSchema: true
     enforceSchemaMethod: Warning
     catalogType: postgres
+    connection: S3 Connection
     loggingOptions:
       printSchema: true
       count: true
