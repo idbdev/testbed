@@ -1,388 +1,180 @@
-jobId: "990"
-jobName: Inventory
+jobId: "991"
+jobName: Credit Risk Assesment
 jobType: Source Aligned Data Product
-developerId: e3177aef-f9f9-4f45-b0a7-a46ea5466170
-domain: inventory
-alias: loading_inventory_data_in_iceberg
+developerId: 7679c14a-8908-42a5-8656-2abecbfa4b49
+domain: financial_services
+alias: loading_Credit_Risk_Assesment_data_in_iceberg
 discoveryPort:
-  name: Inventory
+  name: Credit Risk Assesment
 inputPorts:
-  - alias: Item_Master_1
+  - alias: Credit_Score_1
     isDynamic: true
-    path: s3a://dataverse/testbed/automobile/inventory/item_master.csv
+    path: s3a://dataverse/testbed/banking/credit_scores.csv
     optional:
       persistDataFrame: false
       advanceOptions:
         delimiter: ","
       enableDataReconciliation: false
       enforceSchema: false
-      connection: S3 Connection - Inventory
-      dataSetUrn: urn:dv:dataset:55dd345e-0184-41cf-9fd5-ccf9a4729950
+      connection: S3 Connection - Financial Services
+      dataSetUrn: urn:dv:dataset:edb617b9-0ddc-4c61-a346-e588dc4df878
     type: inputDelimited
-  - alias: Inventory_Status_1
+  - alias: Bureau_Enquiry_1
     isDynamic: true
-    path: s3a://dataverse/testbed/automobile/inventory/inventory_status.csv
+    path: s3a://dataverse/testbed/banking/credit_risk_analysis.csv
     optional:
       persistDataFrame: false
       advanceOptions:
         delimiter: ","
       enableDataReconciliation: false
       enforceSchema: false
-      connection: S3 Connection - Inventory
-      dataSetUrn: urn:dv:dataset:b5d7777d-5428-4eb3-9503-8796292711bd
-    type: inputDelimited
-  - alias: Item_Stock_Limit_1
-    isDynamic: true
-    path: s3a://dataverse/testbed/automobile/inventory/item_stock_limit.csv
-    optional:
-      persistDataFrame: false
-      advanceOptions:
-        delimiter: ","
-      enableDataReconciliation: false
-      enforceSchema: false
-      connection: S3 Connection - Inventory
-      dataSetUrn: urn:dv:dataset:1ab46557-ba63-4af0-a1d5-d7e899b100b3
-    type: inputDelimited
-  - alias: Section_Department_Master_1
-    isDynamic: true
-    path: s3a://dataverse/testbed/automobile/inventory/section_department_master.csv
-    optional:
-      persistDataFrame: false
-      advanceOptions:
-        delimiter: ","
-      enableDataReconciliation: false
-      enforceSchema: false
-      connection: S3 Connection - Inventory
-      dataSetUrn: urn:dv:dataset:f916ea98-2f81-4e91-be80-19418283e2d4
+      connection: S3 Connection - Financial Services
+      dataSetUrn: urn:dv:dataset:ffbe9067-2e29-40d8-85b2-85ee21965c46
     type: inputDelimited
 productState:
   isDynamic: true
-  alias: loading_inventory_data_in_iceberg
+  alias: loading_Credit_Risk_Assesment_data_in_iceberg
   retentionVersions: ""
   logicalSchema:
     properties:
-      Master_Flag:
+      score_id:
         type: STRING
-        description: Master flag indicator
-        sourceColumn: Master_Flag
-        sourceTable: public.data_1
-      Difference_Mil:
+        description: Unique identifier of the credit score record
+        sourceColumn: score_id
+        sourceTable: credit_score
+      customer_id:
         type: STRING
-        description: Difference MIL value
-        sourceColumn: Difference_Mil
-        sourceTable: public.data_1
-      Difference_Rol:
+        description: Unique identifier of the customer
+        sourceColumn: customer_id
+        sourceTable: credit_score
+      score_value:
         type: STRING
-        description: Difference ROL value
-        sourceColumn: Difference_Rol
-        sourceTable: public.data_1
-      Item_Code:
+        description: Actual credit score value
+        sourceColumn: score_value
+        sourceTable: credit_score
+      score_range_min:
         type: STRING
-        description: Unique item code
-        sourceColumn: Item_Code
-        sourceTable: public.data_1
-      Unit:
+        description: Minimum value of the credit score range
+        sourceColumn: score_range_min
+        sourceTable: credit_score
+      score_range_max:
         type: STRING
-        description: Unit of measurement
-        sourceColumn: Unit
-        sourceTable: public.data_1
-      Location:
+        description: Maximum value of the credit score range
+        sourceColumn: score_range_max
+        sourceTable: credit_score
+      scoring_model_name:
         type: STRING
-        description: Location information
-        sourceColumn: Location
-        sourceTable: public.data_1
-      Stock:
+        description: Name of the scoring model used
+        sourceColumn: scoring_model_name
+        sourceTable: credit_score
+      model_version:
         type: STRING
-        description: Stock quantity
-        sourceColumn: Stock
-        sourceTable: public.data_1
-      Company_Code:
+        description: Version of the scoring model
+        sourceColumn: model_version
+        sourceTable: credit_score
+      score_date:
+        type: DATETIME
+        description: Date when the score was generated
+        sourceColumn: score_date
+        sourceTable: credit_score
+      score_valid_till:
+        type: DATETIME
+        description: Validity end date of the credit score
+        sourceColumn: score_valid_till
+        sourceTable: credit_score
+      score_status:
         type: STRING
-        description: Company code
-        sourceColumn: Company_Code
-        sourceTable: public.data_1
-      Rate:
+        description: Status of the credit score
+        sourceColumn: score_status
+        sourceTable: credit_score
+      enquiry_id:
         type: STRING
-        description: Applicable rate
-        sourceColumn: Rate
-        sourceTable: public.data_1
-      Amount:
+        description: Unique identifier of the bureau enquiry
+        sourceColumn: enquiry_id
+        sourceTable: bureau_enquiry
+      bureau_name:
         type: STRING
-        description: Amount value
-        sourceColumn: Amount
-        sourceTable: public.data_1
-      Mil:
+        description: Name of the credit bureau
+        sourceColumn: bureau_name
+        sourceTable: bureau_enquiry
+      enquiry_date:
+        type: DATETIME
+        description: Date when the bureau enquiry was made
+        sourceColumn: enquiry_date
+        sourceTable: bureau_enquiry
+      enquiry_type:
         type: STRING
-        description: MIL value
-        sourceColumn: Mil
-        sourceTable: public.data_1
-      Rol:
+        description: Type of bureau enquiry
+        sourceColumn: enquiry_type
+        sourceTable: bureau_enquiry
+      product_type:
         type: STRING
-        description: ROL value
-        sourceColumn: Rol
-        sourceTable: public.data_1
-      Section2:
+        description: Type of product for which enquiry was made
+        sourceColumn: product_type
+        sourceTable: bureau_enquiry
+      amount_requested:
         type: STRING
-        description: Section 2 category
-        sourceColumn: Section2
-        sourceTable: public.data_1
-      Transfer_Uom:
+        description: Requested loan or credit amount
+        sourceColumn: amount_requested
+        sourceTable: bureau_enquiry
+      enquiry_result:
         type: STRING
-        description: Transfer unit of measurement
-        sourceColumn: Transfer_Uom
-        sourceTable: public.data_1
-      Conversion_Factor:
+        description: Result of the bureau enquiry
+        sourceColumn: enquiry_result
+        sourceTable: bureau_enquiry
+      bureau_reference_decimal(35,10):
         type: STRING
-        description: Conversion factor value
-        sourceColumn: Conversion_Factor
-        sourceTable: public.data_1
-      Sequence_Number:
+        description: Reference decimal(35,10) provided by the bureau
+        sourceColumn: bureau_reference_decimal(35,10)
+        sourceTable: bureau_enquiry
+      report_id:
         type: STRING
-        description: Sequence number
-        sourceColumn: Sequence_Number
-        sourceTable: public.data_1
-      Pack_Uom:
+        description: Unique identifier of the credit report
+        sourceColumn: report_id
+        sourceTable: bureau_enquiry
+      report_date:
+        type: DATETIME
+        description: Date when the credit report was generated
+        sourceColumn: report_date
+        sourceTable: bureau_enquiry
+      bureau_score:
         type: STRING
-        description: Packing unit of measurement
-        sourceColumn: Pack_Uom
-        sourceTable: public.data_1
-      Min_Level:
+        description: Score provided by the credit bureau
+        sourceColumn: bureau_score
+        sourceTable: bureau_enquiry
+      total_accounts_reported:
         type: STRING
-        description: Minimum stock level
-        sourceColumn: Min_Level
-        sourceTable: public.data_1
-      Max_Level:
+        description: Total decimal(35,10) of accounts reported by bureau
+        sourceColumn: total_accounts_reported
+        sourceTable: bureau_enquiry
+      total_enquiries_12m:
         type: STRING
-        description: Maximum stock level
-        sourceColumn: Max_Level
-        sourceTable: public.data_1
-      Record_Level:
+        description: Total enquiries made in last 12 months
+        sourceColumn: total_enquiries_12m
+        sourceTable: bureau_enquiry
+      max_dpd_24m:
         type: STRING
-        description: Record level parameter
-        sourceColumn: Record_Level
-        sourceTable: public.data_1
-      Categories:
+        description: Maximum days past due in last 24 months
+        sourceColumn: max_dpd_24m
+        sourceTable: bureau_enquiry
+      write_off_flag:
         type: STRING
-        description: Item categories
-        sourceColumn: Categories
-        sourceTable: public.data_1
-      Close_Date:
-        type: STRING
-        description: Close date of item
-        sourceColumn: Close_Date
-        sourceTable: public.data_1
-      Start_Date:
-        type: STRING
-        description: Start date of item
-        sourceColumn: Start_Date
-        sourceTable: public.data_1
-      Remarks:
-        type: STRING
-        description: Remarks or comments
-        sourceColumn: Remarks
-        sourceTable: public.data_1
-      Section:
-        type: STRING
-        description: Section classification
-        sourceColumn: Section
-        sourceTable: public.data_1
-      Division:
-        type: STRING
-        description: Division information
-        sourceColumn: Division
-        sourceTable: public.data_1
-      Department:
-        type: STRING
-        description: Department name
-        sourceColumn: Department
-        sourceTable: public.data_1
-      Status:
-        type: STRING
-        description: Status indicator
-        sourceColumn: Status
-        sourceTable: public.data_1
-      Data_View:
-        type: STRING
-        description: Data view detail
-        sourceColumn: Data_View
-        sourceTable: public.data_1
-      Breakdown_View:
-        type: STRING
-        description: Breakdown view parameter
-        sourceColumn: Breakdown_View
-        sourceTable: public.data_1
-      Sub_Group:
-        type: STRING
-        description: Sub group classification
-        sourceColumn: Sub_Group
-        sourceTable: public.data_1
-      Bom_View:
-        type: STRING
-        description: BOM view indicator
-        sourceColumn: Bom_View
-        sourceTable: public.data_1
-      Shop:
-        type: STRING
-        description: Shop or plant information
-        sourceColumn: Shop
-        sourceTable: public.data_1
-      Item_Description:
-        type: STRING
-        description: Description of the item
-        sourceColumn: Item_Description
-        sourceTable: public.data_1
-      Item_Type:
-        type: STRING
-        description: Type of item
-        sourceColumn: Item_Type
-        sourceTable: public.data_1
-      Primary_Item_Flag:
-        type: STRING
-        description: Flag indicating primary item
-        sourceColumn: Primary_Item_Flag
-        sourceTable: public.data_1
-      Root_Company_Code:
-        type: STRING
-        description: Root company code
-        sourceColumn: Root_Company_Code
-        sourceTable: public.data_1
-      Purchase_Unit:
-        type: STRING
-        description: Purchase unit of measurement
-        sourceColumn: Purchase_Unit
-        sourceTable: public.data_1
-      Item_Start_Date:
-        type: STRING
-        description: Item start date
-        sourceColumn: Item_Start_Date
-        sourceTable: public.data_1
-      Item_Close_Date:
-        type: STRING
-        description: Item close date
-        sourceColumn: Item_Close_Date
-        sourceTable: public.data_1
-      Modvat_Start_Date:
-        type: STRING
-        description: MODVAT applicability start date
-        sourceColumn: Modvat_Start_Date
-        sourceTable: public.data_1
-      Modvat_Close_Date:
-        type: STRING
-        description: MODVAT applicability close date
-        sourceColumn: Modvat_Close_Date
-        sourceTable: public.data_1
-      Excise_Form_Series_Flag:
-        type: STRING
-        description: Excise form series indicator
-        sourceColumn: Excise_Form_Series_Flag
-        sourceTable: public.data_1
-      Schedule_Flag:
-        type: STRING
-        description: Schedule flag
-        sourceColumn: Schedule_Flag
-        sourceTable: public.data_1
-      Item_Sub_Type:
-        type: STRING
-        description: Item sub-type
-        sourceColumn: Item_Sub_Type
-        sourceTable: public.data_1
-      Sub_Type:
-        type: STRING
-        description: Subtype classification
-        sourceColumn: Sub_Type
-        sourceTable: public.data_1
-      Item_Sub_Group:
-        type: STRING
-        description: Item sub-group
-        sourceColumn: Item_Sub_Group
-        sourceTable: public.data_1
-      Inner_Part_Flag:
-        type: STRING
-        description: Inner part indicator
-        sourceColumn: Inner_Part_Flag
-        sourceTable: public.data_1
-      Tool_Code:
-        type: STRING
-        description: Tool code
-        sourceColumn: Tool_Code
-        sourceTable: public.data_1
-      Shelf_Life:
-        type: STRING
-        description: Shelf life duration
-        sourceColumn: Shelf_Life
-        sourceTable: public.data_1
-      Colour_Sensitivity:
-        type: STRING
-        description: Color sensitivity factor
-        sourceColumn: Colour_Sensitivity
-        sourceTable: public.data_1
-      Season_Flag:
-        type: STRING
-        description: Seasonal flag
-        sourceColumn: Season_Flag
-        sourceTable: public.data_1
-      Item_Direct_Cons_Flag:
-        type: STRING
-        description: Direct consumption flag
-        sourceColumn: Item_Direct_Cons_Flag
-        sourceTable: public.data_1
-      Latest_Po_Date:
-        type: STRING
-        description: Latest purchase order date
-        sourceColumn: Latest_Po_Date
-        sourceTable: public.data_1
-      Creator:
-        type: STRING
-        description: Record creator
-        sourceColumn: Creator
-        sourceTable: public.data_1
-      Comp:
-        type: STRING
-        description: Company identifier
-        sourceColumn: Comp
-        sourceTable: public.data_1
-      Plant_Location:
-        type: STRING
-        description: Plant or facility location
-        sourceColumn: Plant_Location
-        sourceTable: public.data_1
-      Item_Category:
-        type: STRING
-        description: Category of item
-        sourceColumn: Item_Category
-        sourceTable: public.data_1
-      Etl_Inserted_Date:
-        type: STRING
-        description: ETL insertion timestamp
-        sourceColumn: Etl_Inserted_Date
-        sourceTable: public.data_1
-      Etl_Modified_Date:
-        type: STRING
-        description: ETL modification timestamp
-        sourceColumn: Etl_Modified_Date
-        sourceTable: public.data_1
-      Etl_Created_By:
-        type: STRING
-        description: ETL creator
-        sourceColumn: Etl_Created_By
-        sourceTable: public.data_1
-      Etl_Updated_By:
-        type: STRING
-        description: ETL updater
-        sourceColumn: Etl_Updated_By
-        sourceTable: public.data_1
+        description: Indicates if any write-off is reported
+        sourceColumn: write_off_flag
+        sourceTable: bureau_enquiry
   stateStoreType: loadDataIceberg
-  isProfilingEnabled: true
+  isProfilingEnabled: false
   updateStrategy: Overwrite
-  tableName: iceberg_meta.inventory
+  tableName: iceberg_meta.credit_risk_assesment
   warehousePath: s3a://dataverse/testbed_load/
   catalogName: postgres_catalog
   optional:
     persistDataFrame: false
     enableDataReconciliation: false
-    enforceSchema: true
+    enforceSchema: false
     enforceSchemaMethod: Warning
     catalogType: postgres
+    connection: S3 Connection
     loggingOptions:
       printSchema: true
       count: true
@@ -390,24 +182,17 @@ productState:
   refreshInterval: 30 5 * * *
 transformation:
   - isDynamic: true
-    alias: Spark_SQL_1
-    description: transforming inventory data
-    sequence: 5
+    alias: Transform
+    description: Transforming credit risk data
+    sequence: 3
     inputDataFrameList:
-      - inputDataFrame: Section_Department_Master_1
-        tempViewName: sectionDepartmentMaster
-      - inputDataFrame: Inventory_Status_1
-        tempViewName: inventoryStatus
-      - inputDataFrame: Item_Master_1
-        tempViewName: itemMaster
-      - inputDataFrame: Item_Stock_Limit_1
-        tempViewName: itemStockLimit
-    query: select * from sectionDepartmentMaster
+      - inputDataFrame: Credit_Score_1
+        tempViewName: CS
+      - inputDataFrame: Bureau_Enquiry_1
+        tempViewName: BE
+    query: select * from BE
     optional:
       persistDataFrame: false
-      loggingOptions:
-        printSchema: true
-        showData: true
     type: operationThroughSqlQuery
 controlPort:
   dataQualityRules: {}
