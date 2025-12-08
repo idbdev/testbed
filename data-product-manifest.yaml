@@ -1,7 +1,7 @@
 jobId: "1042"
 jobName: PM MQ - ADP
 jobType: Aggregated Data Product
-developerId: 7679c14a-8908-42a5-8656-2abecbfa4b49
+developerId: e3177aef-f9f9-4f45-b0a7-a46ea5466170
 domain: business
 alias: loading_into_iceberg
 discoveryPort:
@@ -35,7 +35,373 @@ productState:
   isDynamic: true
   alias: loading_into_iceberg
   retentionVersions: ""
-  logicalSchema: ""
+  logicalSchema:
+    properties:
+      Port:
+        type: STRING
+        description: Port information
+        sourceColumn: Port
+        sourceTable: public.data_1
+      Vech_Port:
+        type: STRING
+        description: Vehicle port information
+        sourceColumn: Vech_Port
+        sourceTable: public.data_1
+      Cont:
+        type: STRING
+        description: Container information
+        sourceColumn: Cont
+        sourceTable: public.data_1
+      Smodel_Code:
+        type: STRING
+        description: Model code
+        sourceColumn: Smodel_Code
+        sourceTable: public.data_1
+      Modl:
+        type: STRING
+        description: Model of the vehicle
+        sourceColumn: Modl
+        sourceTable: public.data_1
+      Spec:
+        type: STRING
+        description: Specifications of the vehicle
+        sourceColumn: Spec
+        sourceTable: public.data_1
+      Selection_Code:
+        type: STRING
+        description: Selection code for the vehicle
+        sourceColumn: Selection_Code
+        sourceTable: public.data_1
+      Vinn:
+        type: STRING
+        description: VIN number
+        sourceColumn: Vinn
+        sourceTable: public.data_1
+      Engi_Number:
+        type: STRING
+        description: Engine number
+        sourceColumn: Engi_Number
+        sourceTable: public.data_1
+      Status:
+        type: STRING
+        description: Status of the vehicle
+        sourceColumn: Status
+        sourceTable: public.data_1
+      Colo_Code:
+        type: STRING
+        description: Color code of the vehicle
+        sourceColumn: Colo_Code
+        sourceTable: public.data_1
+      Engi_Vehm_Key_Number:
+        type: STRING
+        description: Engine vehicle key number
+        sourceColumn: Engi_Vehm_Key_Number
+        sourceTable: public.data_1
+      Order_No:
+        type: STRING
+        description: Order number
+        sourceColumn: Order_No
+        sourceTable: public.data_1
+      Ctrl_No:
+        type: STRING
+        description: Control number
+        sourceColumn: Ctrl_No
+        sourceTable: public.data_1
+      Exar_Number:
+        type: STRING
+        description: Exar number
+        sourceColumn: Exar_Number
+        sourceTable: public.data_1
+      Invc_Date:
+        type: STRING
+        description: Invoice date
+        sourceColumn: Invc_Date
+        sourceTable: public.data_1
+      Are_No_Blank:
+        type: STRING
+        description: Are number blank status
+        sourceColumn: Are_No_Blank
+        sourceTable: public.data_1
+      Dealer:
+        type: STRING
+        description: Dealer information
+        sourceColumn: Dealer
+        sourceTable: public.data_1
+      Exin_Number:
+        type: STRING
+        description: Exin number
+        sourceColumn: Exin_Number
+        sourceTable: public.data_1
+      Mulinvdt:
+        type: STRING
+        description: Multi-invoice date
+        sourceColumn: Mulinvdt
+        sourceTable: public.data_1
+      Trip:
+        type: STRING
+        description: Trip information
+        sourceColumn: Trip
+        sourceTable: public.data_1
+      Regno:
+        type: STRING
+        description: Registration number
+        sourceColumn: Regno
+        sourceTable: public.data_1
+      Tptmode:
+        type: STRING
+        description: Transportation mode
+        sourceColumn: Tptmode
+        sourceTable: public.data_1
+      Tptcode:
+        type: STRING
+        description: Transportation code
+        sourceColumn: Tptcode
+        sourceTable: public.data_1
+      Transportation_Code:
+        type: STRING
+        description: Transportation code
+        sourceColumn: Transportation_Code
+        sourceTable: public.data_1
+      Transportation_Name:
+        type: STRING
+        description: Transportation name
+        sourceColumn: Transportation_Name
+        sourceTable: public.data_1
+      Recd_Date:
+        type: STRING
+        description: Received date
+        sourceColumn: Recd_Date
+        sourceTable: public.data_1
+      Soc:
+        type: STRING
+        description: SOC (State of Charge)
+        sourceColumn: Soc
+        sourceTable: public.data_1
+      Msil_Insp:
+        type: STRING
+        description: MSIL inspection information
+        sourceColumn: Msil_Insp
+        sourceTable: public.data_1
+      Batt_Reading:
+        type: STRING
+        description: Battery reading
+        sourceColumn: Batt_Reading
+        sourceTable: public.data_1
+      Km_Reading:
+        type: STRING
+        description: Kilometer reading
+        sourceColumn: Km_Reading
+        sourceTable: public.data_1
+      Invc_Prefix:
+        type: STRING
+        description: Invoice prefix
+        sourceColumn: Invc_Prefix
+        sourceTable: public.data_1
+      Invc_Number:
+        type: STRING
+        description: Invoice number
+        sourceColumn: Invc_Number
+        sourceTable: public.data_1
+      Export_Challan_No:
+        type: STRING
+        description: Export challan number
+        sourceColumn: Export_Challan_No
+        sourceTable: public.data_1
+      Tveh_Cinv_Invoice_Number:
+        type: STRING
+        description: Tveh CINV invoice number
+        sourceColumn: Tveh_Cinv_Invoice_Number
+        sourceTable: public.data_1
+      Tveh_Cinv_Invoice_Date:
+        type: STRING
+        description: Tveh CINV invoice date
+        sourceColumn: Tveh_Cinv_Invoice_Date
+        sourceTable: public.data_1
+      Cust_Ord_Mnth:
+        type: STRING
+        description: Customer order month
+        sourceColumn: Cust_Ord_Mnth
+        sourceTable: public.data_1
+      Rw_Num:
+        type: STRING
+        description: Row number
+        sourceColumn: Rw_Num
+        sourceTable: public.data_1
+      Epol_Name:
+        type: STRING
+        description: Epol name
+        sourceColumn: Epol_Name
+        sourceTable: public.data_1
+      Ship_Date:
+        type: STRING
+        description: Shipping date
+        sourceColumn: Ship_Date
+        sourceTable: public.data_1
+      Esvc_Code:
+        type: STRING
+        description: Esvc code
+        sourceColumn: Esvc_Code
+        sourceTable: public.data_1
+      Einv_No:
+        type: STRING
+        description: E-invoice number
+        sourceColumn: Einv_No
+        sourceTable: public.data_1
+      Engi_Chassis_Prefix:
+        type: STRING
+        description: Engine chassis prefix
+        sourceColumn: Engi_Chassis_Prefix
+        sourceTable: public.data_1
+      Chassis_Number:
+        type: STRING
+        description: Chassis number
+        sourceColumn: Chassis_Number
+        sourceTable: public.data_1
+      Ship_Bill_No:
+        type: STRING
+        description: Shipping bill number
+        sourceColumn: Ship_Bill_No
+        sourceTable: public.data_1
+      Wax_Ok_Date:
+        type: STRING
+        description: Wax OK date
+        sourceColumn: Wax_Ok_Date
+        sourceTable: public.data_1
+      Shift_Name:
+        type: STRING
+        description: Shift name
+        sourceColumn: Shift_Name
+        sourceTable: public.data_1
+      Fcok_Date:
+        type: STRING
+        description: F-Cok date
+        sourceColumn: Fcok_Date
+        sourceTable: public.data_1
+      Vehm_Sales_Model_Code:
+        type: STRING
+        description: Vehicle sales model code
+        sourceColumn: Vehm_Sales_Model_Code
+        sourceTable: public.data_1
+      Action:
+        type: STRING
+        description: Action performed
+        sourceColumn: Action
+        sourceTable: public.data_1
+      Stage:
+        type: STRING
+        description: Stage information
+        sourceColumn: Stage
+        sourceTable: public.data_1
+      Repair_Type:
+        type: STRING
+        description: Repair type
+        sourceColumn: Repair_Type
+        sourceTable: public.data_1
+      Defect_Cd:
+        type: STRING
+        description: Defect code
+        sourceColumn: Defect_Cd
+        sourceTable: public.data_1
+      Jdfm_Desc:
+        type: STRING
+        description: Description of the defect
+        sourceColumn: Jdfm_Desc
+        sourceTable: public.data_1
+      Soc_Damage:
+        type: STRING
+        description: SOC damage status
+        sourceColumn: Soc_Damage
+        sourceTable: public.data_1
+      Time_In:
+        type: STRING
+        description: Time in
+        sourceColumn: Time_In
+        sourceTable: public.data_1
+      Time_Out:
+        type: STRING
+        description: Time out
+        sourceColumn: Time_Out
+        sourceTable: public.data_1
+      Shift_Name_Damage:
+        type: STRING
+        description: Shift name for damage
+        sourceColumn: Shift_Name_Damage
+        sourceTable: public.data_1
+      Repairby:
+        type: STRING
+        description: Repair done by
+        sourceColumn: Repairby
+        sourceTable: public.data_1
+      Responsibility:
+        type: STRING
+        description: Responsible party for the repair
+        sourceColumn: Responsibility
+        sourceTable: public.data_1
+      Defect_Type:
+        type: STRING
+        description: Type of defect
+        sourceColumn: Defect_Type
+        sourceTable: public.data_1
+      Date_In:
+        type: STRING
+        description: Date in
+        sourceColumn: Date_In
+        sourceTable: public.data_1
+      Date_Out:
+        type: STRING
+        description: Date out
+        sourceColumn: Date_Out
+        sourceTable: public.data_1
+      Cod:
+        type: STRING
+        description: COD information
+        sourceColumn: Cod
+        sourceTable: public.data_1
+      Chassis:
+        type: STRING
+        description: Chassis information
+        sourceColumn: Chassis
+        sourceTable: public.data_1
+      Dcat_Code:
+        type: STRING
+        description: Dcat code
+        sourceColumn: Dcat_Code
+        sourceTable: public.data_1
+      Reason_1:
+        type: STRING
+        description: Reason 1
+        sourceColumn: Reason_1
+        sourceTable: public.data_1
+      Reason_2:
+        type: STRING
+        description: Reason 2
+        sourceColumn: Reason_2
+        sourceTable: public.data_1
+      Park_Vin_Status:
+        type: STRING
+        description: Park VIN status
+        sourceColumn: Park_Vin_Status
+        sourceTable: public.data_1
+      Etl_Inserted_Date:
+        type: STRING
+        description: ETL inserted date
+        sourceColumn: Etl_Inserted_Date
+        sourceTable: public.data_1
+      Etl_Modified_Date:
+        type: STRING
+        description: ETL modified date
+        sourceColumn: Etl_Modified_Date
+        sourceTable: public.data_1
+      Etl_Created_By:
+        type: STRING
+        description: ETL created by
+        sourceColumn: Etl_Created_By
+        sourceTable: public.data_1
+      Etl_Updated_By:
+        type: STRING
+        description: ETL updated by
+        sourceColumn: Etl_Updated_By
+        sourceTable: public.data_1
   stateStoreType: loadDataIceberg
   isProfilingEnabled: false
   updateStrategy: Overwrite
@@ -45,7 +411,7 @@ productState:
   optional:
     persistDataFrame: false
     enableDataReconciliation: false
-    enforceSchema: false
+    enforceSchema: true
     enforceSchemaMethod: Warning
     catalogType: postgres
     connection: S3 Connection
