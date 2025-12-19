@@ -265,6 +265,7 @@ productState:
     enforceSchema: false
     enforceSchemaMethod: Warning
     catalogType: postgres
+    connection: Lupin Data Source Connectivity
     loggingOptions:
       printSchema: true
       count: true
