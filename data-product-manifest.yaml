@@ -98,7 +98,7 @@ productState:
       printSchema: true
       count: true
       showData: true
-  refreshInterval: 30 5 * * *
+  refreshInterval: None
 transformation:
   - isDynamic: true
     alias: Filtered_Rejects
