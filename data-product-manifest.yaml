@@ -109,7 +109,7 @@ productState:
     enforceSchema: false
     enforceSchemaMethod: Warning
     catalogType: postgres
-  refreshInterval: 30 5 * * *
+  refreshInterval: None
 transformation:
   - isDynamic: true
     alias: Base_Data
