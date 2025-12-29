@@ -1,413 +1,185 @@
-jobId: "990"
-jobName: Inventory
-jobType: Source Aligned Data Product
+jobId: "1055"
+jobName: Production Rejection Cost Analysis
+jobType: Aggregated Data Product
 developerId: e3177aef-f9f9-4f45-b0a7-a46ea5466170
-domain: inventory
-alias: loading_inventory_data_in_iceberg
+domain: supply_chain
+alias: Load_data_in_production
 discoveryPort:
-  name: Inventory
+  name: Production Rejection Cost Analysis
 inputPorts:
-  - alias: Item_Master_1
+  - alias: Shop_360_1
     isDynamic: true
-    path: s3a://dataverse/testbed/automobile/inventory/item_master.csv
+    dataProductUrn: urn:dv:dataproduct:a61f5afc-5f6d-45b9-b160-72c236492bdc
+    filter: ""
+    projection: ""
     optional:
       persistDataFrame: false
-      advanceOptions:
-        delimiter: ","
-      enableDataReconciliation: false
-      enforceSchema: false
-      connection: S3 Connection - Inventory
-      dataSetUrn: urn:dv:dataset:55dd345e-0184-41cf-9fd5-ccf9a4729950
-    type: inputDelimited
-  - alias: Inventory_Status_1
-    isDynamic: true
-    path: s3a://dataverse/testbed/automobile/inventory/inventory_status.csv
-    optional:
-      persistDataFrame: false
-      advanceOptions:
-        delimiter: ","
-      enableDataReconciliation: false
-      enforceSchema: false
-      connection: S3 Connection - Inventory
-      dataSetUrn: urn:dv:dataset:b5d7777d-5428-4eb3-9503-8796292711bd
-    type: inputDelimited
-  - alias: Item_Stock_Limit_1
-    isDynamic: true
-    path: s3a://dataverse/testbed/automobile/inventory/item_stock_limit.csv
-    optional:
-      persistDataFrame: false
-      advanceOptions:
-        delimiter: ","
-      enableDataReconciliation: false
-      enforceSchema: false
-      connection: S3 Connection - Inventory
-      dataSetUrn: urn:dv:dataset:1ab46557-ba63-4af0-a1d5-d7e899b100b3
-    type: inputDelimited
-  - alias: Section_Department_Master_1
-    isDynamic: true
-    path: s3a://dataverse/testbed/automobile/inventory/section_department_master.csv
-    optional:
-      persistDataFrame: false
-      advanceOptions:
-        delimiter: ","
-      enableDataReconciliation: false
-      enforceSchema: false
-      connection: S3 Connection - Inventory
-      dataSetUrn: urn:dv:dataset:f916ea98-2f81-4e91-be80-19418283e2d4
-    type: inputDelimited
+    type: dataproduct
 productState:
   isDynamic: true
-  alias: loading_inventory_data_in_iceberg
+  alias: Load_data_in_production
   retentionVersions: ""
   logicalSchema:
     properties:
-      Master_Flag:
+      UNITS:
         type: STRING
-        description: Master flag indicator
-        sourceColumn: Master_Flag
-        sourceTable: public.data_1
-      Difference_Mil:
+        description: Unit of measurement for the rejection quantity (e.g., kg, L).
+        sourceColumn: UNITS
+        sourceTable: Shop 360
+      EQP_ID:
         type: STRING
-        description: Difference MIL value
-        sourceColumn: Difference_Mil
-        sourceTable: public.data_1
-      Difference_Rol:
+        description: Unique identifier of the equipment where the rejection occurred.
+        sourceColumn: EQP_ID
+        sourceTable: Shop 360
+      SHOP_ID:
         type: STRING
-        description: Difference ROL value
-        sourceColumn: Difference_Rol
-        sourceTable: public.data_1
-      Item_Code:
+        description: Identifier of the shop or production unit where the rejection happened.
+        sourceColumn: SHOP_ID
+        sourceTable: Shop 360
+      EQP_NAME:
         type: STRING
-        description: Unique item code
-        sourceColumn: Item_Code
-        sourceTable: public.data_1
-      Unit:
+        description: Descriptive name of the equipment involved in the rejection.
+        sourceColumn: EQP_NAME
+        sourceTable: Shop 360
+      EQP_TYPE:
         type: STRING
-        description: Unit of measurement
-        sourceColumn: Unit
-        sourceTable: public.data_1
-      Location:
+        description: Type/category of the equipment (e.g., Mixer, Filler).
+        sourceColumn: EQP_TYPE
+        sourceTable: Shop 360
+      SHOP_NAME:
         type: STRING
-        description: Location information
-        sourceColumn: Location
-        sourceTable: public.data_1
-      Stock:
+        description: Name of the shop or production unit.
+        sourceColumn: SHOP_NAME
+        sourceTable: Shop 360
+      REJECT_DATE:
         type: STRING
-        description: Stock quantity
-        sourceColumn: Stock
-        sourceTable: public.data_1
-      Company_Code:
+        description: Material or Product rejection date
+        sourceColumn: REJECT_DATE
+        sourceTable: Shop 360
+      PRODUCT_CODE:
         type: STRING
-        description: Company code
-        sourceColumn: Company_Code
-        sourceTable: public.data_1
-      Rate:
+        description: Code representing the product that was being processed or rejected.
+        sourceColumn: PRODUCT_CODE
+        sourceTable: Shop 360
+      REJECT_REASON:
         type: STRING
-        description: Applicable rate
-        sourceColumn: Rate
-        sourceTable: public.data_1
-      Amount:
+        description: Reason for product or material rejection (e.g., out-of-spec, damage).
+        sourceColumn: REJECT_REASON
+        sourceTable: Shop 360
+      REJECT_QUANTITY:
         type: STRING
-        description: Amount value
-        sourceColumn: Amount
-        sourceTable: public.data_1
-      Mil:
+        description: Quantity of rejected material or product.
+        sourceColumn: REJECT_QUANTITY
+        sourceTable: Shop 360
+      REJECTION_CATEGORY:
         type: STRING
-        description: MIL value
-        sourceColumn: Mil
-        sourceTable: public.data_1
-      Rol:
+        description: Categorization of the rejection (e.g., Quality, Mechanical Failure).
+        sourceColumn: REJECTION_CATEGORY
+        sourceTable: Shop 360
+      AVG_REJECT_QUANTITY:
         type: STRING
-        description: ROL value
-        sourceColumn: Rol
-        sourceTable: public.data_1
-      Section2:
+        description: Average count of rejected material or product
+        sourceColumn: AVG_REJECT_QUANTITY
+        sourceTable: Shop 360
+      IMPROVEMENT_PRIORITY:
         type: STRING
-        description: Section 2 category
-        sourceColumn: Section2
-        sourceTable: public.data_1
-      Transfer_Uom:
+        description: Priority classification for improvement based on rejection quantity
+          vs. historical average (e.g., High Priority, Normal).
+        sourceColumn: IMPROVEMENT_PRIORITY
+        sourceTable: Shop 360
+      ESTIMATED_REJECT_COST:
         type: STRING
-        description: Transfer unit of measurement
-        sourceColumn: Transfer_Uom
-        sourceTable: public.data_1
-      Conversion_Factor:
+        description: Estimated cost associated with the rejected quantity.
+        sourceColumn: ESTIMATED_REJECT_COST
+        sourceTable: Shop 360
+      RECENT_REJECTION_COUNT:
         type: STRING
-        description: Conversion factor value
-        sourceColumn: Conversion_Factor
-        sourceTable: public.data_1
-      Sequence_Number:
-        type: STRING
-        description: Sequence number
-        sourceColumn: Sequence_Number
-        sourceTable: public.data_1
-      Pack_Uom:
-        type: STRING
-        description: Packing unit of measurement
-        sourceColumn: Pack_Uom
-        sourceTable: public.data_1
-      Min_Level:
-        type: STRING
-        description: Minimum stock level
-        sourceColumn: Min_Level
-        sourceTable: public.data_1
-      Max_Level:
-        type: STRING
-        description: Maximum stock level
-        sourceColumn: Max_Level
-        sourceTable: public.data_1
-      Record_Level:
-        type: STRING
-        description: Record level parameter
-        sourceColumn: Record_Level
-        sourceTable: public.data_1
-      Categories:
-        type: STRING
-        description: Item categories
-        sourceColumn: Categories
-        sourceTable: public.data_1
-      Close_Date:
-        type: STRING
-        description: Close date of item
-        sourceColumn: Close_Date
-        sourceTable: public.data_1
-      Start_Date:
-        type: STRING
-        description: Start date of item
-        sourceColumn: Start_Date
-        sourceTable: public.data_1
-      Remarks:
-        type: STRING
-        description: Remarks or comments
-        sourceColumn: Remarks
-        sourceTable: public.data_1
-      Section:
-        type: STRING
-        description: Section classification
-        sourceColumn: Section
-        sourceTable: public.data_1
-      Division:
-        type: STRING
-        description: Division information
-        sourceColumn: Division
-        sourceTable: public.data_1
-      Department:
-        type: STRING
-        description: Department name
-        sourceColumn: Department
-        sourceTable: public.data_1
-      Status:
-        type: STRING
-        description: Status indicator
-        sourceColumn: Status
-        sourceTable: public.data_1
-      Data_View:
-        type: STRING
-        description: Data view detail
-        sourceColumn: Data_View
-        sourceTable: public.data_1
-      Breakdown_View:
-        type: STRING
-        description: Breakdown view parameter
-        sourceColumn: Breakdown_View
-        sourceTable: public.data_1
-      Sub_Group:
-        type: STRING
-        description: Sub group classification
-        sourceColumn: Sub_Group
-        sourceTable: public.data_1
-      Bom_View:
-        type: STRING
-        description: BOM view indicator
-        sourceColumn: Bom_View
-        sourceTable: public.data_1
-      Shop:
-        type: STRING
-        description: Shop or plant information
-        sourceColumn: Shop
-        sourceTable: public.data_1
-      Item_Description:
-        type: STRING
-        description: Description of the item
-        sourceColumn: Item_Description
-        sourceTable: public.data_1
-      Item_Type:
-        type: STRING
-        description: Type of item
-        sourceColumn: Item_Type
-        sourceTable: public.data_1
-      Primary_Item_Flag:
-        type: STRING
-        description: Flag indicating primary item
-        sourceColumn: Primary_Item_Flag
-        sourceTable: public.data_1
-      Root_Company_Code:
-        type: STRING
-        description: Root company code
-        sourceColumn: Root_Company_Code
-        sourceTable: public.data_1
-      Purchase_Unit:
-        type: STRING
-        description: Purchase unit of measurement
-        sourceColumn: Purchase_Unit
-        sourceTable: public.data_1
-      Item_Start_Date:
-        type: STRING
-        description: Item start date
-        sourceColumn: Item_Start_Date
-        sourceTable: public.data_1
-      Item_Close_Date:
-        type: STRING
-        description: Item close date
-        sourceColumn: Item_Close_Date
-        sourceTable: public.data_1
-      Modvat_Start_Date:
-        type: STRING
-        description: MODVAT applicability start date
-        sourceColumn: Modvat_Start_Date
-        sourceTable: public.data_1
-      Modvat_Close_Date:
-        type: STRING
-        description: MODVAT applicability close date
-        sourceColumn: Modvat_Close_Date
-        sourceTable: public.data_1
-      Excise_Form_Series_Flag:
-        type: STRING
-        description: Excise form series indicator
-        sourceColumn: Excise_Form_Series_Flag
-        sourceTable: public.data_1
-      Schedule_Flag:
-        type: STRING
-        description: Schedule flag
-        sourceColumn: Schedule_Flag
-        sourceTable: public.data_1
-      Item_Sub_Type:
-        type: STRING
-        description: Item sub-type
-        sourceColumn: Item_Sub_Type
-        sourceTable: public.data_1
-      Sub_Type:
-        type: STRING
-        description: Subtype classification
-        sourceColumn: Sub_Type
-        sourceTable: public.data_1
-      Item_Sub_Group:
-        type: STRING
-        description: Item sub-group
-        sourceColumn: Item_Sub_Group
-        sourceTable: public.data_1
-      Inner_Part_Flag:
-        type: STRING
-        description: Inner part indicator
-        sourceColumn: Inner_Part_Flag
-        sourceTable: public.data_1
-      Tool_Code:
-        type: STRING
-        description: Tool code
-        sourceColumn: Tool_Code
-        sourceTable: public.data_1
-      Shelf_Life:
-        type: STRING
-        description: Shelf life duration
-        sourceColumn: Shelf_Life
-        sourceTable: public.data_1
-      Colour_Sensitivity:
-        type: STRING
-        description: Color sensitivity factor
-        sourceColumn: Colour_Sensitivity
-        sourceTable: public.data_1
-      Season_Flag:
-        type: STRING
-        description: Seasonal flag
-        sourceColumn: Season_Flag
-        sourceTable: public.data_1
-      Item_Direct_Cons_Flag:
-        type: STRING
-        description: Direct consumption flag
-        sourceColumn: Item_Direct_Cons_Flag
-        sourceTable: public.data_1
-      Latest_Po_Date:
-        type: STRING
-        description: Latest purchase order date
-        sourceColumn: Latest_Po_Date
-        sourceTable: public.data_1
-      Creator:
-        type: STRING
-        description: Record creator
-        sourceColumn: Creator
-        sourceTable: public.data_1
-      Comp:
-        type: STRING
-        description: Company identifier
-        sourceColumn: Comp
-        sourceTable: public.data_1
-      Plant_Location:
-        type: STRING
-        description: Plant or facility location
-        sourceColumn: Plant_Location
-        sourceTable: public.data_1
-      Item_Category:
-        type: STRING
-        description: Category of item
-        sourceColumn: Item_Category
-        sourceTable: public.data_1
-      Etl_Inserted_Date:
-        type: STRING
-        description: ETL insertion timestamp
-        sourceColumn: Etl_Inserted_Date
-        sourceTable: public.data_1
-      Etl_Modified_Date:
-        type: STRING
-        description: ETL modification timestamp
-        sourceColumn: Etl_Modified_Date
-        sourceTable: public.data_1
-      Etl_Created_By:
-        type: STRING
-        description: ETL creator
-        sourceColumn: Etl_Created_By
-        sourceTable: public.data_1
-      Etl_Updated_By:
-        type: STRING
-        description: ETL updater
-        sourceColumn: Etl_Updated_By
-        sourceTable: public.data_1
+        description: Number of rejections recorded recently for the same equipment.
+        sourceColumn: RECENT_REJECTION_COUNT
+        sourceTable: Shop 360
   stateStoreType: loadDataIceberg
   isProfilingEnabled: true
   updateStrategy: Overwrite
-  tableName: iceberg_meta.inventory
-  warehousePath: s3a://dataverse/testbed_load/
+  tableName: iceberg_meta.production_rejection_cost_analysis
+  warehousePath: s3a://bp-spark-sql-library-test-acc/
   catalogName: postgres_catalog
   optional:
     persistDataFrame: false
     enableDataReconciliation: false
-    enforceSchema: true
+    enforceSchema: false
     enforceSchemaMethod: Warning
     catalogType: postgres
-    loggingOptions:
-      printSchema: true
-      count: true
-      showData: true
   refreshInterval: 30 5 * * *
 transformation:
   - isDynamic: true
-    alias: Spark_SQL_1
-    description: transforming inventory data
+    alias: Base_Data
+    description: base_data
+    sequence: 2
+    inputDataFrameList:
+      - inputDataFrame: Shop_360_1
+        tempViewName: Shop360
+    query: SELECT EQP_ID ,EQP_NAME ,EQP_TYPE ,SHOP_ID ,SHOP_NAME ,PRODUCT_CODE
+      ,REJECT_REASON ,REJECT_QUANTITY ,UNITS ,REJECT_DATE ,CASE WHEN UNITS =
+      'KG' THEN REJECT_QUANTITY * 250 WHEN UNITS = 'L' THEN REJECT_QUANTITY *
+      175 ELSE REJECT_QUANTITY * 50 END AS ESTIMATED_REJECT_COST ,CASE WHEN
+      REJECT_REASON LIKE '%EQUIPMENT%' THEN 'Equipment-Related' WHEN
+      REJECT_REASON LIKE '%PROCESS%' THEN 'Process-Related' WHEN REJECT_REASON
+      LIKE '%MATERIAL%' THEN 'Material-Related' ELSE 'Other' END AS
+      REJECTION_CATEGORY FROM Shop360 WHERE REJECT_DATE >= DATE_SUB(CURRENT_DATE
+      (), 180)
+    optional:
+      persistDataFrame: false
+    type: operationThroughSqlQuery
+  - isDynamic: true
+    alias: Recent_Counts
+    description: recent_counts
+    sequence: 3
+    inputDataFrameList:
+      - inputDataFrame: Shop_360_1
+        tempViewName: Shop360
+    query: SELECT EQP_ID ,REJECT_DATE ,COUNT(*) AS RECENT_REJECTION_COUNT FROM
+      Shop360 WHERE REJECT_DATE >= DATE_SUB(CURRENT_DATE (), 180) GROUP BY
+      EQP_ID ,REJECT_DATE
+    optional:
+      persistDataFrame: false
+    type: operationThroughSqlQuery
+  - isDynamic: true
+    alias: Average_Rejects
+    description: avg_rejects
+    sequence: 4
+    inputDataFrameList:
+      - inputDataFrame: Shop_360_1
+        tempViewName: Shop360
+    query: SELECT REJECT_REASON ,AVG(REJECT_QUANTITY) AS AVG_REJECT_QUANTITY FROM
+      Shop360 WHERE REJECT_DATE >= DATE_SUB(CURRENT_DATE (), 180) GROUP BY
+      REJECT_REASON
+    optional:
+      persistDataFrame: false
+    type: operationThroughSqlQuery
+  - isDynamic: true
+    alias: Production_Rejection_Logic
+    description: Production Rejection Logic
     sequence: 5
     inputDataFrameList:
-      - inputDataFrame: Section_Department_Master_1
-        tempViewName: sectionDepartmentMaster
-      - inputDataFrame: Inventory_Status_1
-        tempViewName: inventoryStatus
-      - inputDataFrame: Item_Master_1
-        tempViewName: itemMaster
-      - inputDataFrame: Item_Stock_Limit_1
-        tempViewName: itemStockLimit
-    query: select * from sectionDepartmentMaster
+      - inputDataFrame: Base_Data
+        tempViewName: base_data
+      - inputDataFrame: Recent_Counts
+        tempViewName: recent_counts
+      - inputDataFrame: Average_Rejects
+        tempViewName: avg_rejects
+    query: SELECT DISTINCT b.EQP_ID ,b.EQP_NAME ,b.EQP_TYPE ,b.SHOP_ID ,b.SHOP_NAME
+      ,b.PRODUCT_CODE ,b.REJECT_REASON ,b.REJECT_QUANTITY ,b.UNITS
+      ,b.ESTIMATED_REJECT_COST ,b.REJECTION_CATEGORY
+      ,COALESCE(rc.RECENT_REJECTION_COUNT, 0) AS RECENT_REJECTION_COUNT ,CASE
+      WHEN b.REJECT_QUANTITY > COALESCE(ar.AVG_REJECT_QUANTITY, 0) THEN 'High
+      Priority' ELSE 'Normal' END AS IMPROVEMENT_PRIORITY FROM base_data b LEFT
+      JOIN recent_counts rc ON b.EQP_ID = rc.EQP_ID AND b.REJECT_DATE =
+      rc.REJECT_DATE LEFT JOIN avg_rejects ar ON b.REJECT_REASON =
+      ar.REJECT_REASON
     optional:
       persistDataFrame: false
       loggingOptions:
         printSchema: true
-        showData: true
     type: operationThroughSqlQuery
 controlPort:
   dataQualityRules: {}
