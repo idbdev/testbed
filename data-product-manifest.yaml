@@ -126,7 +126,7 @@ transformation:
       REJECT_REASON LIKE '%PROCESS%' THEN 'Process-Related' WHEN REJECT_REASON
       LIKE '%MATERIAL%' THEN 'Material-Related' ELSE 'Other' END AS
       REJECTION_CATEGORY FROM Shop360 WHERE REJECT_DATE >= DATE_SUB(CURRENT_DATE
-      (), 180)
+      (), 600)
     optional:
       persistDataFrame: false
     type: operationThroughSqlQuery
@@ -138,7 +138,7 @@ transformation:
       - inputDataFrame: Shop_360_1
         tempViewName: Shop360
     query: SELECT EQP_ID ,REJECT_DATE ,COUNT(*) AS RECENT_REJECTION_COUNT FROM
-      Shop360 WHERE REJECT_DATE >= DATE_SUB(CURRENT_DATE (), 180) GROUP BY
+      Shop360 WHERE REJECT_DATE >= DATE_SUB(CURRENT_DATE (), 600) GROUP BY
       EQP_ID ,REJECT_DATE
     optional:
       persistDataFrame: false
@@ -151,7 +151,7 @@ transformation:
       - inputDataFrame: Shop_360_1
         tempViewName: Shop360
     query: SELECT REJECT_REASON ,AVG(REJECT_QUANTITY) AS AVG_REJECT_QUANTITY FROM
-      Shop360 WHERE REJECT_DATE >= DATE_SUB(CURRENT_DATE (), 180) GROUP BY
+      Shop360 WHERE REJECT_DATE >= DATE_SUB(CURRENT_DATE (), 600) GROUP BY
       REJECT_REASON
     optional:
       persistDataFrame: false
