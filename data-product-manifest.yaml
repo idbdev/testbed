@@ -107,7 +107,7 @@ transformation:
     inputDataFrameList:
       - inputDataFrame: Shop_360_1
         tempViewName: Shop360
-    query: SELECT * FROM Shop360 WHERE REJECT_DATE >= DATE_SUB(CURRENT_DATE(), 360)
+    query: SELECT * FROM Shop360 WHERE REJECT_DATE >= DATE_SUB(CURRENT_DATE(), 600)
     optional:
       persistDataFrame: false
     type: operationThroughSqlQuery
