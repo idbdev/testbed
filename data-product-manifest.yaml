@@ -133,10 +133,10 @@ controlPort:
     NullValueCheck:
       productState:
         checks:
-          - column: transaction_id
+          - column: TransactionId
         referenceAlias: loading_secondary_sales_data
     UniquenessCheck:
       productState:
         checks:
-          - column: transaction_id
+          - column: TransactionId
         referenceAlias: loading_secondary_sales_data
