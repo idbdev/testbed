@@ -1,380 +1,270 @@
-jobId: "990"
-jobName: Inventory
-jobType: Source Aligned Data Product
+jobId: "1052"
+jobName: Risk 360
+jobType: Aggregated Data Product
 developerId: e3177aef-f9f9-4f45-b0a7-a46ea5466170
-domain: inventory
-alias: loading_inventory_data_in_iceberg
+domain: financial_services
+alias: loading_Risk360_data_in_iceberg
 discoveryPort:
-  name: Inventory
+  name: Risk 360
 inputPorts:
-  - alias: Item_Master_1
+  - alias: Risk_360_KPI_1
     isDynamic: true
-    path: s3a://dataverse/testbed/automobile/inventory/item_master.csv
+    path: s3a://dataverse/testbed/banking/risk360.csv
     optional:
       persistDataFrame: false
       advanceOptions:
         delimiter: ","
       enableDataReconciliation: false
       enforceSchema: false
-      connection: S3 Connection - Inventory
-      dataSetUrn: urn:dv:dataset:55dd345e-0184-41cf-9fd5-ccf9a4729950
+      connection: S3 Connection - Financial Services
+      dataSetUrn: urn:dv:dataset:9526c63a-89c2-42dc-bb09-21bc2ee21537
     type: inputDelimited
-  - alias: Inventory_Status_1
+  - alias: Credit_Risk_Assesments_1
     isDynamic: true
-    path: s3a://dataverse/testbed/automobile/inventory/inventory_status.csv
+    dataProductUrn: urn:dv:dataproduct:58b05454-7da8-4beb-933e-747b7cb30c10
+    filter: ""
+    projection: ""
     optional:
       persistDataFrame: false
-      advanceOptions:
-        delimiter: ","
-      enableDataReconciliation: false
-      enforceSchema: false
-      connection: S3 Connection - Inventory
-      dataSetUrn: urn:dv:dataset:b5d7777d-5428-4eb3-9503-8796292711bd
-    type: inputDelimited
-  - alias: Item_Stock_Limit_1
+    type: dataproduct
+  - alias: Corporate_Loan_1
     isDynamic: true
-    path: s3a://dataverse/testbed/automobile/inventory/item_stock_limit.csv
+    dataProductUrn: urn:dv:dataproduct:cfce5299-af3e-4ab3-99bb-d6397cc6ca53
+    filter: ""
+    projection: ""
     optional:
       persistDataFrame: false
-      advanceOptions:
-        delimiter: ","
-      enableDataReconciliation: false
-      enforceSchema: false
-      connection: S3 Connection - Inventory
-      dataSetUrn: urn:dv:dataset:1ab46557-ba63-4af0-a1d5-d7e899b100b3
-    type: inputDelimited
-  - alias: Section_Department_Master_1
+    type: dataproduct
+  - alias: Secured_Loan_1
     isDynamic: true
-    path: s3a://dataverse/testbed/automobile/inventory/section_department_master.csv
+    dataProductUrn: urn:dv:dataproduct:40b3f92e-1b17-4ce6-abf9-b8a776b9b5d8
+    filter: ""
+    projection: ""
     optional:
       persistDataFrame: false
-      advanceOptions:
-        delimiter: ","
-      enableDataReconciliation: false
-      enforceSchema: false
-      connection: S3 Connection - Inventory
-      dataSetUrn: urn:dv:dataset:f916ea98-2f81-4e91-be80-19418283e2d4
-    type: inputDelimited
+    type: dataproduct
+  - alias: Transactions_Master_1
+    isDynamic: true
+    dataProductUrn: urn:dv:dataproduct:cac67fe9-017c-4c97-b1de-f70b586d142e
+    filter: ""
+    projection: ""
+    optional:
+      persistDataFrame: false
+    type: dataproduct
+  - alias: Unsecured_Loan_1
+    isDynamic: true
+    dataProductUrn: urn:dv:dataproduct:50129186-aa27-4fcb-9022-394cb313e571
+    filter: ""
+    projection: ""
+    optional:
+      persistDataFrame: false
+    type: dataproduct
 productState:
   isDynamic: true
-  alias: loading_inventory_data_in_iceberg
+  alias: loading_Risk360_data_in_iceberg
   retentionVersions: ""
   logicalSchema:
     properties:
-      Master_Flag:
+      risk360_id:
         type: STRING
-        description: Master flag indicator
-        sourceColumn: Master_Flag
-        sourceTable: public.data_1
-      Difference_Mil:
+        description: System-generated unique identifier for the Risk 360 record
+        sourceColumn: risk360_id
+        sourceTable: Calculated_Column
+      customer_id:
         type: STRING
-        description: Difference MIL value
-        sourceColumn: Difference_Mil
-        sourceTable: public.data_1
-      Difference_Rol:
+        description: Unique identifier of the customer across all SADPs
+        sourceColumn: customer_id
+        sourceTable: Transaction Master, Secured Loan, Unsecured Loan, Corporate Loan,
+          Credit Risk Assessment
+      loan_id:
         type: STRING
-        description: Difference ROL value
-        sourceColumn: Difference_Rol
-        sourceTable: public.data_1
-      Item_Code:
+        description: Unique identifier for the loan account
+        sourceColumn: loan_id
+        sourceTable: Secured Loan, Unsecured Loan, Corporate Loan
+      loan_type:
         type: STRING
-        description: Unique item code
-        sourceColumn: Item_Code
-        sourceTable: public.data_1
-      Unit:
+        description: "Type of loan: secured, unsecured, or corporate"
+        sourceColumn: loan_type
+        sourceTable: Secured Loan, Unsecured Loan, Corporate Loan
+      txn_id:
         type: STRING
-        description: Unit of measurement
-        sourceColumn: Unit
-        sourceTable: public.data_1
-      Location:
+        description: Unique transaction identifier
+        sourceColumn: txn_id
+        sourceTable: Transaction Master
+      txn_amount:
         type: STRING
-        description: Location information
-        sourceColumn: Location
-        sourceTable: public.data_1
-      Stock:
+        description: Monetary value of the transaction
+        sourceColumn: amount
+        sourceTable: Transaction Master
+      txn_currency:
         type: STRING
-        description: Stock quantity
-        sourceColumn: Stock
-        sourceTable: public.data_1
-      Company_Code:
+        description: Currency code for the transaction
+        sourceColumn: currency
+        sourceTable: Transaction Master
+      txn_timestamp:
         type: STRING
-        description: Company code
-        sourceColumn: Company_Code
-        sourceTable: public.data_1
-      Rate:
+        description: Timestamp when the transaction occurred
+        sourceColumn: timestamp
+        sourceTable: Transaction Master
+      txn_channel:
         type: STRING
-        description: Applicable rate
-        sourceColumn: Rate
-        sourceTable: public.data_1
-      Amount:
+        description: Channel through which the transaction was executed
+        sourceColumn: channel
+        sourceTable: Transaction Master
+      txn_status:
         type: STRING
-        description: Amount value
-        sourceColumn: Amount
-        sourceTable: public.data_1
-      Mil:
+        description: Status of the transaction
+        sourceColumn: status
+        sourceTable: Transaction Master
+      secured_principal_amount:
         type: STRING
-        description: MIL value
-        sourceColumn: Mil
-        sourceTable: public.data_1
-      Rol:
+        description: Principal amount sanctioned for secured loan
+        sourceColumn: principal_amount
+        sourceTable: Secured Loan
+      secured_interest_rate:
         type: STRING
-        description: ROL value
-        sourceColumn: Rol
-        sourceTable: public.data_1
-      Section2:
+        description: Interest rate applicable to the secured loan
+        sourceColumn: interest_rate
+        sourceTable: Secured Loan
+      secured_start_date:
         type: STRING
-        description: Section 2 category
-        sourceColumn: Section2
-        sourceTable: public.data_1
-      Transfer_Uom:
+        description: Loan start date for secured loan
+        sourceColumn: start_date
+        sourceTable: Secured Loan
+      secured_maturity_date:
         type: STRING
-        description: Transfer unit of measurement
-        sourceColumn: Transfer_Uom
-        sourceTable: public.data_1
-      Conversion_Factor:
+        description: Maturity date of the secured loan
+        sourceColumn: maturity_date
+        sourceTable: Secured Loan
+      unsecured_principal_amount:
         type: STRING
-        description: Conversion factor value
-        sourceColumn: Conversion_Factor
-        sourceTable: public.data_1
-      Sequence_Number:
+        description: Principal amount for unsecured loan
+        sourceColumn: principal_amount
+        sourceTable: Unsecured Loan
+      unsecured_interest_rate:
         type: STRING
-        description: Sequence number
-        sourceColumn: Sequence_Number
-        sourceTable: public.data_1
-      Pack_Uom:
+        description: Interest rate for unsecured loan
+        sourceColumn: interest_rate
+        sourceTable: Unsecured Loan
+      unsecured_start_date:
         type: STRING
-        description: Packing unit of measurement
-        sourceColumn: Pack_Uom
-        sourceTable: public.data_1
-      Min_Level:
+        description: Start date for unsecured loan
+        sourceColumn: start_date
+        sourceTable: Unsecured Loan
+      unsecured_maturity_date:
         type: STRING
-        description: Minimum stock level
-        sourceColumn: Min_Level
-        sourceTable: public.data_1
-      Max_Level:
+        description: Maturity date for unsecured loan
+        sourceColumn: maturity_date
+        sourceTable: Unsecured Loan
+      credit_score_id:
         type: STRING
-        description: Maximum stock level
-        sourceColumn: Max_Level
-        sourceTable: public.data_1
-      Record_Level:
+        description: Unique key of the credit score record
+        sourceColumn: score_id
+        sourceTable: Credit Risk Assessment
+      credit_score:
         type: STRING
-        description: Record level parameter
-        sourceColumn: Record_Level
-        sourceTable: public.data_1
-      Categories:
+        description: Customer's credit bureau score
+        sourceColumn: bureau_score
+        sourceTable: Credit Risk Assessment
+      score_value:
         type: STRING
-        description: Item categories
-        sourceColumn: Categories
-        sourceTable: public.data_1
-      Close_Date:
+        description: Risk model output score
+        sourceColumn: score_value
+        sourceTable: Credit Risk Assessment
+      score_range_min:
         type: STRING
-        description: Close date of item
-        sourceColumn: Close_Date
-        sourceTable: public.data_1
-      Start_Date:
+        description: Minimum possible score range
+        sourceColumn: score_range_min
+        sourceTable: Credit Risk Assessment
+      score_range_max:
         type: STRING
-        description: Start date of item
-        sourceColumn: Start_Date
-        sourceTable: public.data_1
-      Remarks:
+        description: Maximum possible score range
+        sourceColumn: score_range_max
+        sourceTable: Credit Risk Assessment
+      score_model:
         type: STRING
-        description: Remarks or comments
-        sourceColumn: Remarks
-        sourceTable: public.data_1
-      Section:
+        description: Name of risk scoring model used
+        sourceColumn: scoring_model_name
+        sourceTable: Credit Risk Assessment
+      score_model_version:
         type: STRING
-        description: Section classification
-        sourceColumn: Section
-        sourceTable: public.data_1
-      Division:
+        description: Version of scoring model
+        sourceColumn: model_version
+        sourceTable: Credit Risk Assessment
+      score_date:
         type: STRING
-        description: Division information
-        sourceColumn: Division
-        sourceTable: public.data_1
-      Department:
+        description: Date when credit score was generated
+        sourceColumn: score_date
+        sourceTable: Credit Risk Assessment
+      score_valid_till:
         type: STRING
-        description: Department name
-        sourceColumn: Department
-        sourceTable: public.data_1
-      Status:
+        description: Validity end date of credit score
+        sourceColumn: score_valid_till
+        sourceTable: Credit Risk Assessment
+      enquiry_id:
         type: STRING
-        description: Status indicator
-        sourceColumn: Status
-        sourceTable: public.data_1
-      Data_View:
+        description: Unique identifier for bureau enquiry
+        sourceColumn: enquiry_id
+        sourceTable: Credit Risk Assessment
+      bureau_name:
         type: STRING
-        description: Data view detail
-        sourceColumn: Data_View
-        sourceTable: public.data_1
-      Breakdown_View:
+        description: Credit bureau that provided the credit report
+        sourceColumn: bureau_name
+        sourceTable: Credit Risk Assessment
+      enquiry_type:
         type: STRING
-        description: Breakdown view parameter
-        sourceColumn: Breakdown_View
-        sourceTable: public.data_1
-      Sub_Group:
+        description: "Type of bureau enquiry: hard or soft"
+        sourceColumn: enquiry_type
+        sourceTable: Credit Risk Assessment
+      enquiry_result:
         type: STRING
-        description: Sub group classification
-        sourceColumn: Sub_Group
-        sourceTable: public.data_1
-      Bom_View:
+        description: Outcome of bureau enquiry
+        sourceColumn: enquiry_result
+        sourceTable: Credit Risk Assessment
+      dpd:
         type: STRING
-        description: BOM view indicator
-        sourceColumn: Bom_View
-        sourceTable: public.data_1
-      Shop:
+        description: Days past due for the loan
+        sourceColumn: dpd
+        sourceTable: Secured Loan, Unsecured Loan, Corporate Loan
+      bucket:
         type: STRING
-        description: Shop or plant information
-        sourceColumn: Shop
-        sourceTable: public.data_1
-      Item_Description:
+        description: Delinquency bucket for loan
+        sourceColumn: bucket
+        sourceTable: Secured Loan, Unsecured Loan, Corporate Loan
+      write_off_flag:
         type: STRING
-        description: Description of the item
-        sourceColumn: Item_Description
-        sourceTable: public.data_1
-      Item_Type:
+        description: Indicates whether the loan is written off
+        sourceColumn: write_off_flag
+        sourceTable: Credit Risk Assessment
+      npl_flag:
         type: STRING
-        description: Type of item
-        sourceColumn: Item_Type
-        sourceTable: public.data_1
-      Primary_Item_Flag:
+        description: Flag indicating whether loan is classified as non-performing
+        sourceColumn: npl_flag
+        sourceTable: Calculated_Column
+      risk_weight:
         type: STRING
-        description: Flag indicating primary item
-        sourceColumn: Primary_Item_Flag
-        sourceTable: public.data_1
-      Root_Company_Code:
+        description: Risk weight assigned based on regulatory norms
+        sourceColumn: risk_weight
+        sourceTable: Calculated_Column
+      raroc:
         type: STRING
-        description: Root company code
-        sourceColumn: Root_Company_Code
-        sourceTable: public.data_1
-      Purchase_Unit:
+        description: Risk-adjusted return on capital
+        sourceColumn: raroc
+        sourceTable: Calculated_Column
+      cost_of_risk:
         type: STRING
-        description: Purchase unit of measurement
-        sourceColumn: Purchase_Unit
-        sourceTable: public.data_1
-      Item_Start_Date:
+        description: Cost of risk based on provisions and write-offs
+        sourceColumn: cost_of_risk
+        sourceTable: Calculated_Column
+      capital_adeq_ratio:
         type: STRING
-        description: Item start date
-        sourceColumn: Item_Start_Date
-        sourceTable: public.data_1
-      Item_Close_Date:
-        type: STRING
-        description: Item close date
-        sourceColumn: Item_Close_Date
-        sourceTable: public.data_1
-      Modvat_Start_Date:
-        type: STRING
-        description: MODVAT applicability start date
-        sourceColumn: Modvat_Start_Date
-        sourceTable: public.data_1
-      Modvat_Close_Date:
-        type: STRING
-        description: MODVAT applicability close date
-        sourceColumn: Modvat_Close_Date
-        sourceTable: public.data_1
-      Excise_Form_Series_Flag:
-        type: STRING
-        description: Excise form series indicator
-        sourceColumn: Excise_Form_Series_Flag
-        sourceTable: public.data_1
-      Schedule_Flag:
-        type: STRING
-        description: Schedule flag
-        sourceColumn: Schedule_Flag
-        sourceTable: public.data_1
-      Item_Sub_Type:
-        type: STRING
-        description: Item sub-type
-        sourceColumn: Item_Sub_Type
-        sourceTable: public.data_1
-      Sub_Type:
-        type: STRING
-        description: Subtype classification
-        sourceColumn: Sub_Type
-        sourceTable: public.data_1
-      Item_Sub_Group:
-        type: STRING
-        description: Item sub-group
-        sourceColumn: Item_Sub_Group
-        sourceTable: public.data_1
-      Inner_Part_Flag:
-        type: STRING
-        description: Inner part indicator
-        sourceColumn: Inner_Part_Flag
-        sourceTable: public.data_1
-      Tool_Code:
-        type: STRING
-        description: Tool code
-        sourceColumn: Tool_Code
-        sourceTable: public.data_1
-      Shelf_Life:
-        type: STRING
-        description: Shelf life duration
-        sourceColumn: Shelf_Life
-        sourceTable: public.data_1
-      Colour_Sensitivity:
-        type: STRING
-        description: Color sensitivity factor
-        sourceColumn: Colour_Sensitivity
-        sourceTable: public.data_1
-      Season_Flag:
-        type: STRING
-        description: Seasonal flag
-        sourceColumn: Season_Flag
-        sourceTable: public.data_1
-      Item_Direct_Cons_Flag:
-        type: STRING
-        description: Direct consumption flag
-        sourceColumn: Item_Direct_Cons_Flag
-        sourceTable: public.data_1
-      Latest_Po_Date:
-        type: STRING
-        description: Latest purchase order date
-        sourceColumn: Latest_Po_Date
-        sourceTable: public.data_1
-      Creator:
-        type: STRING
-        description: Record creator
-        sourceColumn: Creator
-        sourceTable: public.data_1
-      Comp:
-        type: STRING
-        description: Company identifier
-        sourceColumn: Comp
-        sourceTable: public.data_1
-      Plant_Location:
-        type: STRING
-        description: Plant or facility location
-        sourceColumn: Plant_Location
-        sourceTable: public.data_1
-      Item_Category:
-        type: STRING
-        description: Category of item
-        sourceColumn: Item_Category
-        sourceTable: public.data_1
-      Etl_Inserted_Date:
-        type: STRING
-        description: ETL insertion timestamp
-        sourceColumn: Etl_Inserted_Date
-        sourceTable: public.data_1
-      Etl_Modified_Date:
-        type: STRING
-        description: ETL modification timestamp
-        sourceColumn: Etl_Modified_Date
-        sourceTable: public.data_1
-      Etl_Created_By:
-        type: STRING
-        description: ETL creator
-        sourceColumn: Etl_Created_By
-        sourceTable: public.data_1
-      Etl_Updated_By:
-        type: STRING
-        description: ETL updater
-        sourceColumn: Etl_Updated_By
-        sourceTable: public.data_1
+        description: Capital adequacy ratio derived from Tier-1 and risk-weighted assets
+        sourceColumn: capital_adeq_ratio
+        sourceTable: Calculated_Column
   stateStoreType: loadDataIceberg
   isProfilingEnabled: true
   updateStrategy: Overwrite
-  tableName: iceberg_meta.inventory
+  tableName: iceberg_meta.risk_overall
   warehousePath: s3a://dataverse/testbed_load/
   catalogName: postgres_catalog
   optional:
@@ -382,32 +272,46 @@ productState:
     enableDataReconciliation: false
     enforceSchema: true
     enforceSchemaMethod: Warning
-    catalogType: postgres
+    catalogType: glue
+    connection: S3 Connection
     loggingOptions:
       printSchema: true
-      count: true
-      showData: true
   refreshInterval: 30 5 * * *
 transformation:
   - isDynamic: true
     alias: Spark_SQL_1
-    description: transforming inventory data
-    sequence: 5
+    description: Transform risk 360 data
+    sequence: 7
     inputDataFrameList:
-      - inputDataFrame: Section_Department_Master_1
-        tempViewName: sectionDepartmentMaster
-      - inputDataFrame: Inventory_Status_1
-        tempViewName: inventoryStatus
-      - inputDataFrame: Item_Master_1
-        tempViewName: itemMaster
-      - inputDataFrame: Item_Stock_Limit_1
-        tempViewName: itemStockLimit
-    query: select * from sectionDepartmentMaster
+      - inputDataFrame: Credit_Risk_Assesments_1
+        tempViewName: CRA
+      - inputDataFrame: Corporate_Loan_1
+        tempViewName: CL
+      - inputDataFrame: Unsecured_Loan_1
+        tempViewName: UL
+      - inputDataFrame: Transactions_Master_1
+        tempViewName: TM
+      - inputDataFrame: Secured_Loan_1
+        tempViewName: SL
+      - inputDataFrame: Risk_360_KPI_1
+        tempViewName: RISK
+    query: select * from RISK
     optional:
       persistDataFrame: false
       loggingOptions:
         printSchema: true
-        showData: true
     type: operationThroughSqlQuery
 controlPort:
-  dataQualityRules: {}
+  dataQualityRules:
+    NullValueCheck:
+      productState:
+        checks:
+          - column: customer_id
+          - column: risk360_id
+        referenceAlias: loading_Risk360_data_in_iceberg
+    UniquenessCheck:
+      productState:
+        checks:
+          - column: customer_id
+          - column: risk360_id
+        referenceAlias: loading_Risk360_data_in_iceberg
