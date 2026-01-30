@@ -1,11 +1,11 @@
 jobId: "995"
-jobName: Unsecured Loans
+jobName: Unsecured Loan
 jobType: Source Aligned Data Product
-developerId: 7679c14a-8908-42a5-8656-2abecbfa4b49
+developerId: e3177aef-f9f9-4f45-b0a7-a46ea5466170
 domain: financial_services
 alias: loading_unsecured_loan_data_in_iceberg
 discoveryPort:
-  name: Unsecured Loans
+  name: Unsecured Loan
 inputPorts:
   - alias: Unsecured_Loans_1
     isDynamic: true
@@ -45,24 +45,24 @@ productState:
         sourceColumn: loan_type
         sourceTable: loan_master
       principal_amount:
-        type: NUMBER
+        type: STRING
         description: Principal loan amount
         sourceColumn: principal_amount
         sourceTable: loan_master
       interest_rate:
-        type: NUMBER
+        type: STRING
         description: Interest rate of the loan
         sourceColumn: interest_rate
         sourceTable: loan_master
-      start_date:
+      start_string:
         type: STRING
-        description: Loan start date
-        sourceColumn: start_date
+        description: Loan start string
+        sourceColumn: start_string
         sourceTable: loan_master
-      maturity_date:
+      maturity_string:
         type: STRING
-        description: Loan maturity date
-        sourceColumn: maturity_date
+        description: Loan maturity string
+        sourceColumn: maturity_string
         sourceTable: loan_master
       name:
         type: STRING
@@ -75,7 +75,7 @@ productState:
         sourceColumn: contact_info
         sourceTable: customer_master
       credit_score:
-        type: NUMBER
+        type: STRING
         description: Customer credit score
         sourceColumn: credit_score
         sourceTable: customer_master
@@ -84,13 +84,13 @@ productState:
         description: Unique identifier of repayment
         sourceColumn: repayment_id
         sourceTable: repayment_details
-      repayment_date:
+      repayment_string:
         type: STRING
-        description: Date of repayment
-        sourceColumn: repayment_date
+        description: string of repayment
+        sourceColumn: repayment_string
         sourceTable: repayment_details
       amount:
-        type: NUMBER
+        type: STRING
         description: Repayment or disbursement amount
         sourceColumn: amount
         sourceTable: repayment_details
@@ -104,10 +104,10 @@ productState:
         description: Unique identifier of disbursement
         sourceColumn: disbursement_id
         sourceTable: disbursement_details
-      disbursement_date:
+      disbursement_string:
         type: STRING
-        description: Date of disbursement
-        sourceColumn: disbursement_date
+        description: string of disbursement
+        sourceColumn: disbursement_string
         sourceTable: disbursement_details
       method:
         type: STRING
@@ -115,7 +115,7 @@ productState:
         sourceColumn: method
         sourceTable: disbursement_details
       dpd:
-        type: NUMBER
+        type: STRING
         description: Days past due value
         sourceColumn: dpd
         sourceTable: delinquency_details
@@ -155,22 +155,22 @@ productState:
         sourceColumn: overrides
         sourceTable: loan_application
       origination_fee:
-        type: NUMBER
+        type: STRING
         description: Origination fee charged
         sourceColumn: origination_fee
         sourceTable: loan_fees
       late_fee:
-        type: NUMBER
+        type: STRING
         description: Late payment fee charged
         sourceColumn: late_fee
         sourceTable: loan_fees
       foreclosure_charges:
-        type: NUMBER
+        type: STRING
         description: Charges for loan foreclosure
         sourceColumn: foreclosure_charges
         sourceTable: loan_fees
   stateStoreType: loadDataIceberg
-  isProfilingEnabled: false
+  isProfilingEnabled: true
   updateStrategy: Overwrite
   tableName: iceberg_meta.unsecured_loans
   warehousePath: s3a://dataverse/testbed_load/
@@ -178,7 +178,7 @@ productState:
   optional:
     persistDataFrame: false
     enableDataReconciliation: false
-    enforceSchema: false
+    enforceSchema: true
     enforceSchemaMethod: Warning
     catalogType: postgres
     connection: S3 Connection
@@ -204,4 +204,14 @@ transformation:
         showData: true
     type: operationThroughSqlQuery
 controlPort:
-  dataQualityRules: {}
+  dataQualityRules:
+    NullValueCheck:
+      productState:
+        checks:
+          - column: loan_id
+        referenceAlias: loading_unsecured_loan_data_in_iceberg
+    UniquenessCheck:
+      productState:
+        checks:
+          - column: loan_id
+        referenceAlias: loading_unsecured_loan_data_in_iceberg
