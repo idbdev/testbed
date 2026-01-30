@@ -1,11 +1,11 @@
 jobId: "992"
-jobName: Corporate Loans
+jobName: Corporate Loan
 jobType: Source Aligned Data Product
-developerId: 7679c14a-8908-42a5-8656-2abecbfa4b49
+developerId: e3177aef-f9f9-4f45-b0a7-a46ea5466170
 domain: financial_services
 alias: loading_Corporate_Loans_data_in_iceberg
 discoveryPort:
-  name: Corporate Loans
+  name: Corporate Loan
 inputPorts:
   - alias: Loan_Master_1
     isDynamic: true
@@ -58,12 +58,12 @@ productState:
         sourceColumn: interest_rate
         sourceTable: loan_master
       start_date:
-        type: DATETIME
+        type: STRING
         description: Loan start date
         sourceColumn: start_date
         sourceTable: loan_master
       maturity_date:
-        type: DATETIME
+        type: STRING
         description: Loan maturity date
         sourceColumn: maturity_date
         sourceTable: loan_master
@@ -88,7 +88,7 @@ productState:
         sourceColumn: status
         sourceTable: collateral_details
   stateStoreType: loadDataIceberg
-  isProfilingEnabled: false
+  isProfilingEnabled: true
   updateStrategy: Overwrite
   tableName: iceberg_meta.corporate_loans
   warehousePath: s3a://dataverse/testbed_load/
@@ -96,7 +96,7 @@ productState:
   optional:
     persistDataFrame: false
     enableDataReconciliation: false
-    enforceSchema: false
+    enforceSchema: true
     enforceSchemaMethod: Warning
     catalogType: postgres
     connection: S3 Connection
@@ -120,4 +120,14 @@ transformation:
       persistDataFrame: false
     type: operationThroughSqlQuery
 controlPort:
-  dataQualityRules: {}
+  dataQualityRules:
+    NullValueCheck:
+      productState:
+        checks:
+          - column: loan_id
+        referenceAlias: loading_Corporate_Loans_data_in_iceberg
+    UniquenessCheck:
+      productState:
+        checks:
+          - column: loan_id
+        referenceAlias: loading_Corporate_Loans_data_in_iceberg
