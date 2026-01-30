@@ -1,11 +1,11 @@
 jobId: "993"
-jobName: Secured Loans
+jobName: Secured Loan
 jobType: Source Aligned Data Product
-developerId: 7679c14a-8908-42a5-8656-2abecbfa4b49
+developerId: e3177aef-f9f9-4f45-b0a7-a46ea5466170
 domain: financial_services
 alias: loading_secured_loan_data_in_iceberg
 discoveryPort:
-  name: Secured Loans
+  name: Secured Loan
 inputPorts:
   - alias: Party_Master_1
     isDynamic: true
@@ -98,12 +98,12 @@ productState:
         sourceColumn: tenor
         sourceTable: loan_master
       start_date:
-        type: DATETIME
+        type: STRING
         description: Loan start date
         sourceColumn: start_date
         sourceTable: loan_master
       maturity_date:
-        type: DATETIME
+        type: STRING
         description: Loan maturity date
         sourceColumn: maturity_date
         sourceTable: loan_master
@@ -113,7 +113,7 @@ productState:
         sourceColumn: status
         sourceTable: loan_master
   stateStoreType: loadDataIceberg
-  isProfilingEnabled: false
+  isProfilingEnabled: true
   updateStrategy: Overwrite
   tableName: iceberg_meta.secured_loan
   warehousePath: s3a://dataverse/testbed_load/
@@ -121,7 +121,7 @@ productState:
   optional:
     persistDataFrame: false
     enableDataReconciliation: false
-    enforceSchema: false
+    enforceSchema: true
     enforceSchemaMethod: Warning
     catalogType: postgres
     connection: S3 Connection
@@ -145,4 +145,14 @@ transformation:
       persistDataFrame: false
     type: operationThroughSqlQuery
 controlPort:
-  dataQualityRules: {}
+  dataQualityRules:
+    NullValueCheck:
+      productState:
+        checks:
+          - column: customer_id
+        referenceAlias: loading_secured_loan_data_in_iceberg
+    UniquenessCheck:
+      productState:
+        checks:
+          - column: customer_id
+        referenceAlias: loading_secured_loan_data_in_iceberg
