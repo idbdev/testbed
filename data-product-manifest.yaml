@@ -199,12 +199,10 @@ controlPort:
     NullValueCheck:
       productState:
         checks:
-          - column: customer_id
           - column: score_id
         referenceAlias: loading_Credit_Risk_Assesment_data_in_iceberg
     UniquenessCheck:
       productState:
         checks:
-          - column: customer_id
           - column: score_id
         referenceAlias: loading_Credit_Risk_Assesment_data_in_iceberg
