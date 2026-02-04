@@ -69,37 +69,40 @@ productState:
         type: STRING
         description: Unique identifier for the customer
         sourceColumn: Customer_Id
-        sourceTable: customer
+        sourceTable: new_customer
       Customer_Name:
         type: STRING
         description: Name of the customer
         sourceColumn: Customer_Name
-        sourceTable: customer
+        sourceTable: new_customer
+        isPII: true
       Email:
         type: STRING
         description: Email address of the customer
         sourceColumn: Email
-        sourceTable: customer
+        sourceTable: new_customer
+        isPII: true
       Phone_Number:
         type: STRING
         description: Phone number of the customer
         sourceColumn: Phone_Number
-        sourceTable: customer
+        sourceTable: new_customer
+        isPII: true
       Country:
         type: STRING
         description: Country of the customer
         sourceColumn: Country
-        sourceTable: customer
+        sourceTable: new_customer
       State:
         type: STRING
         description: State of the customer
         sourceColumn: State
-        sourceTable: customer
+        sourceTable: new_customer
       First_Purchase_Date:
         type: STRING
         description: Date of the customer's first purchase (DD/MM/YYYY)
         sourceColumn: First_Purchase_Date
-        sourceTable: customer
+        sourceTable: new_customer
       Campaign_Id:
         type: STRING
         description: Unique identifier for the marketing campaign
@@ -154,19 +157,19 @@ productState:
         type: STRING
         description: Total number of customers acquired from the campaign
         sourceColumn: Total_Customers_Acquired
-        sourceTable: calculated
+        sourceTable: new_customer
       CAC:
         type: STRING
         description: Customer Acquisition Cost for the campaign (Budget_Amount /
           Total_Customers_Acquired)
         sourceColumn: CAC
-        sourceTable: calculated
+        sourceTable: marketing_spend
       Campaign_Duration_Days:
         type: STRING
         description: Duration of the marketing campaign in days (Difference between
           End_Date and Start_Date)
         sourceColumn: Campaign_Duration_Days
-        sourceTable: calculated
+        sourceTable: marketing_spend
   stateStoreType: loadDataIceberg
   isProfilingEnabled: true
   updateStrategy: Overwrite
@@ -186,7 +189,7 @@ productState:
   refreshInterval: 30 5 * * *
 transformation:
   - isDynamic: true
-    alias: Spark_SQL_1
+    alias: transforming_data
     description: transforming customer acquisition cost data
     sequence: 3
     inputDataFrameList:
@@ -209,8 +212,10 @@ controlPort:
         checks:
           - column: Customer_Id
         referenceAlias: loading_customer_acquisition_data_in_iceberg
-    UniquenessCheck:
+    UniqueCombinationCheck:
       productState:
         checks:
-          - column: Customer_Id
+          - columns:
+              - Customer_Id
+              - Country
         referenceAlias: loading_customer_acquisition_data_in_iceberg
