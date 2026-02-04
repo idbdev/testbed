@@ -7,7 +7,7 @@ alias: loading_unsecured_loan_data_in_iceberg
 discoveryPort:
   name: Unsecured Loan
 inputPorts:
-  - alias: Unsecured_Loans_1
+  - alias: Balance_of_Payment_1
     isDynamic: true
     path: s3a://dataverse/testbed/banking/unsecured_loans.csv
     optional:
@@ -18,10 +18,6 @@ inputPorts:
       enforceSchema: false
       connection: S3 Connection - Financial Services
       dataSetUrn: urn:dv:dataset:ff9d3258-cd83-41e8-b341-985def881ca3
-      loggingOptions:
-        printSchema: true
-        count: true
-        showData: true
     type: inputDelimited
 productState:
   isDynamic: true
@@ -33,142 +29,142 @@ productState:
         type: STRING
         description: Unique identifier of the loan
         sourceColumn: loan_id
-        sourceTable: loan_master
+        sourceTable: balance_of_payment
       customer_id:
         type: STRING
         description: Unique identifier of the customer
         sourceColumn: customer_id
-        sourceTable: loan_master
+        sourceTable: balance_of_payment
       loan_type:
         type: STRING
         description: Type of loan
         sourceColumn: loan_type
-        sourceTable: loan_master
+        sourceTable: balance_of_payment
       principal_amount:
         type: STRING
         description: Principal loan amount
         sourceColumn: principal_amount
-        sourceTable: loan_master
+        sourceTable: balance_of_payment
       interest_rate:
         type: STRING
         description: Interest rate of the loan
         sourceColumn: interest_rate
-        sourceTable: loan_master
+        sourceTable: balance_of_payment
       start_string:
         type: STRING
         description: Loan start string
         sourceColumn: start_string
-        sourceTable: loan_master
+        sourceTable: balance_of_payment
       maturity_string:
         type: STRING
         description: Loan maturity string
         sourceColumn: maturity_string
-        sourceTable: loan_master
+        sourceTable: balance_of_payment
       name:
         type: STRING
         description: Customer full name
         sourceColumn: name
-        sourceTable: customer_master
+        sourceTable: balance_of_payment
       contact_info:
         type: STRING
         description: Customer contact details
         sourceColumn: contact_info
-        sourceTable: customer_master
+        sourceTable: balance_of_payment
       credit_score:
         type: STRING
         description: Customer credit score
         sourceColumn: credit_score
-        sourceTable: customer_master
+        sourceTable: balance_of_payment
       repayment_id:
         type: STRING
         description: Unique identifier of repayment
         sourceColumn: repayment_id
-        sourceTable: repayment_details
+        sourceTable: balance_of_payment
       repayment_string:
         type: STRING
         description: string of repayment
         sourceColumn: repayment_string
-        sourceTable: repayment_details
+        sourceTable: balance_of_payment
       amount:
         type: STRING
         description: Repayment or disbursement amount
         sourceColumn: amount
-        sourceTable: repayment_details
+        sourceTable: balance_of_payment
       payment_method:
         type: STRING
         description: Method used for repayment
         sourceColumn: payment_method
-        sourceTable: repayment_details
+        sourceTable: balance_of_payment
       disbursement_id:
         type: STRING
         description: Unique identifier of disbursement
         sourceColumn: disbursement_id
-        sourceTable: disbursement_details
+        sourceTable: balance_of_payment
       disbursement_string:
         type: STRING
         description: string of disbursement
         sourceColumn: disbursement_string
-        sourceTable: disbursement_details
+        sourceTable: balance_of_payment
       method:
         type: STRING
         description: Disbursement method
         sourceColumn: method
-        sourceTable: disbursement_details
+        sourceTable: balance_of_payment
       dpd:
         type: STRING
         description: Days past due value
         sourceColumn: dpd
-        sourceTable: delinquency_details
+        sourceTable: balance_of_payment
       bucket:
         type: STRING
         description: Delinquency bucket category
         sourceColumn: bucket
-        sourceTable: delinquency_details
+        sourceTable: balance_of_payment
       status:
         type: STRING
         description: Delinquency or loan status
         sourceColumn: status
-        sourceTable: delinquency_details
+        sourceTable: balance_of_payment
       application_id:
         type: STRING
         description: Unique identifier of loan application
         sourceColumn: application_id
-        sourceTable: loan_application
+        sourceTable: balance_of_payment
       scorecards:
         type: STRING
         description: Scorecard results used for decisioning
         sourceColumn: scorecards
-        sourceTable: loan_application
+        sourceTable: balance_of_payment
       decision:
         type: STRING
         description: Loan approval or rejection decision
         sourceColumn: decision
-        sourceTable: loan_application
+        sourceTable: balance_of_payment
       reasons:
         type: STRING
         description: Reasons for decision
         sourceColumn: reasons
-        sourceTable: loan_application
+        sourceTable: balance_of_payment
       overrides:
         type: STRING
         description: Manual overrides applied to decision
         sourceColumn: overrides
-        sourceTable: loan_application
+        sourceTable: balance_of_payment
       origination_fee:
         type: STRING
         description: Origination fee charged
         sourceColumn: origination_fee
-        sourceTable: loan_fees
+        sourceTable: balance_of_payment
       late_fee:
         type: STRING
         description: Late payment fee charged
         sourceColumn: late_fee
-        sourceTable: loan_fees
+        sourceTable: balance_of_payment
       foreclosure_charges:
         type: STRING
         description: Charges for loan foreclosure
         sourceColumn: foreclosure_charges
-        sourceTable: loan_fees
+        sourceTable: balance_of_payment
   stateStoreType: loadDataIceberg
   isProfilingEnabled: true
   updateStrategy: Overwrite
@@ -193,7 +189,7 @@ transformation:
     description: Transform unsecured loan data
     sequence: 2
     inputDataFrameList:
-      - inputDataFrame: Unsecured_Loans_1
+      - inputDataFrame: Balance_of_Payment_1
         tempViewName: UL
     query: select * from UL
     optional:
