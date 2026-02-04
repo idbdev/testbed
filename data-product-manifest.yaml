@@ -61,57 +61,57 @@ productState:
   retentionVersions: ""
   logicalSchema:
     properties:
-      TransactionId:
+      Transaction_Id:
         type: STRING
         description: Unique identifier for the transaction
         sourceColumn: TransactionId
         sourceTable: Transaction
-      TransactionDate:
+      Transaction_Date:
         type: STRING
         description: Date of the transaction
         sourceColumn: TransactionDate
         sourceTable: Transaction
-      ProductId:
+      Product_Id:
         type: STRING
         description: Unique identifier for the product sold
         sourceColumn: ProductId
         sourceTable: Transaction / Traffic
-      QuantitySold:
+      Quantity_Sold:
         type: STRING
         description: Quantity of the product sold
         sourceColumn: QuantitySold
         sourceTable: Transaction
-      SalePrice:
+      Sale_Price:
         type: STRING
         description: Price of the product at the time of sale
         sourceColumn: SalePrice
         sourceTable: Transaction
-      TotalAmount:
+      Total_Amount:
         type: STRING
         description: Total amount for the transaction
         sourceColumn: TotalAmount
         sourceTable: Transaction
-      CustomerId:
+      Customer_Id:
         type: STRING
         description: Unique identifier for the customer
         sourceColumn: CustomerId
         sourceTable: Customer
-      FirstPurchaseDate:
+      First_Purchase_Date:
         type: STRING
         description: Date when the customer made their first purchase
         sourceColumn: FirstPurchaseDate
         sourceTable: Customer
-      LastPurchaseDate:
+      Last_Purchase_Date:
         type: STRING
         description: Date when the customer made their most recent purchase
         sourceColumn: LastPurchaseDate
         sourceTable: Customer
-      VisitId:
+      Visit_Id:
         type: STRING
         description: Unique identifier for the visit
         sourceColumn: VisitId
         sourceTable: Traffic
-      VisitDate:
+      Visit_Date:
         type: STRING
         description: Date of the visit
         sourceColumn: VisitDate
@@ -121,37 +121,37 @@ productState:
         description: Source from where the visit originated (e.g., organic, paid)
         sourceColumn: Source
         sourceTable: Traffic
-      CampaignId:
+      Campaign_Id:
         type: STRING
         description: Campaign identifier for marketing initiatives
         sourceColumn: CampaignId
         sourceTable: Traffic / MarketingSpend
-      BudgetAmount:
+      Budget_Amount:
         type: STRING
         description: Marketing budget allocated to the campaign
         sourceColumn: BudgetAmount
         sourceTable: MarketingSpend
-      AvailableStock:
+      Available_Stock:
         type: STRING
         description: Amount of stock available for sale
         sourceColumn: AvailableStock
         sourceTable: InventoryMovement / MaterialMaster
-      OpeningStock:
+      Opening_Stock:
         type: STRING
         description: Stock available at the beginning of the period
         sourceColumn: OpeningStock
         sourceTable: InventoryMovement
-      ClosingStock:
+      Closing_Stock:
         type: STRING
         description: Stock remaining at the end of the period
         sourceColumn: ClosingStock
         sourceTable: InventoryMovement
-      StandardCost:
+      Standard_Cost:
         type: STRING
         description: Standard cost of the product
         sourceColumn: StandardCost
         sourceTable: MaterialMaster
-      IsAvailable:
+      Is_Available:
         type: STRING
         description: Indicates whether the product is available for sale
         sourceColumn: IsAvailable
@@ -161,32 +161,32 @@ productState:
         description: Gross Merchandise Value (total sales value)
         sourceColumn: GMV
         sourceTable: MMCI.calculated
-      AverageOrderValue:
+      Average_Order_Value:
         type: STRING
         description: Average value of an order
         sourceColumn: AverageOrderValue
         sourceTable: MMCI.calculated
-      ConversionRate:
+      Conversion_Rate:
         type: STRING
         description: Rate of visitors who make a purchase
         sourceColumn: ConversionRate
         sourceTable: MMCI.calculated
-      CustomerAcquisitionCost:
+      Customer_Acquisition_Cost:
         type: STRING
         description: Cost of acquiring a new customer
         sourceColumn: CustomerAcquisitionCost
         sourceTable: MMCI.calculated
-      CustomerLifetimeValue:
+      Customer_Lifetime_Value:
         type: STRING
         description: Total value a customer brings over their lifetime
         sourceColumn: CustomerLifetimeValue
         sourceTable: MMCI.calculated
-      OnShelfAvailability:
+      On_Shelf_Availability:
         type: STRING
         description: Percentage of time the product is available on shelf
         sourceColumn: OnShelfAvailability
         sourceTable: MMCI.calculated
-      InventoryTurnover:
+      Inventory_Turnover:
         type: STRING
         description: Rate at which inventory is sold or used
         sourceColumn: InventoryTurnover
@@ -239,8 +239,10 @@ controlPort:
         checks:
           - column: Transaction_Id
         referenceAlias: loading_data_of_consumer_insight_in_iceberg
-    UniquenessCheck:
+    UniqueCombinationCheck:
       productState:
         checks:
-          - column: Transaction_Id
+          - columns:
+              - Transaction_Id
+              - Product_Id
         referenceAlias: loading_data_of_consumer_insight_in_iceberg
