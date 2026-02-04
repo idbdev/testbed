@@ -5,7 +5,7 @@ developerId: e3177aef-f9f9-4f45-b0a7-a46ea5466170
 domain: consumer_goods
 alias: loading_data_of_consumer_insight_in_iceberg
 discoveryPort:
-  name: Market Measurement & Consumer Insight
+  name: Market Measurement & Consumer Insights
 inputPorts:
   - alias: Customer_Master_1
     isDynamic: true
