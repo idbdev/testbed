@@ -212,10 +212,8 @@ controlPort:
         checks:
           - column: Customer_Id
         referenceAlias: loading_customer_acquisition_data_in_iceberg
-    UniqueCombinationCheck:
+    UniquenessCheck:
       productState:
         checks:
-          - columns:
-              - Customer_Id
-              - Country
+          - column: Email
         referenceAlias: loading_customer_acquisition_data_in_iceberg
