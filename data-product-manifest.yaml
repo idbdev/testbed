@@ -1,7 +1,7 @@
 jobId: "1063"
 jobName: Revenue Attribution
 jobType: Source Aligned Data Product
-developerId: e3177aef-f9f9-4f45-b0a7-a46ea5466170
+developerId: 7679c14a-8908-42a5-8656-2abecbfa4b49
 domain: cmt
 alias: loading_Revenue_Attribution_data_in_iceberg
 discoveryPort:
@@ -156,9 +156,4 @@ controlPort:
       productState:
         checks:
           - column: content_id
-        referenceAlias: loading_Revenue_Attribution_data_in_iceberg
-    UnacceptableTextValueCheck:
-      productState:
-        checks:
-          - column: ""
         referenceAlias: loading_Revenue_Attribution_data_in_iceberg
