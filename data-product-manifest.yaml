@@ -261,6 +261,21 @@ productState:
         description: Capital adequacy ratio derived from Tier-1 and risk-weighted assets
         sourceColumn: capital_adeq_ratio
         sourceTable: Calculated_Column
+      npl_ratio:
+        type: STRING
+        description: NPL ratio derived from Non-Performing Loans and Total Gross Loans
+        sourceColumn: npl_ratio
+        sourceTable: Calculated_Column
+      ecl_ratio:
+        type: STRING
+        description: ECL ratio derived from Loan Loss Provisions and Non-Performing Loans
+        sourceColumn: ecl_ratio
+        sourceTable: Calculated_Column
+      ldr:
+        type: STRING
+        description: LDR derived from Net Loans and Total Deposits
+        sourceColumn: ldr
+        sourceTable: Calculated_Column
   stateStoreType: loadDataIceberg
   isProfilingEnabled: true
   updateStrategy: Overwrite
